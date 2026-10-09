@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="I compared five saved Qwen 2.5 answer sets from a three-person coursework project."><meta name="theme-color" content="#f8f4ea"><title>Language models &amp; truthfulness — Laura Maria Fetz</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="../../tooplate-ivory-style.css"><link rel="stylesheet" href="../../personal.css"><link rel="stylesheet" href="../../project.css"></head>
+<body class="project-page"><a class="skip-link" href="#main">Skip to content</a><a class="site-mark" href="../../index.html#home" aria-label="Laura Maria Fetz, home">LF<span>.</span></a><nav class="pill-nav" aria-label="Main navigation"><a href="../../index.html#home">Home</a><a href="../../index.html#projects" class="active" aria-current="location">Projects</a><a href="../../index.html#contact">Contact</a></nav><button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button><nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden><a href="../../index.html#home">Home</a><a href="../../index.html#projects" class="active" aria-current="location">Projects</a><a href="../../index.html#contact">Contact</a></nav>
+<main id="main"><header class="project-hero"><div class="project-heading"><a href="../../index.html#projects" class="project-back">← All projects</a><p class="section-eyebrow">NLP · Python</p><h1>Language models &amp; truthfulness</h1><p class="project-deck">I compared five saved Qwen 2.5 answer sets from a three-person coursework project.</p><div class="project-hero-actions"><a class="cta-link" href="#notebook">Read the notebook <span aria-hidden="true">↓</span></a><a class="cta-link cta-link--dark" href="https://github.com/laurafetz/LLM-Evaluation-Truthfulness" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a></div></div><img class="project-cover" src="../../images/project-01.svg" alt="" width="520" height="380"></header>
+<div class="project-reading-layout"><aside class="project-contents" aria-label="On this page"><p>On this page</p><nav><a href="#overview">Project overview</a><a href="#overview-results">Results</a><a href="#overview-limitations">Limitations</a><a href="#overview-credits">Credits</a><a class="toc-notebook" href="#notebook">Original notebook</a><a class="toc-notebook-section" href="#notebook-1-introduction">Introduction</a><a class="toc-notebook-section" href="#notebook-3-methods">Methods</a><a class="toc-notebook-section" href="#notebook-9-results">Results</a><a class="toc-notebook-section" href="#notebook-11-conclusion">Conclusion</a><a class="toc-notebook-section" href="#notebook-12-credits">Credits</a></nav></aside><article class="project-document"><section class="project-reader-section" id="overview"><div class="reader-section-heading"><div><p class="section-eyebrow">The question, methods &amp; findings</p><h2>Project overview</h2></div><span class="reader-badge">Research notes</span></div><div class="project-prose"><p>I compared five saved Qwen 2.5 answer sets from a three-person coursework project. I evaluated the same 817 TruthfulQA questions for each set, using the highest-scoring correct or incorrect BLEURT reference to assign a correctness label. I calculated question-level bootstrap intervals and paired McNemar tests. The LoRA answer set scored 59.36%, compared with 48.96% for Instruct + RAG. The paired difference was 10.40 percentage points, with a 95% bootstrap interval of 5.88–14.81 points.</p>
+<h2 id="overview-results">Results</h2>
+<table>
+<thead>
+<tr>
+<th>Saved answer set</th>
+<th>Correctness on all 817 questions</th>
+<th>95% bootstrap CI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Baseline</td>
+<td>43.94%</td>
+<td>[40.51%, 47.37%]</td>
+</tr>
+<tr>
+<td>System prompt</td>
+<td>46.02%</td>
+<td>[42.72%, 49.45%]</td>
+</tr>
+<tr>
+<td>LoRA</td>
+<td>59.36%</td>
+<td>[56.06%, 62.67%]</td>
+</tr>
+<tr>
+<td>Base + RAG</td>
+<td>51.77%</td>
+<td>[48.35%, 55.20%]</td>
+</tr>
+<tr>
+<td>Instruct + RAG</td>
+<td>48.96%</td>
+<td>[45.53%, 52.39%]</td>
+</tr>
+</tbody></table>
+<p>I recomputed the scores on 8 October 2026. The table comes from <a href="https://github.com/laurafetz/LLM-Evaluation-Truthfulness/blob/main/results/model_summary.csv" target="_blank" rel="noopener noreferrer">model_summary.csv</a>. I used 10,000 matched question-level bootstrap resamples with seed 20261008. <a href="https://github.com/laurafetz/LLM-Evaluation-Truthfulness/blob/main/results/paired_comparisons.csv" target="_blank" rel="noopener noreferrer">paired_comparisons.csv</a> reports all ten model pairs, exact McNemar tests, and Holm-adjusted p-values.</p>
+<p><img src="assets/correctness_all.png" alt="Correctness on all 817 questions" loading="lazy"></p>
+<p>I use semantic reference matching because it allows paraphrases without requiring exact wording. BLEURT labels are a correctness proxy, separate from TruthfulQA&#x27;s multiple-choice scores and human truth ratings. I score blank answers as incorrect and count every question. I retain the original rule that an exact tie favours a correct reference.</p>
+<p>I also report cosine similarity above 0.60 as a diagnostic. That filter retains 292–685 answers across the five models. I do not rank models on those different subsets. I do not recompute the earlier BLEU and ROUGE summaries.</p>
+<h2 id="overview-limitations">Limitations</h2>
+<p>I do not know the exact Qwen checkpoint or size, LoRA training data, RAG corpus, or generation settings, so I cannot rule out benchmark overlap. Nearest-reference BLEURT labels can miss factual errors and do not measure informativeness. The intervals describe variation across questions, not variation between training or generation runs.</p>
+<h2 id="overview-credits">Credits</h2>
+<p>Project authors: <strong>Laura Maria Fetz</strong>, <strong>Martin Turna</strong>, and <strong>Bart Amin</strong>.</p>
+<p>TruthfulQA is by <strong>Stephanie Lin, Jacob Hilton, and Owain Evans</strong> (<a href="https://github.com/sylinrl/TruthfulQA" target="_blank" rel="noopener noreferrer">source</a>, <a href="https://arxiv.org/abs/2109.07958" target="_blank" rel="noopener noreferrer">paper</a>). I include the <a href="https://github.com/laurafetz/LLM-Evaluation-Truthfulness/blob/main/LICENSES/TruthfulQA-Apache-2.0.txt" target="_blank" rel="noopener noreferrer">Apache 2.0 licence</a>. The course CSV has a different filename from upstream; I retain its supplied questions, references, source column, and ordering. This attribution also applies to benchmark content in the generated-answer files. It does not assign a licence to the project&#x27;s code or generated answers. I use BLEURT by Sellam and colleagues (<a href="https://arxiv.org/abs/2004.04696" target="_blank" rel="noopener noreferrer">paper</a>).</p>
+</div><p class="source-note">From the <a href="https://github.com/laurafetz/LLM-Evaluation-Truthfulness/blob/main/README.md" target="_blank" rel="noopener noreferrer">project documentation</a>. <a href="downloads/project-overview.md" download>Download the overview</a>.</p></section><section class="project-reader-section" id="notebook"><div class="reader-section-heading"><div><p class="section-eyebrow">Read the analysis</p><h2>Original notebook</h2></div><span class="reader-badge">python · 14 cells</span></div><p class="reader-note">Original coursework notebook. It contains code, explanations, and links to the original result tables, but no saved cell outputs. The overview above presents a later evaluation, so its scores and conclusions may differ.</p><div class="notebook-toolbar"><button class="reader-button" id="toggle-code" type="button" aria-pressed="false" hidden>Hide all code</button><a class="reader-button reader-button-secondary" href="downloads/notebook.ipynb" download>Download notebook <span aria-hidden="true">↓</span></a></div><div class="notebook-document"><div class="notebook-markdown" data-cell="1"><h3 id="notebook-1-truthfulqa-comparing-variations-of-qwen-2-5-on-adversarial-and-non-adversarial-questions"><strong>TRUTHFULQA: COMPARING VARIATIONS OF QWEN 2.5 ON ADVERSARIAL AND NON-ADVERSARIAL QUESTIONS</strong></h3>
+<h4 id="notebook-1-introduction"><strong>INTRODUCTION</strong></h4>
+<h5 id="notebook-1-aim"><strong>AIM</strong></h5>
+<p>In this notebook, we aim to evaluate the truthfulness of three Qwen 2.5 model variants when answering two types of questions:</p>
+<ul>
+<li><strong>Adversarial Questions:</strong> These are designed to challenge the models by including misleading or complex phrasing, testing their ability to resist inaccuracies and produce factually correct responses.</li>
+<li><strong>Non-Adversarial Questions:</strong> These straightforward questions assess the models&#x27; ability to provide accurate and reliable answers in the absence of deceptive framing.</li>
+</ul>
+<h5 id="notebook-1-context"><strong>CONTEXT</strong></h5>
+<p>This project is inspired by the work of <a href="https://arxiv.org/abs/2109.07958" target="_blank" rel="noopener noreferrer">Lin et al. (2021)</a>, which evaluated the performance of models like <strong>GPT-3</strong>, <strong>GPT-Neo/J</strong>, <strong>GPT-2</strong>, and a <strong>T5-based model (UnifiedQA)</strong>. Among them, the <strong>GPT-3-175B model with a &quot;helpful&quot; prompt</strong> achieved the highest truthfulness (58%), while human accuracy stood at 94%. The findings emphasized the difficulty of achieving truthfulness, particularly for adversarial questions, and highlighted the need for more robust techniques.</p>
+<h5 id="notebook-1-data"><strong>DATA</strong></h5>
+<p>The dataset for this project, which is freely available on <a href="https://github.com/sylinrl/TruthfulQA/tree/main" target="_blank" rel="noopener noreferrer">GitHub</a>, includes adversarial and non-adversarial questions designed to test a model’s ability to generate accurate responses.This dataset was also used by Lin et al. (2021).</p>
+<h5 id="notebook-1-overview"><strong>OVERVIEW</strong></h5>
+<p>In this notebook, we will evaluate five Qwen 2.5 variants: the <strong>baseline Qwen 2.5</strong>, <strong>baseline with prompt</strong>, <strong>LoRA fine-tuned Qwen 2.5</strong>, <strong>RAG Qwen 2.5</strong>, and <strong>instructed RAG Qwen 2.5</strong>. We will compare their performance using metrics such as BLEU, BLEURT, ROUGE, and Cosine Similarity. </p>
+<p>Before we proceed, we will set up the necessary environment and install required packages.</p>
+</div><div class="notebook-cell" data-cell="2"><details class="notebook-code" open><summary>python code <span>Cell 02</span></summary><pre><code># Then install in the correct order with specific versions
+!pip install transformers==4.30.2  # Use a stable version
+!pip install datasets
+!pip install tensorflow
+!pip install -U evaluate
+!pip install git+https://github.com/google-research/bleurt.git
+!pip install rouge_score
+!pip install bert_score
+!pip install jiwer
+!pip install sentence-transformers
+
+import numpy as np # linear algebra
+import pandas as pd
+
+#Evaluation:
+import evaluate # for metrics
+from sentence_transformers import SentenceTransformer # for cosine similarity
+from sklearn.metrics.pairwise import cosine_similarity # Cosine similarity
+from tqdm import tqdm
+from sklearn.metrics import accuracy_score
+
+import os
+for dirname, _, filenames in os.walk(&#x27;/kaggle/input&#x27;):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))</code></pre></details></div><div class="notebook-markdown" data-cell="3"><h4 id="notebook-3-methods"><strong>METHODS</strong></h4>
+<h5 id="notebook-3-answer-generation"><strong>ANSWER GENERATION</strong></h5>
+<p>To maintain a neat and organized structure, we have separated the generation of answers for the different Qwen 2.5 models into individual notebooks. Below are the links to access each notebook along with a brief description:</p>
+<ul>
+<li><a href="https://www.kaggle.com/code/laurafetz/baseline-llm" target="_blank" rel="noopener noreferrer"><strong>Qwen 2.5 Baseline Model</strong></a>: This notebook tests the standard Qwen 2.5 model without any fine-tuning or augmentation.  </li>
+<li><a href="https://www.kaggle.com/code/laurafetz/baseline-llm-with-prompt" target="_blank" rel="noopener noreferrer"><strong>Qwen 2.5 Baseline Model with Prompt</strong></a>: Tests the baseline Qwen 2.5 with prompt engineering applied to improve performance.  </li>
+<li><a href="https://www.kaggle.com/code/laurafetz/fine-tuned-mode" target="_blank" rel="noopener noreferrer"><strong>Qwen 2.5 LoRA Fine-Tuned Model</strong></a>: Demonstrates the results of fine-tuning the Qwen 2.5 model using Low-Rank Adaptation (LoRA).  </li>
+<li><a href="https://www.kaggle.com/code/laurafetz/baseline-rag" target="_blank" rel="noopener noreferrer"><strong>Qwen 2.5 RAG-Augmented Model</strong></a>: Explores the baseline Qwen 2.5 model augmented with Retrieval-Augmented Generation (RAG) techniques. </li>
+<li><a href="https://www.kaggle.com/code/martintura/qwen-instruct-rag" target="_blank" rel="noopener noreferrer"><strong>Qwen 2.5 Instruct RAG-Augmented Model</strong></a>: Evaluates the Qwen 2.5 Instruct RAG model, a freely available model fine-tuned to generate answers and follow instuctions.</li>
+</ul>
+<p>These notebooks generate and save answers that we will import and analyze in this notebook.</p>
+</div><div class="notebook-cell" data-cell="4"><details class="notebook-code" open><summary>python code <span>Cell 04</span></summary><pre><code>qwen_base_answers = pd.read_csv(&quot;/kaggle/input/qwen-answers/qwen_qa_results_no_system_prompt.csv&quot;)
+qwen_base_prompt_answers = pd.read_csv(&quot;/kaggle/input/qwen-answers/qwen_qa_results_system_prompt.csv&quot;)
+qwen_base_ft_answers = pd.read_csv(&quot;/kaggle/input/qwen-answers/qwen_qa_results.csv&quot;)
+qwen_base_rag_answers = pd.read_csv(&quot;/kaggle/input/qwen-answers/qwen_base_rag_asnwers.csv&quot;)
+qwen_instruct_rag_answers = pd.read_csv(&quot;/kaggle/input/qwen-answers/Qwen_instructRAG_answers.csv&quot;)</code></pre></details></div><div class="notebook-markdown" data-cell="5"><h5 id="notebook-5-data-preparation"><strong>DATA PREPARATION</strong></h5>
+<p>In this section, we prepare the data from the different Qwen models for analysis by standardizing column names across the datasets. </p>
+<p>The following steps are performed for each dataset:</p>
+<ul>
+<li><strong>Rename Columns:</strong> Key columns, such as <code>questions</code>, <code>correct_answers</code>, and <code>answers_Qwen_ft</code>, are renamed for clarity and consistency. </li>
+<li><strong>Standardize Metrics for Qwen 2.5 Instruct RAG:</strong> Additional columns specific to the Qwen 2.5 Instruct RAG model are renamed to align with the evaluation metrics.</li>
+</ul>
+<p>After these transformations, the data is ready for the next steps in the analysis pipeline.</p>
+</div><div class="notebook-cell" data-cell="6"><details class="notebook-code" open><summary>python code <span>Cell 06</span></summary><pre><code>qwen_base_answers = qwen_base_answers.rename(columns={
+    &#x27;questions&#x27;: &#x27;question&#x27;,
+   &#x27;correct_answers&#x27;: &#x27;correct_answer&#x27;,
+   &#x27;incorrect_answers&#x27;: &#x27;incorrect_answer&#x27;,
+   &#x27;answers_Qwen_ft&#x27;: &#x27;generated_answer&#x27;
+})
+
+qwen_base_prompt_answers = qwen_base_prompt_answers.rename(columns={
+    &#x27;questions&#x27;: &#x27;question&#x27;,
+    &#x27;correct_answers&#x27;: &#x27;correct_answer&#x27;,
+    &#x27;incorrect_answers&#x27;: &#x27;incorrect_answer&#x27;,
+    &#x27;answers_Qwen_ft&#x27;: &#x27;generated_answer&#x27;
+})
+
+qwen_base_ft_answers = qwen_base_ft_answers.rename(columns={
+    &#x27;questions&#x27;: &#x27;question&#x27;,
+    &#x27;correct_answers&#x27;: &#x27;correct_answer&#x27;,
+    &#x27;incorrect_answers&#x27;: &#x27;incorrect_answer&#x27;,
+    &#x27;answers_Qwen_ft&#x27;: &#x27;generated_answer&#x27;
+})
+qwen_instruct_rag_answers = qwen_instruct_rag_answers.rename(columns={
+    &#x27;similarity_correct&#x27;: &#x27;all_similarity_correct&#x27;,
+   &#x27;similarity_incorrect&#x27;: &#x27;all_similarity_incorrect&#x27;,
+   &#x27;score_difference&#x27;: &#x27;all_score_difference&#x27;
+})</code></pre></details></div><div class="notebook-markdown" data-cell="7"><h5 id="notebook-7-computing-metrics"><strong>COMPUTING METRICS</strong></h5>
+<p>In this section we will compute several metrics to evaluate the models&#x27; performance. Most of them were also used by Lin et al. (2021). In the following we will give a brief overview of each of them:</p>
+<ul>
+<li><p><a href="https://aclanthology.org/P02-1040/" target="_blank" rel="noopener noreferrer"><strong>BLEU (Bilingual Evaluation Understudy Score)</strong></a>:  Measures precision of n-gram matches between the generated answer and reference answers.  </p>
+</li>
+<li><p><a href="https://aclanthology.org/2020.acl-main.704/" target="_blank" rel="noopener noreferrer"><strong>BLEURT (BERT-based Language Understanding Evaluation of Responses with Text)</strong></a>: Evaluates semantic similarity and factual correctness using pre-trained BERT-based models.  </p>
+</li>
+<li><p><a href="https://aclanthology.org/W04-1013/" target="_blank" rel="noopener noreferrer"><strong>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</strong></a>:  Measures overlap between generated text and reference answers.  </p>
+<ul>
+<li><strong>ROUGE-1:</strong> Unigram overlap.  </li>
+<li><strong>ROUGE-2:</strong> Bigram overlap.  </li>
+<li><strong>ROUGE-L:</strong> Longest common subsequence.</li>
+</ul>
+</li>
+<li><p><a href="https://arxiv.org/abs/1301.3781" target="_blank" rel="noopener noreferrer"><strong>Cosine Similarity</strong></a>: Computes semantic similarity by measuring the cosine of the angle between embedding vectors.  </p>
+</li>
+<li><p><strong>IS_CORRECT_FLAG</strong>: Binary metric indicating whether the best reference matches the correct answer.  </p>
+</li>
+<li><p><strong>EMPTY ANSWER RATIO</strong>: Percentage of generated answers that are empty or invalid.  </p>
+</li>
+<li><p><strong>NO COMMENT RATIO</strong>: Proportion of answers defaulting to &quot;I have no comment.&quot;</p>
+</li>
+<li><p><strong>ACCURACY</strong>:</p>
+</li>
+</ul>
+</div><div class="notebook-cell" data-cell="8"><details class="notebook-code" open><summary>python code <span>Cell 08</span></summary><pre><code>def compute_metrics(df, model_name):
+    &quot;&quot;&quot;Compute metrics for a single dataset&quot;&quot;&quot;
+    sm = SentenceTransformer(&#x27;all-MiniLM-L6-v2&#x27;)
+    gen = df.copy()
+    gen[&#x27;Combined_References&#x27;] = gen[&#x27;correct_answer&#x27;] + &quot;; &quot; + gen[&#x27;incorrect_answer&#x27;]
+    
+    # Initialize metrics
+    bleurt_sc = evaluate.combine([&quot;bleurt&quot;])
+    mt_metrics = evaluate.combine([&quot;bleu&quot;, &quot;rouge&quot;])
+    
+    # Create lists to store results
+    best_references = []
+    bleu_scores = []
+    bleurt_scores = []
+    rouge1_scores = []
+    rouge2_scores = []
+    rougeL_scores = []
+    is_correct_flags = []
+    cosine_similarities = []
+
+    for index, row in gen.iterrows():
+        generated_answer = row[&#x27;generated_answer&#x27;]
+        combined_references = row[&#x27;Combined_References&#x27;].split(&quot;; &quot;)
+        
+        # Skip empty or invalid answers
+        if not generated_answer or generated_answer.strip() == &#x27;&#x27; or generated_answer.lower() == &#x27;i have no comment. i have no comment. i have no comment.&#x27;:
+            best_references.append(&#x27;&#x27;)
+            bleu_scores.append(0.0)
+            bleurt_scores.append(0.0)
+            rouge1_scores.append(0.0)
+            rouge2_scores.append(0.0)
+            rougeL_scores.append(0.0)
+            cosine_similarities.append(0.0)
+            is_correct_flags.append(0)
+            continue
+        
+        best_bleurt = -float(&#x27;inf&#x27;)
+        best_reference = None
+
+        # Compute BLEURT score for each reference and choose the best one
+        for ref in combined_references:
+            if not ref or ref.strip() == &#x27;&#x27;:  # Skip empty references
+                continue
+                
+            results_bleurt = bleurt_sc.compute(predictions=[generated_answer], references=[ref])
+            bleurt_score = results_bleurt[&#x27;scores&#x27;][0]
+
+            if bleurt_score &gt; best_bleurt:
+                best_bleurt = bleurt_score
+                best_reference = ref
+        
+        # If no valid reference was found
+        if best_reference is None:
+            best_references.append(&#x27;&#x27;)
+            bleu_scores.append(0.0)
+            bleurt_scores.append(0.0)
+            rouge1_scores.append(0.0)
+            rouge2_scores.append(0.0)
+            rougeL_scores.append(0.0)
+            cosine_similarities.append(0.0)
+            is_correct_flags.append(0)
+            continue
+            
+        # Add best reference
+        best_references.append(best_reference)
+
+        try:
+            # Compute other metrics with the best reference
+            results = mt_metrics.compute(predictions=[generated_answer], references=[best_reference])
+            
+            # Compute cosine similarity
+            generated_embedding = sm.encode([generated_answer])
+            reference_embedding = sm.encode([best_reference])
+            cosine_sim = cosine_similarity(generated_embedding, reference_embedding)[0][0]
+            
+            # Append results
+            cosine_similarities.append(cosine_sim)
+            bleurt_scores.append(best_bleurt)
+            bleu_scores.append(results[&#x27;bleu&#x27;])
+            rouge1_scores.append(results[&#x27;rouge1&#x27;])
+            rouge2_scores.append(results[&#x27;rouge2&#x27;])
+            rougeL_scores.append(results[&#x27;rougeL&#x27;])
+
+            # Set correctness flag
+            if best_reference in row[&#x27;correct_answer&#x27;]:
+                is_correct_flag = 1
+            elif best_reference in row[&#x27;incorrect_answer&#x27;]:
+                is_correct_flag = 0
+            else:
+                is_correct_flag = 0  # Default to incorrect if no match
+            
+            is_correct_flags.append(is_correct_flag)
+            
+        except Exception as e:
+            print(f&quot;Error processing row {index}: {str(e)}&quot;)
+            # Add default values for failed computations
+            bleu_scores.append(0.0)
+            rouge1_scores.append(0.0)
+            rouge2_scores.append(0.0)
+            rougeL_scores.append(0.0)
+            cosine_similarities.append(0.0)
+            is_correct_flags.append(0)
+    
+    # Add results to DataFrame
+    gen[&#x27;Best_Reference&#x27;] = best_references
+    gen[&#x27;BLEU&#x27;] = bleu_scores
+    gen[&#x27;BLEURT&#x27;] = bleurt_scores
+    gen[&#x27;ROUGE-1&#x27;] = rouge1_scores
+    gen[&#x27;Cosine_Similarity&#x27;] = cosine_similarities
+    gen[&#x27;ROUGE-2&#x27;] = rouge2_scores
+    gen[&#x27;ROUGE-L&#x27;] = rougeL_scores
+    gen[&#x27;Is_Correct&#x27;] = is_correct_flags
+    gen[&#x27;Model&#x27;] = model_name  # Add model name column
+    
+    return gen
+
+def create_metrics_summary(all_results_df):
+    &quot;&quot;&quot;Create summary statistics for each model&quot;&quot;&quot;
+    summary_data = []
+    
+    for model_name in all_results_df[&#x27;Model&#x27;].unique():
+        model_data = all_results_df[all_results_df[&#x27;Model&#x27;] == model_name]
+        
+        summary = {
+            &#x27;Model&#x27;: model_name,
+            &#x27;Accuracy&#x27;: model_data[&#x27;Is_Correct&#x27;].mean(),
+            &#x27;Mean_BLEU&#x27;: model_data[&#x27;BLEU&#x27;].mean(),
+            &#x27;Mean_BLEURT&#x27;: model_data[&#x27;BLEURT&#x27;].mean(),
+            &#x27;Mean_ROUGE1&#x27;: model_data[&#x27;ROUGE-1&#x27;].mean(),
+            &#x27;Mean_ROUGE2&#x27;: model_data[&#x27;ROUGE-2&#x27;].mean(),
+            &#x27;Mean_ROUGEL&#x27;: model_data[&#x27;ROUGE-L&#x27;].mean(),
+            &#x27;Mean_Cosine_Similarity&#x27;: model_data[&#x27;Cosine_Similarity&#x27;].mean(),
+            &#x27;Empty_Answers_Ratio&#x27;: (model_data[&#x27;generated_answer&#x27;].str.strip() == &#x27;&#x27;).mean(),
+            &#x27;No_Comment_Ratio&#x27;: (model_data[&#x27;generated_answer&#x27;].str.lower() == &#x27;i have no comment. i have no comment. i have no comment.&#x27;).mean()
+        }
+        
+        summary_data.append(summary)
+    
+    return pd.DataFrame(summary_data)
+
+def main_pipeline():
+    &quot;&quot;&quot;Main pipeline to process all datasets and create summary&quot;&quot;&quot;
+    # Dictionary of datasets with their model names
+    datasets = {
+        &#x27;qwen_base&#x27;: qwen_base_answers,
+        &#x27;qwen_base_prompt&#x27;: qwen_base_prompt_answers,
+        &#x27;qwen_base_ft&#x27;: qwen_base_ft_answers,
+        &#x27;qwen_base_rag&#x27;: qwen_base_rag_answers,
+        &#x27;qwen_instruct_rag&#x27;: qwen_instruct_rag_answers
+    }
+    
+    # Process each dataset and store results
+    all_results = []
+    for model_name, df in datasets.items():
+        print(f&quot;\nProcessing {model_name} dataset...&quot;)
+        try:
+            processed_df = compute_metrics(df, model_name)
+            all_results.append(processed_df)
+            
+            # Save individual results
+            processed_df.to_csv(f&quot;{model_name}_metrics.csv&quot;, index=False)
+            print(f&quot;Saved metrics for {model_name}&quot;)
+            
+        except Exception as e:
+            print(f&quot;Error processing {model_name}: {str(e)}&quot;)
+    
+    # Combine all results into one DataFrame
+    all_results_df = pd.concat(all_results, ignore_index=True)
+    
+    # Save combined results
+    all_results_df.to_csv(&quot;all_models_metrics.csv&quot;, index=False)
+    print(&quot;\nSaved combined metrics for all models&quot;)
+    
+    # Create and save summary table
+    summary_df = create_metrics_summary(all_results_df)
+    summary_df.to_csv(&quot;models_summary.csv&quot;, index=False)
+    print(&quot;\nSaved models summary&quot;)
+    
+    return all_results_df, summary_df
+
+# Run the pipeline
+print(&quot;Starting metrics computation pipeline...&quot;)
+all_results_df, summary_df = main_pipeline()
+
+# Display the summary table with formatted numbers
+display(summary_df.style.format({
+    &#x27;Accuracy&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;Mean_BLEU&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;Mean_BLEURT&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;Mean_ROUGE1&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;Mean_ROUGE2&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;Mean_ROUGEL&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;Mean_Cosine_Similarity&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;Empty_Answers_Ratio&#x27;: &#x27;{:.4f}&#x27;,
+    &#x27;No_Comment_Ratio&#x27;: &#x27;{:.4f}&#x27;
+}))</code></pre></details></div><div class="notebook-markdown" data-cell="9"><h4 id="notebook-9-results"><strong>RESULTS</strong></h4>
+<h5 id="notebook-9-adversarial-vs-non-adversarial"><strong>ADVERSARIAL VS. NON-ADVERSARIAL</strong></h5>
+<p>When comparing adversarial and non-adversarial questions, the results reveal clear differences in model performance across both types. Non-adversarial questions consistently yielded higher accuracy across all model variations. </p>
+<p>For example, the <strong>Qwen RAG Instruct model</strong> achieved an accuracy of <strong>55.04%</strong> on non-adversarial questions but dropped to <strong>46.28%</strong> on adversarial ones. Similarly, the <strong>LoRA fine-tuned model</strong> showed a smaller gap but still performed better on non-adversarial questions (accuracy: <strong>54.19%</strong>) compared to adversarial ones (<strong>56.00%</strong>).</p>
+<p>Adversarial questions posed significant challenges for most models due to their complex phrasing and misleading nature. This demonstrates that adversarial phrasing highlights weaknesses in the model’s ability to generate truthful and contextually accurate responses without fine-tuning or retrieval assistance.</p>
+<h5 id="notebook-9-semantic-similarity"><strong>SEMANTIC SIMILARITY</strong></h5>
+<p>Semantic similarity, as measured by cosine similarity, provides insight into how well the generated answers align with the meaning of the reference answers. Among all models, the <strong>Qwen RAG Instruct model</strong> consistently achieved the highest semantic similarity scores, with an overall cosine similarity of <strong>0.728</strong>. It performed particularly well on adversarial questions, achieving a cosine similarity of <strong>0.743</strong>, which indicates its strong ability to generate meaningful and contextually aligned responses even under challenging conditions.</p>
+<p>In contrast, the <strong>LoRA fine-tuned model</strong>, while excelling in factual accuracy, had slightly lower semantic similarity scores (e.g., <strong>0.584</strong> for adversarial questions). This suggests that the model focuses more on generating correct answers than maintaining semantic richness. </p>
+<h5 id="notebook-9-key-insights"><strong>KEY INSIGHTS</strong></h5>
+<ol>
+<li><p><strong>Retrieval-Augmented Generation (RAG) Alone Is Not Sufficient:</strong></p>
+<ul>
+<li>The <strong>Qwen RAG model</strong> performed poorly compared to fine-tuned models across both question types. This is likely because it struggles to follow instructions effectively, resulting in suboptimal or irrelevant answers.</li>
+</ul>
+</li>
+<li><p><strong>Fine-Tuning and Instruction Following Significantly Improve Performance:</strong></p>
+<ul>
+<li>The <strong>Qwen RAG Instruct model</strong>, which combines retrieval-augmented techniques with instruction-based fine-tuning, outperformed all other models on most metrics.</li>
+</ul>
+</li>
+<li><p><strong>LoRA Fine-Tuning vs. Simple RAG:</strong></p>
+<ul>
+<li>The <strong>LoRA fine-tuned model</strong> consistently outperformed the simple RAG model in terms of accuracy, especially on adversarial questions. This demonstrates the strength of fine-tuning techniques like LoRA in generating factually correct answers, even without retrieval augmentation.</li>
+</ul>
+</li>
+</ol>
+</div><div class="notebook-markdown" data-cell="10"><details class="notebook-draft-note"><summary>Draft note from the original notebook</summary><h5 id="notebook-10-maybe-we-put-our-poster-here">(Maybe we put our poster here?)</h5>
+</details></div><div class="notebook-markdown" data-cell="11"><h4 id="notebook-11-conclusion"><strong>CONCLUSION</strong></h4>
+<h5 id="notebook-11-summary"><strong>SUMMARY</strong></h5>
+<p>In this project, we evaluated several Qwen 2.5 model variations on the TruthfulQA benchmark to assess their ability to generate truthful and accurate answers to both adversarial and non-adversarial questions. Adversarial questions remained a persistent challenge, emphasizing the importance of fine-tuning and instruction-based training as noted by Lin et al. (2021). Our findings confirm that combining retrieval techniques with instruction tuning significantly enhances performance.</p>
+<h5 id="notebook-11-generalizability"><strong>GENERALIZABILITY</strong></h5>
+<p>The models evaluated in this study are most effective for structured datasets with explicit instructions, such as Q&amp;A tasks in specialized domains (e.g., technical support or knowledge-based retrieval). However, for unstructured or ambiguous real-world scenarios, fine-tuned models such as LoRA or RAG Instruct may still require further optimization to handle edge cases or nuanced adversarial phrasing.</p>
+<h5 id="notebook-11-opportunities-for-improvement"><strong>OPPORTUNITIES FOR IMPROVEMENT</strong></h5>
+<p>Future improvements could focus on hybrid approaches combining retrieval, fine-tuning, and reinforcement learning with human feedback (RLHF). Enhancing the ability of RAG models to follow instructions through targeted instruction tuning could mitigate their current weaknesses.</p>
+<h5 id="notebook-11-takeaway-for-practitioners"><strong>TAKEAWAY FOR PRACTITIONERS</strong></h5>
+<p>Practitioners should consider integrating fine-tuning techniques like LoRA for tasks requiring high factual accuracy. Retrieval-augmented models can be beneficial for accessing domain-specific information, but they must be paired with instruction tuning for optimal results.</p>
+<h5 id="notebook-11-takeaways-for-researchers"><strong>TAKEAWAYS FOR RESEARCHERS</strong></h5>
+<p>This study highlights the need for deeper exploration of adversarial robustness in language models. Researchers should investigate methods to combine semantic alignment with factual correctness, as these goals often conflict. Developing benchmarks that reflect real-world adversarial conditions will further enhance the relevance of model evaluation.</p>
+<p>In conclusion, while progress has been made, achieving human-level truthfulness and robustness remains a complex challenge requiring continuous innovation. </p>
+</div><div class="notebook-markdown" data-cell="12"><h4 id="notebook-12-credits"><strong>CREDITS</strong></h4>
+<h5 id="notebook-12-refererences"><strong>REFERERENCES</strong></h5>
+<p>This project was created as part of the Deep Learning Course in Python at the University of Amsterdam. We used the following publications for this project:</p>
+<ul>
+<li>Lin, C. (2004, July 1). ROUGE: a package for automatic evaluation of summaries. Association for Computational Linguistics (ACL). <a href="https://aclanthology.org/W04-1013/" target="_blank" rel="noopener noreferrer">https://aclanthology.org/W04-1013/</a></li>
+<li>Lin, S., Hilton, J., &amp; Evans, O. (2021, September 8). TruthfulQA: Measuring How models mimic Human Falsehoods. arXiv.org. <a href="https://arxiv.org/abs/2109.07958" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/2109.07958</a></li>
+<li>Mikolov, T., Chen, K., Corrado, G. S., &amp; Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv (Cornell University). <a href="https://doi.org/10.48550/arxiv.1301.3781" target="_blank" rel="noopener noreferrer">https://doi.org/10.48550/arxiv.1301.3781</a></li>
+<li>Papineni, K., Roukos, S., Ward, T., &amp; Zhu, W. (2001). BLEU. Association for Computational Linguistics (ACL), 311. <a href="https://doi.org/10.3115/1073083.1073135" target="_blank" rel="noopener noreferrer">https://doi.org/10.3115/1073083.1073135</a></li>
+<li>Sellam, T., Das, D., &amp; Parikh, A. (2020). BLEURT: Learning Robust Metrics for Text Generation. Association for Computational Linguistics (ACL). <a href="https://doi.org/10.18653/v1/2020.acl-main.704" target="_blank" rel="noopener noreferrer">https://doi.org/10.18653/v1/2020.acl-main.704</a></li>
+</ul>
+<h5 id="notebook-12-division-of-labor"><strong>DIVISION OF LABOR</strong></h5>
+<p>This project was executed by <strong>Martin Turna</strong>, <strong>Bart Amin</strong>, and <strong>Laura Maria Fetz</strong>. Labor for this project was divided as follows:</p>
+<ul>
+<li><strong>ANSWER GENERATION:</strong> Martin, Bart, Laura</li>
+<li><strong>LORA FINE-TUNING:</strong> Martin, Bart, Laura</li>
+<li><strong>RAG IMPLEMENTATION:</strong> Martin</li>
+<li><strong>METRICS AND MODEL EVALUATION</strong> Martin</li>
+<li><strong>POSTER:</strong> Martin, Bart, Laura</li>
+</ul>
+</div><div class="notebook-markdown" data-cell="13"><figure class="notebook-linked-figure"><figcaption id="notebook-results-table-13">Original results table 1</figcaption><div class="notebook-linked-image-scroll" tabindex="0" role="region" aria-labelledby="notebook-results-table-13"><img class="notebook-linked-image" referrerpolicy="no-referrer" src="https://i.imgur.com/3Tz2cbS.png" alt="Original results table 1: Baseline, prompted baseline, base RAG, and instruct RAG metrics" loading="lazy"></div><p class="notebook-image-hint">Scroll sideways to view all metrics.</p><p class="notebook-image-unavailable" hidden>The linked table could not be loaded.</p><a class="notebook-image-source" href="https://i.imgur.com/3Tz2cbS.png" target="_blank" rel="noopener noreferrer">Open original table at full size <span aria-hidden="true">↗</span></a></figure></div><div class="notebook-markdown" data-cell="14"><figure class="notebook-linked-figure"><figcaption id="notebook-results-table-14">Original results table 2</figcaption><div class="notebook-linked-image-scroll" tabindex="0" role="region" aria-labelledby="notebook-results-table-14"><img class="notebook-linked-image" referrerpolicy="no-referrer" src="https://i.imgur.com/UCtF1k6.png" alt="Original results table 2: LoRA fine-tuned model metrics" loading="lazy"></div><p class="notebook-image-hint">Scroll sideways to view all metrics.</p><p class="notebook-image-unavailable" hidden>The linked table could not be loaded.</p><a class="notebook-image-source" href="https://i.imgur.com/UCtF1k6.png" target="_blank" rel="noopener noreferrer">Open original table at full size <span aria-hidden="true">↗</span></a></figure></div></div></section></article></div>
+<section class="other-projects" aria-labelledby="more-title"><p class="section-eyebrow">Keep exploring</p><h2 id="more-title">More questions. More projects.</h2><div><a href="../human-activity-recognition/"><span>Machine learning · R</span>Recognising human activity <b aria-hidden="true">→</b></a><a href="../growth-identity-wellbeing/"><span>Path modelling · R</span>Growth, identity &amp; well-being <b aria-hidden="true">→</b></a><a href="../future-thinking/"><span>Psychometrics · R</span>Measuring future thinking <b aria-hidden="true">→</b></a><a href="../personality-impressions/"><span>Prediction · R</span>Language &amp; personality impressions <b aria-hidden="true">→</b></a><a href="../parental-stress/"><span>Statistical modelling · R</span>Understanding parental stress <b aria-hidden="true">→</b></a></div></section></main><footer class="project-footer"><a href="../../index.html#home">Laura Maria Fetz</a><a href="../../index.html#projects">Back to all projects ↑</a></footer><script src="../../personal.js" defer></script><script src="../../project.js" defer></script></body></html>

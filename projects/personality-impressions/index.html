@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="I studied whether transcripts and audiovisual features predict observers&amp;#x27; Big Five personality impressions."><meta name="theme-color" content="#f8f4ea"><title>Language &amp; personality impressions — Laura Maria Fetz</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="../../tooplate-ivory-style.css"><link rel="stylesheet" href="../../personal.css"><link rel="stylesheet" href="../../project.css"></head>
+<body class="project-page"><a class="skip-link" href="#main">Skip to content</a><a class="site-mark" href="../../index.html#home" aria-label="Laura Maria Fetz, home">LF<span>.</span></a><nav class="pill-nav" aria-label="Main navigation"><a href="../../index.html#home">Home</a><a href="../../index.html#projects" class="active" aria-current="location">Projects</a><a href="../../index.html#contact">Contact</a></nav><button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button><nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden><a href="../../index.html#home">Home</a><a href="../../index.html#projects" class="active" aria-current="location">Projects</a><a href="../../index.html#contact">Contact</a></nav>
+<main id="main"><header class="project-hero"><div class="project-heading"><a href="../../index.html#projects" class="project-back">← All projects</a><p class="section-eyebrow">Prediction · R</p><h1>Language &amp; personality impressions</h1><p class="project-deck">I studied whether transcripts and audiovisual features predict observers&amp;#x27; Big Five personality impressions.</p><div class="project-hero-actions"><a class="cta-link" href="#notebook">Read the notebook <span aria-hidden="true">↓</span></a><a class="cta-link cta-link--dark" href="https://github.com/laurafetz/Vlogger-Big-Five-Prediction" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a></div></div><img class="project-cover" src="../../images/project-05.svg" alt="" width="520" height="380"></header>
+<div class="project-reading-layout"><aside class="project-contents" aria-label="On this page"><p>On this page</p><nav><a href="#overview">Project overview</a><a href="#overview-results">Results</a><a href="#overview-limitations">Limitations</a><a href="#overview-credits">Credits</a><a class="toc-notebook" href="#notebook">Original notebook</a></nav></aside><article class="project-document"><section class="project-reader-section" id="overview"><div class="reader-section-heading"><div><p class="section-eyebrow">The question, methods &amp; findings</p><h2>Project overview</h2></div><span class="reader-badge">Research notes</span></div><div class="project-prose"><p>I studied whether transcripts and audiovisual features predict observers&#x27; Big Five personality impressions. The coursework data contain 324 labelled vloggers and 80 with withheld scores. I compared predefined feature sets with ridge regression, using five-fold cross-validation repeated five times and a fixed penalty of 10. The text model had a pooled RMSE of 0.827 across the five traits, compared with 0.834 for the training-fold mean baseline.</p>
+<h2 id="overview-results">Results</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Pooled CV RMSE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Simple text features + ridge</td>
+<td>0.827</td>
+</tr>
+<tr>
+<td>Text + audiovisual features + ridge</td>
+<td>0.830</td>
+</tr>
+<tr>
+<td>Training-fold mean baseline</td>
+<td>0.834</td>
+</tr>
+<tr>
+<td>Audiovisual features + ridge</td>
+<td>0.836</td>
+</tr>
+<tr>
+<td>Combined features with quadratic terms + ridge</td>
+<td>1.507</td>
+</tr>
+</tbody></table>
+<p>I ran this comparison on 8 October 2026. The table comes from <a href="https://github.com/laurafetz/Vlogger-Big-Five-Prediction/blob/main/results/cv_comparison.csv" target="_blank" rel="noopener noreferrer">cv_comparison.csv</a>. I report each trait separately in <a href="https://github.com/laurafetz/Vlogger-Big-Five-Prediction/blob/main/results/cv_by_trait.csv" target="_blank" rel="noopener noreferrer">cv_by_trait.csv</a>.</p>
+<p><img src="assets/cv_comparison.png" alt="Repeated cross-validation RMSE" loading="lazy"></p>
+<p>I assign each vlogger to one fold per repeat. I fit scaling and constant-feature removal within training folds. The text features are word count, sentence count, count of words with at least eleven letters, and type-token ratio. I use the supplied <code>mean.*</code> audiovisual features.</p>
+<p>This is a new comparison with simpler features. My original group notebook used NRC emotion counts and stepwise selection. It reported training RMSE of 0.651 for an interaction model and a competition score of 0.845. Those scores come from a different workflow and are not the CV estimates above.</p>
+<h2 id="overview-limitations">Limitations</h2>
+<p>The text model&#x27;s improvement over the mean baseline is small, and I have no independent test score for this comparison. The fixed ridge penalty may not suit each feature set. Observer impressions do not measure clinical personality traits.</p>
+<h2 id="overview-credits">Credits</h2>
+<p>Project authors: <strong>Laura Maria Fetz</strong>, <strong>Roman Esseveld</strong>, and <strong>Bram le Fèbre</strong>. I loaded the data and prepared the test predictions. Roman and I worked on features; Bram and I worked on models, text, and figures.</p>
+<p>The dataset and transcripts are credited to Biel and colleagues: <a href="https://doi.org/10.1109/TMM.2012.2225032" target="_blank" rel="noopener noreferrer">The YouTube Lens</a> and <a href="https://doi.org/10.1145/2522848.2522894" target="_blank" rel="noopener noreferrer">Hi YouTube!</a>.</p>
+</div><p class="source-note">From the <a href="https://github.com/laurafetz/Vlogger-Big-Five-Prediction/blob/main/README.md" target="_blank" rel="noopener noreferrer">project documentation</a>. <a href="downloads/project-overview.md" download>Download the overview</a>.</p></section><section class="project-reader-section" id="notebook"><div class="reader-section-heading"><div><p class="section-eyebrow">Read the analysis</p><h2>Original notebook</h2></div><span class="reader-badge">R · 60 cells</span></div><p class="reader-note">This original coursework notebook contains code and explanations. Saved outputs are not included in this copy; the project overview above presents the current results.</p><div class="notebook-toolbar"><button class="reader-button" id="toggle-code" type="button" aria-pressed="false" hidden>Hide all code</button><a class="reader-button reader-button-secondary" href="downloads/notebook.ipynb" download>Download notebook <span aria-hidden="true">↓</span></a></div><div class="notebook-document"><div class="notebook-markdown" data-cell="1"><h3 id="notebook-1-predicting-personality-impressions-from-vlogs">Predicting personality impressions from vlogs</h3>
+<p>I explored transcript and audiovisual predictors of observers’ Big Five ratings. This is my original coursework notebook, with 324 labelled vloggers and eighty withheld cases. The current repeated-CV analysis uses a separate R script and simpler features.</p>
+<p>Project authors: Laura Maria Fetz, Roman Esseveld, and Bram le Fèbre.</p>
+</div><div class="notebook-markdown" data-cell="2"><h3 id="notebook-2-read-the-data">Read the data</h3>
+<p>I load the packages and transcript files.</p>
+</div><div class="notebook-cell" data-cell="3"><details class="notebook-code" open><summary>R code <span>Cell 03</span></summary><pre><code># Loading packages
+library(tidyverse) 
+library(tidytext)
+
+# Listing files
+list.files(path = &quot;../input&quot;)
+
+# Directory structure 
+master_dir = file.path(list.files(&#x27;../input&#x27;, full.names=TRUE), &#x27;youtube-personality&#x27;)
+directory_content = list.files(master_dir, full.names = TRUE)
+print(directory_content)
+
+# Path to the transcripts directory with transcript .txt files
+path_to_transcripts = directory_content[2] 
+
+# .csv filenames
+AudioVisual_file    = directory_content[3]
+Gender_file         = directory_content[4]
+Personality_file    = directory_content[5]</code></pre></details></div><div class="notebook-markdown" data-cell="4"><p>I read each transcript and keep its vlogger identifier.</p>
+</div><div class="notebook-cell" data-cell="5"><details class="notebook-code" open><summary>R code <span>Cell 05</span></summary><pre><code># Importing the transcripts
+transcript_files = list.files(path_to_transcripts, full.names = TRUE) 
+print(head(transcript_files))
+
+# Encoding the ID
+vlogId = basename(transcript_files)
+vlogId = str_replace(vlogId, pattern = &quot;.txt$&quot;, replacement = &quot;&quot;)
+head(vlogId)
+
+# Including features extracted from the transcript texts
+transcripts_df = tibble(
+    
+    # vlogId connects each transcripts to a vlogger
+    vlogId=vlogId,
+    
+    # Read the transcript text from all file and store as a string
+    TEXT = map_chr(transcript_files, ~ paste(readLines(.x), collapse = &quot;\\n&quot;)), 
+    
+    # `filename` keeps track of the specific video transcript
+    filename = transcript_files
+)
+
+# Inspecting the first two examples
+transcripts_df %&gt;% 
+    head(2)</code></pre></details></div><div class="notebook-markdown" data-cell="6"><h4 id="notebook-6-personality-ratings">Personality ratings</h4>
+<p>I read the five observer-rated personality scores.</p>
+</div><div class="notebook-cell" data-cell="7"><details class="notebook-code" open><summary>R code <span>Cell 07</span></summary><pre><code># Import the Personality scores
+pers_df = read_delim(Personality_file, delim=&quot; &quot;)
+
+# Checking the data frame
+head(pers_df)</code></pre></details></div><div class="notebook-markdown" data-cell="8"><h4 id="notebook-8-gender-labels">Gender labels</h4>
+<p>I read the supplied gender labels.</p>
+</div><div class="notebook-cell" data-cell="9"><details class="notebook-code" open><summary>R code <span>Cell 09</span></summary><pre><code># Storing gender info
+gender_df = read.delim(Gender_file, head=FALSE, sep=&quot; &quot;, skip = 2)
+
+# Add column names
+names(gender_df) = c(&#x27;vlogId&#x27;, &#x27;gender&#x27;)
+
+# preview data
+head(gender_df)</code></pre></details></div><div class="notebook-markdown" data-cell="10"><h4 id="notebook-10-join-the-labels">Join the labels</h4>
+<p>I join the label tables by vlogger identifier.</p>
+</div><div class="notebook-cell" data-cell="11"><details class="notebook-code" open><summary>R code <span>Cell 11</span></summary><pre><code># merging gender and pers with left_join
+vlogger_df01 = left_join(gender_df, pers_df, by=&#x27;vlogId&#x27;)
+
+# switching characters for numeric values for gender variable
+vlogger_df01$gender[vlogger_df01$gender == &quot;Female&quot;] &lt;- 1
+vlogger_df01$gender[vlogger_df01$gender == &quot;Male&quot;] &lt;- 0
+
+# preview data
+head(vlogger_df01)</code></pre></details></div><div class="notebook-markdown" data-cell="12"><p>The eighty test vloggers have no personality labels. I retain them for later prediction.</p>
+</div><div class="notebook-markdown" data-cell="13"><h4 id="notebook-13-audiovisual-features">Audiovisual features</h4>
+<p>I read the supplied audio and visual features.</p>
+</div><div class="notebook-cell" data-cell="14"><details class="notebook-code" open><summary>R code <span>Cell 14</span></summary><pre><code># Importing the audio and visual information
+AudioVisual_df &lt;- read.delim(AudioVisual_file, sep = &quot; &quot;, head=TRUE)
+
+# preview data
+head(AudioVisual_df)</code></pre></details></div><div class="notebook-markdown" data-cell="15"><p>I select the audiovisual features used in the following models.</p>
+</div><div class="notebook-markdown" data-cell="16"><h4 id="notebook-16-join-the-features">Join the features</h4>
+<p>I join the audiovisual features to the label table.</p>
+</div><div class="notebook-cell" data-cell="17"><details class="notebook-code" open><summary>R code <span>Cell 17</span></summary><pre><code># select all columns containing the mean 
+selected_columns &lt;- grep(&quot;^mean&quot;, names(AudioVisual_df), value = TRUE)
+
+# Join the selected columns to vlogger_df01
+vlogger_df1 &lt;- left_join(vlogger_df01, select(AudioVisual_df, vlogId, all_of(selected_columns)), by = &#x27;vlogId&#x27;)
+
+# Print the first few rows of the resulting data frame
+head(vlogger_df1)</code></pre></details></div><div class="notebook-markdown" data-cell="18"><h3 id="notebook-18-extract-transcript-features">Extract transcript features</h3>
+<p>I followed the course text-analysis example to extract predictors from the transcripts.</p>
+</div><div class="notebook-markdown" data-cell="19"><h4 id="notebook-19-tokenize-words">Tokenize words</h4>
+<p>I split each transcript into word tokens.</p>
+</div><div class="notebook-cell" data-cell="20"><details class="notebook-code" open><summary>R code <span>Cell 20</span></summary><pre><code># Tokenizing the transcripts into words
+transcript_features_df = 
+    transcripts_df %&gt;%
+    unnest_tokens(token, TEXT, token = &#x27;words&#x27;) 
+
+# Creating a wordcloud to see the 100 most used words
+transcript_features_df %&gt;%
+    mutate(token = tolower(token)) %&gt;%
+count(token, sort= TRUE) %&gt;%
+with(., wordcloud::wordcloud(token, n, max.words = 100))</code></pre></details></div><div class="notebook-markdown" data-cell="21"><h4 id="notebook-21-join-token-features">Join token features</h4>
+<p>I join the transcript features to the vlogger table.</p>
+</div><div class="notebook-cell" data-cell="22"><details class="notebook-code" open><summary>R code <span>Cell 22</span></summary><pre><code># Merging transcript_features_df with vlogger_df1
+vlogger_df = left_join(vlogger_df1, transcript_features_df, by=&#x27;vlogId&#x27;) %&gt;%
+   select(-filename)
+
+# preview of data
+head(vlogger_df)</code></pre></details></div><div class="notebook-markdown" data-cell="23"><h4 id="notebook-23-nrc-emotion-lexicon">NRC emotion lexicon</h4>
+<p>I count words associated with the eight NRC emotions and positive or negative sentiment.</p>
+</div><div class="notebook-cell" data-cell="24"><details class="notebook-code" open><summary>R code <span>Cell 24</span></summary><pre><code># adding lexicons from &#x27;textdata&#x27; package
+get_lexicon = function(lexicon_name = names(textdata:::download_functions)) {
+    lexicon_name = match.arg(lexicon_name)
+    textdata:::download_functions[[lexicon_name]](&#x27;.&#x27;)
+    rds_filename = paste0(lexicon_name,&#x27;.rds&#x27;)
+    textdata:::process_functions[[lexicon_name]](&#x27;.&#x27;,rds_filename)
+    readr::read_rds(rds_filename)
+}
+
+# computing sentiment scores as features
+nrc &lt;- get_lexicon(&#x27;nrc&#x27;)
+transcript_sentiment &lt;- left_join(vlogger_df, nrc,  by = c(token = &#x27;word&#x27;), relationship=&#x27;many-to-many&#x27;)%&gt;% 
+count(`vlogId`, sentiment) %&gt;%
+pivot_wider(id_cols = &#x27;vlogId&#x27;, names_from=sentiment, values_from=n, values_fill = 0) </code></pre></details></div><div class="notebook-markdown" data-cell="25"><h4 id="notebook-25-remove-stopwords">Remove stopwords</h4>
+<p>I remove common stopwords before counting lexicon matches.</p>
+</div><div class="notebook-cell" data-cell="26"><details class="notebook-code" open><summary>R code <span>Cell 26</span></summary><pre><code># getting stopwords
+stopwords &lt;- get_stopwords() 
+
+# removing stopwords
+transcript_features_df &lt;- transcript_features_df %&gt;%
+    anti_join(stopwords, by = c(token = &quot;word&quot;))
+
+#creating a wordcloud to see the 100 most used words without stopwords
+transcript_features_df %&gt;%
+count(token, sort= TRUE) %&gt;%
+with(., wordcloud::wordcloud(token, n, max.words = 100))</code></pre></details></div><div class="notebook-markdown" data-cell="27"><h4 id="notebook-27-join-emotion-counts">Join emotion counts</h4>
+<p>I join the lexicon counts by vlogger identifier.</p>
+</div><div class="notebook-cell" data-cell="28"><details class="notebook-code" open><summary>R code <span>Cell 28</span></summary><pre><code># merging our dataframe 
+data01 &lt;- inner_join(vlogger_df1,transcript_sentiment, by = &quot;vlogId&quot;)
+
+# preview data
+head(data01)</code></pre></details></div><div class="notebook-markdown" data-cell="29"><h4 id="notebook-29-sentence-features">Sentence features</h4>
+<p>I add the sentence-count feature.</p>
+</div><div class="notebook-cell" data-cell="30"><details class="notebook-code" open><summary>R code <span>Cell 30</span></summary><pre><code># make a column that counts the length of a sentence by summing the words per vlog.
+transcript_features_df_2 &lt;- 
+    transcripts_df %&gt;%
+    unnest_tokens(sentences, TEXT, token = &#x27;sentences&#x27;) %&gt;%
+  group_by(vlogId) %&gt;%
+  summarize(sentences = n()) %&gt;%
+  as_tibble()
+
+# Merge the two data frames
+data02 &lt;- inner_join(data01, transcript_features_df_2, by = &quot;vlogId&quot;)
+
+# preview data
+head(data02)</code></pre></details></div><div class="notebook-markdown" data-cell="31"><h4 id="notebook-31-long-words">Long words</h4>
+<p>I add the long-word feature defined in the code below.</p>
+</div><div class="notebook-cell" data-cell="32"><details class="notebook-code" open><summary>R code <span>Cell 32</span></summary><pre><code># make a dataframe that counts the letters in each word:
+word_length &lt;- transcript_features_df %&gt;%
+    select(vlogId, token) %&gt;%
+    mutate(token = nchar(token))
+
+# objectivly calculate what short and long words should be by calculating std
+summary(word_length$token)
+
+# creating a variable that contains the length of the words
+word_length &lt;- word_length %&gt;%
+    mutate(long_word = token &gt;= 11)
+
+# creating a variable that contains long words
+long_word_df &lt;- word_length %&gt;%
+  group_by(vlogId) %&gt;%
+  summarize(long_words = sum(long_word))
+
+# now adding the feature to the data 
+data &lt;- data02 %&gt;%
+  left_join(long_word_df, by = &quot;vlogId&quot;)
+
+# preview data
+head(data)</code></pre></details></div><div class="notebook-markdown" data-cell="33"><h3 id="notebook-33-fit-regression-models">Fit regression models</h3>
+<p>I compare models using training RMSE pooled across the five traits. These are in-sample comparisons, separate from the repeated CV results in the README.</p>
+</div><div class="notebook-markdown" data-cell="34"><h4 id="notebook-34-additive-model">Additive model</h4>
+<p>I first include all candidate predictors. The original training RMSE was 0.742.</p>
+</div><div class="notebook-cell" data-cell="35"><details class="notebook-code" open><summary>R code <span>Cell 35</span></summary><pre><code># building an additive model
+mod_01 &lt;- lm(cbind(Extr, Agr, Cons, Emot, Open) ~ gender + mean.pitch + mean.conf.pitch + mean.spec.entropy + mean.val.apeak + mean.loc.apeak + mean.num.apeak + mean.num.apeak + mean.energy + mean.d.energy + anger + anticipation + disgust + fear + joy + negative + positive + sadness + surprise + trust + sentences + long_words, data = data)
+
+# print model summary
+summary(mod_01)
+
+# RMSE for the training dataset
+(RMSE_01 &lt;- sqrt(mean(mod_01$residuals^2)))</code></pre></details></div><div class="notebook-markdown" data-cell="36"><h4 id="notebook-36-reduced-additive-model">Reduced additive model</h4>
+<p>I retain predictors selected from the first model. The original training RMSE was 0.754.</p>
+</div><div class="notebook-cell" data-cell="37"><details class="notebook-code" open><summary>R code <span>Cell 37</span></summary><pre><code># building a second additive model
+mod_02 &lt;- lm(cbind(Extr, Agr, Cons, Emot, Open) ~ gender + mean.conf.pitch + mean.spec.entropy + mean.val.apeak + mean.loc.apeak + mean.num.apeak + mean.num.apeak + mean.energy + mean.d.energy + anger + anticipation + fear + joy + positive + surprise + sentences + long_words, data = data)
+
+# print model summary
+summary(mod_02)
+
+# RMSE for the training dataset
+(RMSE_02 &lt;- sqrt(mean(mod_02$residuals^2)))</code></pre></details></div><div class="notebook-markdown" data-cell="38"><h4 id="notebook-38-interaction-model">Interaction model</h4>
+<p>I add interactions between predictors. Training RMSE fell to 0.651, but the submitted competition RMSE was 0.845. This gap suggested overfitting.</p>
+</div><div class="notebook-cell" data-cell="39"><details class="notebook-code" open><summary>R code <span>Cell 39</span></summary><pre><code># building an interactive model
+mod_03 &lt;- lm(cbind(Extr, Agr, Cons, Emot, Open) ~ gender + mean.pitch * mean.conf.pitch + mean.spec.entropy + mean.val.apeak * mean.loc.apeak * mean.num.apeak * mean.num.apeak + mean.energy * mean.d.energy + anger * disgust * fear * negative * sadness + anticipation * joy * positive * surprise * trust + sentences * long_words, data = data)
+
+# print model summary
+summary(mod_03)
+
+# RMSE for the training dataset
+(RMSE_03 &lt;- sqrt(mean(mod_03$residuals^2)))</code></pre></details></div><div class="notebook-markdown" data-cell="40"><h4 id="notebook-40-correlation-based-reduction">Correlation-based reduction</h4>
+<p>I inspect predictor correlations and remove selected correlated features. The original training RMSE was 0.762.</p>
+</div><div class="notebook-cell" data-cell="41"><details class="notebook-code" open><summary>R code <span>Cell 41</span></summary><pre><code># Subsetting the features that could be correlated
+corr_data &lt;- data[, 8:28]
+
+# Compute the correlation matrix 
+correlation_matrix &lt;- cor(corr_data)
+
+# Find highly correlated variables
+highly_correlated_vars &lt;- caret::findCorrelation(correlation_matrix, cutoff = 0.8)
+
+# Print the highly correlated variables
+print(highly_correlated_vars)
+
+# Remove highly correlated variables from the correlation subset
+corr_data &lt;- corr_data[, -highly_correlated_vars]
+
+# Remove the original columns 1 to 7 from the &#x27;data&#x27; dataframe
+data_cor &lt;- data[, 1:7]
+
+# Combine the modified &#x27;corr_data&#x27; with the &#x27;data&#x27; dataframe
+data_cor &lt;- cbind(data, corr_data)
+
+# preview data
+head(data_cor)
+
+# Display the column names of the updated &#x27;data&#x27; dataframe
+colnames(data_cor)</code></pre></details></div><div class="notebook-cell" data-cell="42"><details class="notebook-code" open><summary>R code <span>Cell 42</span></summary><pre><code># building an additive model with remaining features
+mod_04 &lt;- lm(cbind(Extr, Agr, Cons, Emot, Open) ~ gender + mean.pitch + mean.conf.pitch + mean.spec.entropy + mean.val.apeak + mean.loc.apeak + mean.energy + mean.d.energy + disgust + fear + joy + surprise + sentences + long_words, data = data_cor)
+
+# print model summary
+summary(mod_04)
+
+# RMSE for the training dataset
+(RMSE_04 &lt;- sqrt(mean(mod_04$residuals^2)))</code></pre></details></div><div class="notebook-markdown" data-cell="43"><h4 id="notebook-43-stepwise-regression">Stepwise regression</h4>
+<p>I use AIC to select a model with forward and backward steps. The original training RMSE was 0.790.</p>
+</div><div class="notebook-cell" data-cell="44"><details class="notebook-code" open><summary>R code <span>Cell 44</span></summary><pre><code># List of response variables
+response_vars &lt;- c(&quot;Extr&quot;, &quot;Agr&quot;, &quot;Cons&quot;, &quot;Emot&quot;, &quot;Open&quot;)
+
+# Create an empty list to store the stepwise models
+stepwise_models &lt;- list()
+
+# Iterate over each response variable and fit a stepwise model
+for (response_var in response_vars) {
+  # Create the formula for the current response variable
+  formula_str &lt;- paste(response_var, &quot;~ gender + mean.pitch + mean.conf.pitch + mean.spec.entropy + 
+  mean.val.apeak + mean.loc.apeak + mean.num.apeak + mean.num.apeak + mean.energy + mean.d.energy + 
+  anger + anticipation + disgust + fear + joy + negative + positive + sadness + surprise + trust + 
+  sentences + long_words&quot;)
+  lm_formula &lt;- as.formula(formula_str)
+  
+  # Fit the linear model
+  lm_model &lt;- lm(lm_formula, data = data)
+  
+  # Perform stepwise regression
+  stepwise_model &lt;- step(lm_model, direction = &quot;both&quot;)
+  
+  # Store the stepwise model in the list
+  stepwise_models[[response_var]] &lt;- stepwise_model
+}
+
+# Access and view the summaries of the stepwise models
+for (response_var in response_vars) {
+  cat(&quot;Summary for response variable:&quot;, response_var, &quot;\n&quot;)
+  summary(stepwise_models[[response_var]])
+  cat(&quot;\n&quot;)
+}
+
+# best model based on smallest AIC
+mod_05 &lt;- lm(cbind(Extr, Agr, Cons, Emot, Open) ~ mean.loc.apeak + mean.num.apeak + anticipation + joy + 
+    positive + sadness + trust, data = data)
+
+# RMSE for the training dataset
+(RMSE_05 &lt;- sqrt(mean(mod_05$residuals^2)))</code></pre></details></div><div class="notebook-markdown" data-cell="45"><h4 id="notebook-45-audiovisual-features-only">Audiovisual features only</h4>
+<p>I fit the model without transcript features. The original training RMSE was 0.805.</p>
+</div><div class="notebook-cell" data-cell="46"><details class="notebook-code" open><summary>R code <span>Cell 46</span></summary><pre><code># building a model only including audio and visual features
+mod_6 &lt;- lm(cbind(Extr, Agr, Cons, Emot, Open) ~ mean.pitch + mean.conf.pitch + mean.spec.entropy + mean.val.apeak + mean.loc.apeak + mean.num.apeak + mean.num.apeak + mean.energy + mean.d.energy, data = data)
+
+# print model summary
+summary(mod_6)
+
+# RMSE for the training dataset
+(RMSE_06 &lt;- sqrt(mean(mod_6$residuals^2)))</code></pre></details></div><div class="notebook-markdown" data-cell="47"><h4 id="notebook-47-transcript-features-only">Transcript features only</h4>
+<p>I fit the model without audiovisual features. The original training RMSE was 0.776.</p>
+</div><div class="notebook-cell" data-cell="48"><details class="notebook-code" open><summary>R code <span>Cell 48</span></summary><pre><code># building a model only including text features
+mod_07 &lt;- lm(cbind(Extr, Agr, Cons, Emot, Open) ~ anger + anticipation + disgust + fear + joy + negative + positive + sadness + surprise + trust + sentences + long_words, data = data)
+
+# print model summary
+summary(mod_07)
+
+# RMSE for the training dataset
+(RMSE_07 &lt;- sqrt(mean(mod_07$residuals^2)))</code></pre></details></div><div class="notebook-markdown" data-cell="49"><h4 id="notebook-49-compare-training-errors">Compare training errors</h4>
+<p>I plot the in-sample RMSE values. The interaction model has the lowest training error, but this does not establish the lowest test error.</p>
+</div><div class="notebook-cell" data-cell="50"><details class="notebook-code" open><summary>R code <span>Cell 50</span></summary><pre><code># combine RMSEs into one vector:
+all_rmse &lt;- c(RMSE_01, RMSE_02, RMSE_03, RMSE_04, RMSE_05, RMSE_06, RMSE_07)
+
+# Names of the RMSE values 
+names &lt;- c(&quot;MOD_01&quot;, &quot;MOD_02&quot;, &quot;MOD_03&quot;, &quot;MOD_04&quot;, &quot;MOD_05&quot;, &quot;MOD_06&quot;, &quot;MOD_07&quot;)
+
+# Create a barplot with names on the X-axis and values on the Y-axis
+barplot(all_rmse, names.arg = names, main = &quot;RMSE Values&quot;, xlab = &quot;RMSE Names&quot;, ylab = &quot;RMSE Values&quot;, col = &quot;grey&quot;)
+
+</code></pre></details></div><div class="notebook-markdown" data-cell="51"><h3 id="notebook-51-prepare-the-test-set">Prepare the test set</h3>
+<p>I select the eighty vloggers with withheld personality scores.</p>
+</div><div class="notebook-cell" data-cell="52"><details class="notebook-code" open><summary>R code <span>Cell 52</span></summary><pre><code># Creating a subset for test data
+test_data = data %&gt;% 
+    filter(is.na(Extr))
+
+# counting rows
+nrow(test_data)</code></pre></details></div><div class="notebook-markdown" data-cell="53"><h4 id="notebook-53-predict-scores">Predict scores</h4>
+<p>I use the selected transcript model to predict the five traits.</p>
+</div><div class="notebook-cell" data-cell="54"><details class="notebook-code" open><summary>R code <span>Cell 54</span></summary><pre><code># Prediction for test data
+pred_mod_all = predict(mod_07, new = test_data)
+
+# Compute output data frame
+test_data_pred = test_data %&gt;% 
+    mutate(
+        Extr = pred_mod_all[,&#x27;Extr&#x27;], 
+        Agr  = pred_mod_all[,&#x27;Agr&#x27; ],
+        Cons = pred_mod_all[,&#x27;Cons&#x27;],
+        Emot = pred_mod_all[,&#x27;Emot&#x27;],
+        Open = pred_mod_all[,&#x27;Open&#x27;]
+    ) %&gt;%
+    select(vlogId, Extr:Open)
+
+# preview of data
+head(test_data_pred)</code></pre></details></div><div class="notebook-markdown" data-cell="55"><h4 id="notebook-55-export-predictions">Export predictions</h4>
+<p>I reshape the predictions to the competition format.</p>
+</div><div class="notebook-cell" data-cell="56"><details class="notebook-code" open><summary>R code <span>Cell 56</span></summary><pre><code># Converting our data to long format
+test_data_pred_long &lt;- test_data_pred %&gt;% 
+    pivot_longer(c(Extr, Agr, Cons, Emot, Open), names_to=&#x27;pers_axis&#x27;)
+
+# Obtain the right format for Kaggle
+test_data_pred_final &lt;- test_data_pred_long %&gt;%
+    unite(Id, vlogId, pers_axis) %&gt;%
+    rename(Expected = value)
+
+# Check if we succeeded
+head(test_data_pred_final)</code></pre></details></div><div class="notebook-cell" data-cell="57"><details class="notebook-code" open><summary>R code <span>Cell 57</span></summary><pre><code># Write to csv
+write_csv(test_data_pred_final, file = &quot;predictions_07.csv&quot;)
+
+# Check if the file was written successfully.
+dir()</code></pre></details></div><div class="notebook-markdown" data-cell="58"><h3 id="notebook-58-dataset-credits">Dataset credits</h3>
+<p>I used the YouTube Personality Dataset. The transcript source is Biel, Tsiminaki, Dines, and Gatica-Perez (2013), Hi YouTube! (<a href="https://doi.org/10.1145/2522848.2522894" target="_blank" rel="noopener noreferrer">DOI</a>). The audiovisual source is Biel and Gatica-Perez (2013), The YouTube Lens (<a href="https://doi.org/10.1109/TMM.2012.2225032" target="_blank" rel="noopener noreferrer">DOI</a>). I do not include the dataset or cached transcript outputs in this repository.</p>
+</div><div class="notebook-markdown" data-cell="59"><h3 id="notebook-59-project-credits">Project credits</h3>
+<p>Project authors: Laura Maria Fetz, Roman Esseveld, and Bram le Fèbre. I loaded the data and prepared the test predictions. Roman and I worked on features. Bram and I worked on models, text, and figures.</p>
+</div><div class="notebook-cell" data-cell="60"><details class="notebook-code" open><summary>R code <span>Cell 60</span></summary><pre><code>
+# 1. Define project paths
+project_name &lt;- &quot;Kaggle_Project&quot;
+project_dir &lt;- file.path(&quot;/kaggle/working&quot;, project_name)
+
+dir.create(project_dir, recursive = TRUE, showWarnings = FALSE)
+
+# 2. Copy source datasets
+data_dir &lt;- file.path(project_dir, &quot;data&quot;)
+dir.create(data_dir, showWarnings = FALSE)
+
+if (dir.exists(&quot;/kaggle/input&quot;)) {
+  system2(
+    &quot;cp&quot;,
+    c(&quot;-R&quot;, &quot;/kaggle/input/.&quot;, shQuote(data_dir))
+  )
+}
+
+# 3. Copy generated outputs
+output_dir &lt;- file.path(project_dir, &quot;outputs&quot;)
+dir.create(output_dir, showWarnings = FALSE)
+
+files &lt;- list.files(
+  &quot;/kaggle/working&quot;,
+  full.names = TRUE,
+  all.files = TRUE,
+  no.. = TRUE
+)
+
+files &lt;- files[
+  !basename(files) %in% c(
+    project_name,
+    paste0(project_name, &quot;.zip&quot;)
+  )
+]
+
+file.copy(
+  files,
+  output_dir,
+  recursive = TRUE,
+  overwrite = TRUE
+)
+
+# 4. Create ZIP archive
+zip_path &lt;- file.path(
+  &quot;/kaggle/working&quot;,
+  paste0(project_name, &quot;.zip&quot;)
+)
+
+if (file.exists(zip_path)) file.remove(zip_path)
+
+system2(
+  &quot;zip&quot;,
+  c(&quot;-rq&quot;, shQuote(zip_path), shQuote(project_name)),
+  stdout = TRUE
+)
+
+# 5. Verify ZIP creation
+if (file.exists(zip_path)) {
+  cat(&quot;ZIP created successfully:\n&quot;, zip_path)
+  cat(&quot;\nDownload it from the Kaggle Output files.&quot;)
+} else {
+  stop(&quot;ZIP creation failed.&quot;)
+}
+</code></pre></details></div></div></section></article></div>
+<section class="other-projects" aria-labelledby="more-title"><p class="section-eyebrow">Keep exploring</p><h2 id="more-title">More questions. More projects.</h2><div><a href="../language-model-truthfulness/"><span>NLP · Python</span>Language models &amp; truthfulness <b aria-hidden="true">→</b></a><a href="../human-activity-recognition/"><span>Machine learning · R</span>Recognising human activity <b aria-hidden="true">→</b></a><a href="../growth-identity-wellbeing/"><span>Path modelling · R</span>Growth, identity &amp; well-being <b aria-hidden="true">→</b></a><a href="../future-thinking/"><span>Psychometrics · R</span>Measuring future thinking <b aria-hidden="true">→</b></a><a href="../parental-stress/"><span>Statistical modelling · R</span>Understanding parental stress <b aria-hidden="true">→</b></a></div></section></main><footer class="project-footer"><a href="../../index.html#home">Laura Maria Fetz</a><a href="../../index.html#projects">Back to all projects ↑</a></footer><script src="../../personal.js" defer></script><script src="../../project.js" defer></script></body></html>

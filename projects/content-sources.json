@@ -1,0 +1,282 @@
+[
+  {
+    "title": "Language models & truthfulness",
+    "slug": "language-model-truthfulness",
+    "source": "https://github.com/laurafetz/LLM-Evaluation-Truthfulness",
+    "source_readme_sha256": "4e4df27fb4573a9a5c455cbb8154003e3a2e11ee87ace5b6b4175f50ce7b7b4b",
+    "notebook": {
+      "cells": 14,
+      "code_cells": 4,
+      "outputs": 0,
+      "language": "python",
+      "source_filename": "dlip-project-metrics-2.ipynb",
+      "source_sha256": "879a630c8b4639374a4266249630c2de1dc0125cb6d0b63644b3d67867963721",
+      "source": "supplied-by-laura",
+      "linked_result_images": [
+        "https://i.imgur.com/3Tz2cbS.png",
+        "https://i.imgur.com/UCtF1k6.png"
+      ],
+      "web_view_adjustments": [
+        "Malformed image markup cleaned in cells 13 and 14",
+        "Draft poster note in cell 10 displayed as a collapsed note"
+      ]
+    },
+    "report": "not-yet-supplied"
+  },
+  {
+    "title": "Recognising human activity",
+    "slug": "human-activity-recognition",
+    "source": "https://github.com/laurafetz/Human-Activity-Recognition",
+    "source_readme_sha256": "332444f8bcf27ab6d30b2989f4f12ced1da4a6f22b83b2bafd88951aea67e039",
+    "notebook": {
+      "cells": 68,
+      "code_cells": 33,
+      "outputs": 30,
+      "language": "R"
+    },
+    "report": "not-yet-supplied"
+  },
+  {
+    "title": "Growth, identity & well-being",
+    "slug": "growth-identity-wellbeing",
+    "source": "https://github.com/laurafetz/Personal-Growth-Identity-Formation-and-Well-Being-SEM-Path-Model",
+    "source_readme_sha256": "f745b8c7093cf0d93cc5accd9bf6172b5de1af44f1bdef2f04d98d73b3ff92e8",
+    "notebook": null,
+    "report": {
+      "source_filename": "Project 2 - SEM Path Model.docx",
+      "source_sha256": "f5f7da2b9c39d3a5e3ab6a35b19af0ca977a5be31ea33dfff34acaa2452da812",
+      "download": "downloads/report.docx",
+      "tables": 1,
+      "images": 5,
+      "equations": 0,
+      "figures": [
+        {
+          "file": "assets/report-image1.png",
+          "source_sha256": "177d6b8f88682fe4059e316a031c0d8a1bb2f02c3d4d44e5750308019101ef16",
+          "label": "Figure 1: Hypothesized model with full mediation"
+        },
+        {
+          "file": "assets/report-image4.png",
+          "source_sha256": "0c23f7f0acda45eda9c881f32e22b60bc4158bdf28991789a0846eea15e4b298",
+          "label": "Figure 2: Chi-square across model modifications"
+        },
+        {
+          "file": "assets/report-image3.png",
+          "source_sha256": "ae47e9b22105aee7e3a960c24dc5b4a59bc9598aac07ff2554066774fda80363",
+          "label": "Figure 2: CFI across model modifications"
+        },
+        {
+          "file": "assets/report-image2.png",
+          "source_sha256": "8fbedf56d060dbc783e0f3e87a5a8a7421e9a446577160ba7af57dd2d8730c1f",
+          "label": "Figure 2: RMSEA across model modifications"
+        },
+        {
+          "file": "assets/report-image5.png",
+          "source_sha256": "cdd911af321b192788bcd6557bb79b96bf95cefc720fc16de795b5160eb876eb",
+          "label": "Figure 3: Modified model with partial mediation"
+        }
+      ],
+      "headings": [
+        {
+          "title": "Methods",
+          "id": "report-methods",
+          "level": 3
+        },
+        {
+          "title": "Primary analysis",
+          "id": "report-primary-analysis",
+          "level": 3
+        },
+        {
+          "title": "Secondary analysis",
+          "id": "report-secondary-analysis",
+          "level": 3
+        },
+        {
+          "title": "Results for full mediation",
+          "id": "report-results-for-full-mediation",
+          "level": 3
+        },
+        {
+          "title": "Results for model modification",
+          "id": "report-results-for-model-modification",
+          "level": 3
+        },
+        {
+          "title": "Results of the partial mediation model",
+          "id": "report-results-of-the-partial-mediation-model",
+          "level": 3
+        },
+        {
+          "title": "Conclusion",
+          "id": "report-conclusion",
+          "level": 3
+        },
+        {
+          "title": "References",
+          "id": "report-references",
+          "level": 3
+        },
+        {
+          "title": "Appendix",
+          "id": "report-appendix",
+          "level": 3
+        }
+      ],
+      "note": "Original coursework report. The overview above presents a later rerun with a different model specification, so its fit statistics differ from the original results below."
+    }
+  },
+  {
+    "title": "Measuring future thinking",
+    "slug": "future-thinking",
+    "source": "https://github.com/laurafetz/Consideration-of-Future-Consequences-SEM-Factor-Model",
+    "source_readme_sha256": "d90a7a26d0c3d16ebaf4336a8d397eee2e8873547bb829416d831c3095f9abb9",
+    "notebook": null,
+    "report": {
+      "source_filename": "Project 4 - SEM Factor Model.docx",
+      "source_sha256": "67a9a3295b295d07927c60c56ca75b8e041ab87307169ec4171d21d379c9e35f",
+      "download": "downloads/report.docx",
+      "tables": 4,
+      "images": 4,
+      "equations": 6,
+      "figures": [
+        {
+          "file": "assets/report-image1.png",
+          "source_sha256": "b618c958447a7bdde3ccdbbcbd054d5a4aaa29bcd36c8cc2879eb53eed6a76e0",
+          "label": "Figure 1: Participants Divided in Continents and Gender Identity."
+        },
+        {
+          "file": "assets/report-image2.png",
+          "source_sha256": "267b08b4116eca46641225bdb5a4b7b2c20d555da3383ddd73ef4af7ea5b915d",
+          "label": "Figure 2: Missingness in Data"
+        },
+        {
+          "file": "assets/report-image3.png",
+          "source_sha256": "9f80b532bdb160818e2ccd204a3da8c4331a7dd851ae9a140a837970843a8c7d",
+          "label": "Figure 3: One Factor Model"
+        },
+        {
+          "file": "assets/report-image4.png",
+          "source_sha256": "f67cd7604d6d0bf6ebe3dc7b1959a4c40a509f0200cdc3d2c9aa94bdbcedd15a",
+          "label": "Figure 4: Two Factor Model"
+        }
+      ],
+      "headings": [
+        {
+          "title": "Data and Participants",
+          "id": "report-data-and-participants",
+          "level": 3
+        },
+        {
+          "title": "Methods",
+          "id": "report-methods",
+          "level": 3
+        },
+        {
+          "title": "Analysis",
+          "id": "report-analysis",
+          "level": 3
+        },
+        {
+          "title": "Results One Factor Model",
+          "id": "report-results-one-factor-model",
+          "level": 3
+        },
+        {
+          "title": "Results Two Factor Model",
+          "id": "report-results-two-factor-model",
+          "level": 3
+        },
+        {
+          "title": "Results Measurement Invariance",
+          "id": "report-results-measurement-invariance",
+          "level": 3
+        },
+        {
+          "title": "Final Model \u2013 Scalar Model",
+          "id": "report-final-model-scalar-model",
+          "level": 3
+        },
+        {
+          "title": "Conclusion",
+          "id": "report-conclusion",
+          "level": 3
+        },
+        {
+          "title": "References:",
+          "id": "report-references",
+          "level": 3
+        },
+        {
+          "title": "Appendix",
+          "id": "report-appendix",
+          "level": 3
+        }
+      ],
+      "note": "Original coursework report, with its text, figures, result tables, and references. The overview above summarises the same original analysis."
+    }
+  },
+  {
+    "title": "Language & personality impressions",
+    "slug": "personality-impressions",
+    "source": "https://github.com/laurafetz/Vlogger-Big-Five-Prediction",
+    "source_readme_sha256": "6515c7bc77f7382ef858e55d9f09e048bb9864aee0c230ce523bcf65ee5fa76d",
+    "notebook": {
+      "cells": 60,
+      "code_cells": 28,
+      "outputs": 0,
+      "language": "R"
+    },
+    "report": "not-yet-supplied"
+  },
+  {
+    "title": "Understanding parental stress",
+    "slug": "parental-stress",
+    "source": "https://github.com/laurafetz/Stress-Intervention-ANOVA",
+    "source_readme_sha256": "ec7fa7027c066f5cdb86091cf22107bb9e1b93cf7e51cfee9cadfe383dd85494",
+    "notebook": null,
+    "report": {
+      "source_filename": "Project 1 - ANOVA.docx",
+      "source_sha256": "5400acd5dc35d853cc8e1de5b6ae4f0d3e47d524255d1a1ea08ef1dcbf29e336",
+      "download": "downloads/report.docx",
+      "tables": 1,
+      "images": 1,
+      "equations": 0,
+      "figures": [
+        {
+          "file": "assets/report-image1.png",
+          "source_sha256": "10034d6eed840197e751b673a8675817e5af0a6c20b2c22d0ad026e852b6ecb6",
+          "label": "Figure 1: Differences in parental stress at posttest for different levels of employment status"
+        }
+      ],
+      "headings": [
+        {
+          "title": "Introduction",
+          "id": "report-introduction",
+          "level": 3
+        },
+        {
+          "title": "Model comparisons",
+          "id": "report-model-comparisons",
+          "level": 3
+        },
+        {
+          "title": "Post-hoc tests",
+          "id": "report-post-hoc-tests",
+          "level": 3
+        },
+        {
+          "title": "Conclusion",
+          "id": "report-conclusion",
+          "level": 3
+        },
+        {
+          "title": "Appendix",
+          "id": "report-appendix",
+          "level": 3
+        }
+      ],
+      "note": "Original coursework report. The overview above contains results recomputed in October 2026; some reported confidence limits differ slightly."
+    }
+  }
+]
