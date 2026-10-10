@@ -40,3 +40,5 @@ Then open [localhost:8000](http://localhost:8000).
 I started with [Ivory Flow by Tooplate](https://www.tooplate.com/view/2166-ivory-flow) and adapted the layout, styling, and content for my portfolio. Thank you to Tooplate for the original template.
 
 Project collaborators, data sources, and references are credited on the individual project pages.
+
+
