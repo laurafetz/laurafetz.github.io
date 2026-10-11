@@ -48,6 +48,42 @@
   }, { passive: true });
   window.addEventListener('resize', updateNavigation);
   updateNavigation();
+  const toolkitDialog = document.getElementById('toolkit-dialog');
+  if (toolkitDialog) {
+    const toolkitTitle = document.getElementById('toolkit-title');
+    const toolkitContent = document.getElementById('toolkit-content');
+    const toolkitDescription = document.getElementById('toolkit-description');
+    const defaultToolkitDescription = toolkitDescription.textContent;
+    let toolkitOpener = null;
+    let backdropPointerDown = false;
+    const outsideDialog = event => {
+      const bounds = toolkitDialog.getBoundingClientRect();
+      return event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
+    };
+    document.querySelectorAll('.toolkit-trigger').forEach(button => {
+      button.addEventListener('click', () => {
+        const template = document.getElementById('toolkit-' + button.dataset.toolkit);
+        if (!template || toolkitDialog.open) return;
+        toolkitOpener = button;
+        toolkitTitle.textContent = 'My ' + button.dataset.language + ' toolkit';
+        toolkitDescription.textContent = template.dataset.description || defaultToolkitDescription;
+        toolkitContent.replaceChildren(template.content.cloneNode(true));
+        toolkitDialog.scrollTop = 0;
+        toolkitDialog.showModal();
+        document.body.classList.add('toolkit-open');
+      });
+    });
+    toolkitDialog.querySelector('.toolkit-close').addEventListener('click', () => toolkitDialog.close());
+    toolkitDialog.addEventListener('pointerdown', event => { backdropPointerDown = outsideDialog(event); });
+    toolkitDialog.addEventListener('click', event => {
+      if (backdropPointerDown && outsideDialog(event)) toolkitDialog.close();
+      backdropPointerDown = false;
+    });
+    toolkitDialog.addEventListener('close', () => {
+      document.body.classList.remove('toolkit-open');
+      toolkitOpener?.focus({ preventScroll: true });
+    });
+  }
   const track = document.querySelector('.lookbook-track');
   if (!track) return;
   const previous = document.getElementById('lbPrev');

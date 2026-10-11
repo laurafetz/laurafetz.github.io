@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tooplate-ivory-style.css">
-  <link rel="stylesheet" href="personal.css">
+  <link rel="stylesheet" href="personal.css?v=toolkit">
   <link rel="stylesheet" href="writing.css">
   <!-- Adapted from Tooplate 2166 Ivory Flow: https://www.tooplate.com/view/2166-ivory-flow -->
 </head>
@@ -88,7 +88,7 @@
   <section class="canvas-section writing-section" id="writing" aria-labelledby="writing-title"><div class="writing-heading"><p class="section-eyebrow">04 / Essays &amp; blog posts</p><h2 id="writing-title">Writing Examples</h2><p class="section-intro">Writing is another way I explore the questions that interest me — from child development to culture and society.</p></div><div class="writing-grid"><article class="writing-card"><a class="writing-card-visual" href="writing/parenting-the-pooh-way/" aria-label="Read Parenting the Pooh Way: Encouraging the Shy Child"><img src="images/writing-development.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Blog post · Child development</p><h3><a href="writing/parenting-the-pooh-way/">Parenting the Pooh Way: Encouraging the Shy Child</a></h3><p>An exploration of childhood shyness and how parents can offer gentle, supportive encouragement.</p><a class="cta-link" href="writing/parenting-the-pooh-way/">Read article <span aria-hidden="true">→</span></a></div></article><article class="writing-card"><a class="writing-card-visual" href="writing/blackface-and-racism-in-greek-film-and-television/" aria-label="Read Blackface and Racism in Greek Film and Television"><img src="images/writing-culture.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Blog post · Culture &amp; society</p><h3><a href="writing/blackface-and-racism-in-greek-film-and-television/">Blackface and Racism in Greek Film and Television</a></h3><p>A critical look at racist portrayals in Greek cinema and television, their historical context, and the debate around representation.</p><a class="cta-link" href="writing/blackface-and-racism-in-greek-film-and-television/">Read article <span aria-hidden="true">→</span></a></div></article></div></section>
 
   <section class="canvas-section process" id="methods" aria-labelledby="methods-title">
-    <div class="process-inner"><div class="process-left"><p class="section-eyebrow">05 / Methods &amp; skills</p><h2 class="process-title" id="methods-title">Understanding people.<br><em>Working with data.</em></h2><p class="process-subtitle">I’m interested in how computational and statistical methods can help us understand complex psychological and social phenomena.</p><div class="tools-list" aria-label="Programming languages"><span>R</span><span>Python</span><span>SQL</span></div></div>
+    <div class="process-inner"><div class="process-left"><p class="section-eyebrow">05 / Methods &amp; skills</p><h2 class="process-title" id="methods-title">Understanding people.<br><em>Working with data.</em></h2><p class="process-subtitle">I’m interested in how computational and statistical methods can help us understand complex psychological and social phenomena.</p><div class="tools-list" aria-label="Programming languages"><button class="toolkit-trigger" type="button" data-language="R" data-toolkit="r" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my R toolkit">R <span aria-hidden="true">↗</span></button><button class="toolkit-trigger" type="button" data-language="Python" data-toolkit="python" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my Python toolkit">Python <span aria-hidden="true">↗</span></button><button class="toolkit-trigger" type="button" data-language="SQL" data-toolkit="sql" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my SQL toolkit">SQL <span aria-hidden="true">↗</span></button></div><p class="tools-hint">Select a language to explore my toolkit.</p></div>
       <div class="timeline">
         <div class="timeline-item"><p class="timeline-step">01 / Statistical modelling</p><h3 class="timeline-heading">Patterns across people &amp; time</h3><p class="timeline-text">Structural equation modelling, multilevel modelling, longitudinal data analysis, generalised linear mixed models, network analysis, and Monte Carlo simulation.</p></div>
         <div class="timeline-item"><p class="timeline-step">02 / Psychometrics</p><h3 class="timeline-heading">Making measurement meaningful</h3><p class="timeline-text">Classical test theory, item response theory, confirmatory factor analysis, measurement invariance, and latent variable modelling.</p></div>
@@ -113,6 +113,42 @@
     <footer class="signature-footer"><span>© 2026 Laura Maria Fetz</span><span>Adapted from <a href="https://www.tooplate.com/view/2166-ivory-flow" target="_blank" rel="noopener noreferrer">Ivory Flow by Tooplate</a></span></footer>
   </section>
 </main>
-<script src="personal.js" defer></script>
+
+<dialog class="toolkit-dialog" id="toolkit-dialog" aria-labelledby="toolkit-title" aria-describedby="toolkit-description">
+  <div class="toolkit-shell">
+    <header class="toolkit-header">
+      <div><p class="section-eyebrow">05 / A closer look</p><h2 id="toolkit-title">My toolkit</h2></div>
+      <button class="toolkit-close" type="button" aria-label="Close toolkit" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </header>
+    <p class="toolkit-description" id="toolkit-description">Packages, libraries, and functions I work with.</p>
+    <div id="toolkit-content"></div>
+  </div>
+</dialog>
+<template id="toolkit-r">
+  <div class="toolkit-groups">
+    <section class="toolkit-group"><h3>Data preparation</h3><ul class="toolkit-tags"><li>tidyverse</li><li>mice</li></ul><p class="toolkit-functions"><code>filter()</code><code>mutate()</code><code>left_join()</code><code>pivot_longer()</code></p></section>
+    <section class="toolkit-group"><h3>Psychometrics</h3><ul class="toolkit-tags"><li>psych</li><li>mirt</li></ul></section>
+    <section class="toolkit-group"><h3>Statistical modelling</h3><ul class="toolkit-tags"><li>lme4</li><li>lmerTest</li><li>mvtnorm</li></ul></section>
+    <section class="toolkit-group"><h3>SEM, networks &amp; meta-analysis</h3><ul class="toolkit-tags"><li>lavaan</li><li>psychonetrics</li><li>metaSEM</li><li>OpenMx</li></ul></section>
+    <section class="toolkit-group"><h3>Interactive applications</h3><ul class="toolkit-tags"><li>shiny</li></ul></section>
+  </div>
+  <footer class="toolkit-footer"><p>See some of these tools in my work</p><div class="toolkit-projects"><a href="projects/growth-identity-wellbeing/">Growth, identity &amp; well-being <span aria-hidden="true">↗</span></a><a href="projects/future-thinking/">Measuring future thinking <span aria-hidden="true">↗</span></a></div></footer>
+</template>
+<template id="toolkit-python">
+  <div class="toolkit-groups">
+    <section class="toolkit-group"><h3>Working with data</h3><ul class="toolkit-tags"><li>pandas</li><li>NumPy</li></ul><p class="toolkit-functions"><code>pd.read_csv()</code><code>pd.DataFrame()</code><code>pd.concat()</code></p></section>
+    <section class="toolkit-group"><h3>Machine learning &amp; deep learning</h3><ul class="toolkit-tags"><li>PyTorch</li><li>TensorFlow</li></ul></section>
+  </div>
+  <footer class="toolkit-footer"><p>See some of these tools in my work</p><div class="toolkit-projects"><a href="projects/language-model-truthfulness/">Language models &amp; truthfulness <span aria-hidden="true">↗</span></a></div></footer>
+</template>
+<template id="toolkit-sql" data-description="Queries and operations I use to import, combine, and explore structured data.">
+  <div class="toolkit-groups">
+    <section class="toolkit-group"><h3>Importing &amp; preparing data</h3><ul class="toolkit-tags"><li>CSV imports</li><li>Data type conversion</li></ul><p class="toolkit-functions"><code>CAST()</code></p><p class="toolkit-note">Bringing data from different sources into tables.</p></section>
+    <section class="toolkit-group"><h3>Selecting &amp; filtering</h3><ul class="toolkit-tags"><li>SELECT</li><li>WHERE</li><li>DISTINCT</li><li>ORDER BY</li></ul></section>
+    <section class="toolkit-group"><h3>Combining tables</h3><ul class="toolkit-tags"><li>INNER JOIN</li><li>LEFT JOIN</li><li>UNION</li></ul></section>
+    <section class="toolkit-group"><h3>Summarising data</h3><ul class="toolkit-tags"><li>GROUP BY</li><li>HAVING</li></ul><p class="toolkit-functions"><code>COUNT()</code><code>SUM()</code><code>AVG()</code></p></section>
+  </div>
+</template>
+<script src="personal.js?v=toolkit" defer></script>
 </body>
 </html>

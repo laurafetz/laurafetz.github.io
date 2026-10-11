@@ -103,7 +103,42 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px s
 .process-title em { color: #cfddc7; }
 .process-subtitle { color: #d0dce0; font-weight: 400; max-width: 370px; }
 .tools-list { display: flex; gap: 12px; margin-top: 32px; }
-.tools-list span { padding: 12px 20px; border: 1px solid #b1c4c265; border-radius: 5px; color: var(--paper); font: 12px 'DM Mono',monospace; background: #f8f4ea08; }
+.tools-list { flex-wrap: wrap; }
+.tools-list > button, .tools-list > span { display: inline-flex; align-items: center; gap: 16px; min-height: 46px; padding: 12px 20px; border: 1px solid #b1c4c265; border-radius: 5px; color: var(--paper); font: 12px 'DM Mono',monospace; background: #f8f4ea08; }
+.tools-list > button { cursor: pointer; transition: background .18s, border-color .18s, color .18s; }
+.tools-list > button:hover { background: var(--paper); color: var(--sea); border-color: var(--paper); }
+.tools-list > button:focus-visible { outline-color: var(--orange); outline-offset: 5px; }
+.tools-list > button span { font-size: 16px; color: var(--orange); }
+.tools-list > button:hover span { color: var(--terra); }
+.tools-hint { margin-top: 14px; color: #d0dce0; font-size: 11px; line-height: 1.6; }
+body.toolkit-open { overflow: hidden; }
+.toolkit-dialog { width: min(680px, calc(100% - 32px)); max-width: none; max-height: calc(100svh - 48px); margin: auto; padding: 0; border: 1px solid #d9cdb9; border-radius: 12px; background: var(--paper); color: var(--ink); box-shadow: 0 28px 90px #112b3e40; overflow: auto; overscroll-behavior: contain; }
+.toolkit-dialog::backdrop { background: #163545a8; backdrop-filter: blur(4px); }
+.toolkit-shell { padding: 32px 36px; }
+.toolkit-header { position: sticky; top: 0; z-index: 1; background: var(--paper); padding-bottom: 8px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.toolkit-header .section-eyebrow { margin-bottom: 8px; }
+.toolkit-header h2 { font-size: 32px; line-height: 1.25; letter-spacing: -.04em; }
+.toolkit-close { flex: 0 0 auto; width: 44px; height: 44px; display: grid; place-items: center; color: var(--sea); background: var(--white); border: 1px solid #cdd7cc; border-radius: 50%; cursor: pointer; }
+.toolkit-close:hover { background: var(--sage-light); }
+.toolkit-close svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.toolkit-close:focus-visible { outline-offset: 3px; }
+.toolkit-description { margin-top: 14px; max-width: 470px; color: var(--ink-muted); font-size: 13px; line-height: 1.75; }
+.toolkit-groups { margin-top: 24px; }
+.toolkit-group { border-top: 1px solid #ddd5c7; padding: 18px 0; }
+.toolkit-group h3 { margin: 0 0 11px; font-size: 15px; line-height: 1.45; letter-spacing: -.02em; }
+.toolkit-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 0; }
+.toolkit-tags li { padding: 6px 10px; border: 1px solid #cdd7cc; background: var(--sage-light); color: #42594b; border-radius: 5px; font-size: 12px; line-height: 1.4; }
+.toolkit-group:nth-child(even) .toolkit-tags li { background: #f3e5d4; border-color: #e4cbb1; color: #875333; }
+.toolkit-functions { display: flex; flex-wrap: wrap; gap: 7px 15px; margin-top: 11px; }
+.toolkit-functions code { font: 10px/1.65 'DM Mono',monospace; color: var(--sea); overflow-wrap: anywhere; }
+.toolkit-note { margin-top: 10px; color: var(--ink-muted); font-size: 11px; line-height: 1.65; }
+.toolkit-footer { border-top: 1px solid #ddd5c7; padding-top: 20px; }
+.toolkit-footer > p { color: var(--ink-muted); font-size: 11px; margin-bottom: 12px; }
+.toolkit-projects { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.toolkit-projects a { color: var(--sea); font-size: 12px; line-height: 1.5; text-decoration: underline; text-underline-offset: 4px; }
+.toolkit-projects a:hover { color: var(--terra); }
+@media (max-width: 480px) { .toolkit-dialog { max-height: calc(100svh - 24px); } .toolkit-shell { padding: 24px 20px; } .toolkit-header h2 { font-size: 27px; } .toolkit-description { font-size: 12px; } }
+@media (prefers-reduced-motion: reduce) { .tools-list > button { transition: none; } }
 .timeline { padding-left: 34px; }
 .timeline::before { background: linear-gradient(180deg,transparent,#9daf9f,#9daf9f,transparent); }
 .timeline-item { opacity: 1; transform: none; padding-bottom: 40px; }
