@@ -21,12 +21,13 @@ Each project has its own page with an overview, findings, and either a readable 
 
 ## My writing examples
 
-I also share writing on child development, culture, and society:
+I also share writing on child development, culture, and society, alongside creative pieces:
 
 - [Parenting the Pooh Way: Encouraging the Shy Child](https://laurafetz.github.io/writing/parenting-the-pooh-way/)
 - [Blackface and Racism in Greek Film and Television](https://laurafetz.github.io/writing/blackface-and-racism-in-greek-film-and-television/)
+- [The Price of Admission](https://laurafetz.github.io/writing/the-price-of-admission/) — a satirical play about beauty and the cost of belonging.
 
-Both posts can be read directly on the website, with their original images and references. PDF versions are available to download.
+All pieces can be read directly on the website. The blog posts include their original images and references, and PDF versions of all my writing are available to download.
 
 ## The design
 

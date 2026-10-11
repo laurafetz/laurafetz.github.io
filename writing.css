@@ -2,7 +2,7 @@
 .writing-section { padding: 90px 64px 100px; background: #eee7d9; }
 .writing-heading { max-width: 1180px; margin: 0 auto 38px; }
 .writing-heading h2 { font: 500 clamp(32px,3.3vw,46px)/1.2 'Manrope',sans-serif; letter-spacing: -.04em; }
-.writing-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; max-width: 1180px; margin: 0 auto; }
+.writing-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; max-width: 1180px; margin: 0 auto; }
 .writing-card { min-width: 0; background: var(--white); border: 1px solid #d9cebb; border-radius: 6px; overflow: hidden; box-shadow: 4px 5px 0 #d5c9b340; display: flex; flex-direction: column; }
 .writing-card-visual { display: block; overflow: hidden; }
 .writing-card-visual img { display: block; width: 100%; height: auto; aspect-ratio: 2/1; object-fit: cover; }
@@ -31,7 +31,22 @@
 .writing-footnotes ol { padding-left: 24px; }
 .writing-footnotes li { font-size: 12px; line-height: 1.9; padding-left: 5px; margin-bottom: 18px; overflow-wrap: anywhere; scroll-margin-top: 100px; }
 .writing-footnotes .note-back { margin-left: 8px; }
-.more-writing > div { grid-template-columns: repeat(2,minmax(0,1fr)); }
-@media (max-width: 1024px) { .writing-section { padding-inline: 40px; } .writing-grid { gap: 22px; } .writing-card-copy { padding: 24px; } .writing-card-copy h3 { font-size: 23px; } .writing-reader { padding: 30px; } }
+.more-writing > div { grid-template-columns: repeat(3,minmax(0,1fr)); }
+@media (max-width: 1024px) { .writing-section { padding-inline: 40px; } .writing-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; } .writing-card-copy { padding: 24px; } .writing-card-copy h3 { font-size: 23px; } .writing-reader { padding: 30px; } }
 @media (max-width: 768px) { .writing-section { padding: 70px 24px; } .writing-grid { grid-template-columns: 1fr; gap: 26px; } .writing-heading { margin-bottom: 30px; } .writing-heading h2 { font-size: 32px; } .writing-card-copy { padding: 24px; } .writing-card-copy h3 { font-size: 23px; } .writing-reader { padding: 26px 20px; } .writing-prose { font-size: 14px; line-height: 1.9; } .writing-prose h2 { font-size: 22px; } .writing-page .project-cover { margin-top: 0; } .writing-prose .writing-quote { font-size: 21px; padding-left: 16px; } .more-writing > div { grid-template-columns: 1fr; } }
 @media print { .writing-grid { display: block; } .writing-card { break-inside: avoid; margin-bottom: 24px; } .writing-image-open { display: none; } .writing-page .project-cover { display: none; } .writing-prose { font-size: 11pt; } }
+
+/* The play keeps speakers and stage directions distinct, while sharing the article reader. */
+.play-prose .play-cast { list-style: none; padding: 0; margin: 22px 0 38px; }
+.play-cast li { margin-bottom: 10px; }
+.play-cast strong, .play-speaker { color: var(--sea); font: 500 11px/1.7 'DM Mono',monospace; letter-spacing: .02em; }
+.play-prose h2 { border-top: 1px solid #e5dfd2; padding-top: 32px; margin-top: 46px; margin-bottom: 26px; }
+.play-prose h2:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+.play-prose .play-speech { margin-bottom: 22px; }
+.play-speaker, .play-line { display: block; }
+.play-speaker { margin-bottom: 5px; }
+.play-line + .play-line { margin-top: 6px; }
+.play-prose .play-stage { font-size: 13px; line-height: 1.8; color: var(--ink-muted); border-left: 2px solid #b9c7b4; padding-left: 16px; margin: 28px 0; }
+.play-prose .play-fin { font: 500 12px/1.8 'DM Mono',monospace; letter-spacing: .15em; color: var(--sea); margin-top: 34px; }
+@media (max-width: 768px) { .play-prose .play-stage { font-size: 12px; padding-left: 12px; } .play-prose h2 { font-size: 20px; } }
+@media print { .play-speech, .play-stage, .play-cast li { break-inside: avoid; } .play-prose h2 { break-after: avoid; } }

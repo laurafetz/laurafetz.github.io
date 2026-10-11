@@ -59,6 +59,21 @@
       "wordCount": 1212,
       "sourceSha256": "bca79290b912aaf61ac3c29d11c87b1bfc797a47a477281d8c52c84c28ee3a46",
       "downloadPages": 5
+    },
+    {
+      "slug": "the-price-of-admission",
+      "title": "The Price of Admission",
+      "type": "satirical-play",
+      "source": "supplied-by-laura-in-chat",
+      "sourceSha256": "c513e770ddcc2e295adb89236b9fcd466f1c2ef1ad6be6811dfb693d0e9438f4",
+      "download": "downloads/the-price-of-admission.pdf",
+      "sha256": "1778017a91324588a649c5dc719cfd5a05540052e90dc4c90f0471061b767a83",
+      "images": [],
+      "blocks": 180,
+      "footnotes": 0,
+      "references": 0,
+      "wordCount": 590,
+      "downloadPages": 4
     }
   ]
 }
