@@ -17,7 +17,7 @@ I wanted a place to share my work and give a sense of who I am beyond a GitHub p
 - [Language & personality impressions](https://laurafetz.github.io/projects/personality-impressions/) — predicting Big Five personality impressions from vlogger language.
 - [Understanding parental stress](https://laurafetz.github.io/projects/parental-stress/) — analysing a stress intervention with ANOVA.
 
-Each project has its own page with an overview, findings, and either a readable notebook or the original report. The original files are also available to download. Where a project includes both coursework and a later analysis, these are labelled separately.
+Each project has its own page with an overview, findings, and either a readable notebook or the original report. The notebooks and PDF reports are also available to download. Where a project includes both coursework and a later analysis, these are labelled separately.
 
 ## My writing examples
 
@@ -26,7 +26,7 @@ I also share writing on child development, culture, and society:
 - [Parenting the Pooh Way: Encouraging the Shy Child](https://laurafetz.github.io/writing/parenting-the-pooh-way/)
 - [Blackface and Racism in Greek Film and Television](https://laurafetz.github.io/writing/blackface-and-racism-in-greek-film-and-television/)
 
-Both posts can be read directly on the website, with their original images and references. The original Word files are available to download.
+Both posts can be read directly on the website, with their original images and references. PDF versions are available to download.
 
 ## The design
 

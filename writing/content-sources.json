@@ -4,8 +4,8 @@
       "slug": "parenting-the-pooh-way",
       "title": "Parenting the Pooh Way: Encouraging the Shy Child",
       "sourceFile": "Parenting the Pooh Way.docx",
-      "download": "downloads/parenting-the-pooh-way.docx",
-      "sha256": "ba0f26efaf3ab12100dc20cd94d336da6b1e8b6ff3a43cb5bf535cc68c3b1922",
+      "download": "downloads/parenting-the-pooh-way.pdf",
+      "sha256": "8ab90207e660444fc6113a8e523a8eaa8698cce6114a4362ca87c9b77374997a",
       "images": [
         {
           "file": "image-1.png",
@@ -21,14 +21,16 @@
       "paragraphs": 33,
       "footnotes": 0,
       "references": 7,
-      "wordCount": 1396
+      "wordCount": 1396,
+      "sourceSha256": "ba0f26efaf3ab12100dc20cd94d336da6b1e8b6ff3a43cb5bf535cc68c3b1922",
+      "downloadPages": 5
     },
     {
       "slug": "blackface-and-racism-in-greek-film-and-television",
       "title": "Blackface and Racism in Greek Film and Television",
       "sourceFile": "Blackface_and_Racism_in_Greek_Film_and_Television_EN.docx",
-      "download": "downloads/blackface-and-racism-in-greek-film-and-television.docx",
-      "sha256": "bca79290b912aaf61ac3c29d11c87b1bfc797a47a477281d8c52c84c28ee3a46",
+      "download": "downloads/blackface-and-racism-in-greek-film-and-television.pdf",
+      "sha256": "058e2d8b0a81f700b8b1071248ffeed092f632c8fb8ef6c143debf4b5adf9865",
       "images": [
         {
           "file": "image-1.jpg",
@@ -54,7 +56,9 @@
       "paragraphs": 17,
       "footnotes": 9,
       "references": 9,
-      "wordCount": 1212
+      "wordCount": 1212,
+      "sourceSha256": "bca79290b912aaf61ac3c29d11c87b1bfc797a47a477281d8c52c84c28ee3a46",
+      "downloadPages": 5
     }
   ]
 }

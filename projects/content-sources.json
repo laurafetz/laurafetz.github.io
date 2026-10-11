@@ -45,7 +45,7 @@
     "report": {
       "source_filename": "Project 2 - SEM Path Model.docx",
       "source_sha256": "f5f7da2b9c39d3a5e3ab6a35b19af0ca977a5be31ea33dfff34acaa2452da812",
-      "download": "downloads/report.docx",
+      "download": "downloads/report.pdf",
       "tables": 1,
       "images": 5,
       "equations": 0,
@@ -123,7 +123,9 @@
           "level": 3
         }
       ],
-      "note": "Original coursework report. The overview above presents a later rerun with a different model specification, so its fit statistics differ from the original results below."
+      "note": "Original coursework report. The overview above presents a later rerun with a different model specification, so its fit statistics differ from the original results below.",
+      "download_sha256": "1171155fb3e6bc31b4e2fa188fab4461151c0a1162d37890c2640d43f2e27d68",
+      "download_pages": 12
     }
   },
   {
@@ -135,7 +137,7 @@
     "report": {
       "source_filename": "Project 4 - SEM Factor Model.docx",
       "source_sha256": "67a9a3295b295d07927c60c56ca75b8e041ab87307169ec4171d21d379c9e35f",
-      "download": "downloads/report.docx",
+      "download": "downloads/report.pdf",
       "tables": 4,
       "images": 4,
       "equations": 6,
@@ -213,7 +215,9 @@
           "level": 3
         }
       ],
-      "note": "Original coursework report, with its text, figures, result tables, and references. The overview above summarises the same original analysis."
+      "note": "Original coursework report, with its text, figures, result tables, and references. The overview above summarises the same original analysis.",
+      "download_sha256": "0faeaba35a3b211d2c65beb7cdd3cfad64afabf11ff56803a2ced4cdc353ca87",
+      "download_pages": 17
     }
   },
   {
@@ -238,7 +242,7 @@
     "report": {
       "source_filename": "Project 1 - ANOVA.docx",
       "source_sha256": "5400acd5dc35d853cc8e1de5b6ae4f0d3e47d524255d1a1ea08ef1dcbf29e336",
-      "download": "downloads/report.docx",
+      "download": "downloads/report.pdf",
       "tables": 1,
       "images": 1,
       "equations": 0,
@@ -276,7 +280,9 @@
           "level": 3
         }
       ],
-      "note": "Original coursework report. The overview above contains results recomputed in October 2026; some reported confidence limits differ slightly."
+      "note": "Original coursework report. The overview above contains results recomputed in October 2026; some reported confidence limits differ slightly.",
+      "download_sha256": "ceb883297ef922028258a898138e51f3f8bf424a1f248027be904aed97697bcb",
+      "download_pages": 3
     }
   }
 ]
