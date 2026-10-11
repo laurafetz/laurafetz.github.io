@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "slug": "parenting-the-pooh-way",
+      "title": "Parenting the Pooh Way: Encouraging the Shy Child",
+      "sourceFile": "Parenting the Pooh Way.docx",
+      "download": "downloads/parenting-the-pooh-way.docx",
+      "sha256": "ba0f26efaf3ab12100dc20cd94d336da6b1e8b6ff3a43cb5bf535cc68c3b1922",
+      "images": [
+        {
+          "file": "image-1.png",
+          "originalPart": "word/media/image1.png",
+          "sha256": "15342eff9da8ea45af2cd3b0a96219e52d09ad72d576ed28f84c7bc8a7d1510e"
+        },
+        {
+          "file": "image-2.jpeg",
+          "originalPart": "word/media/image2.jpeg",
+          "sha256": "22186b357a29b9f24a0cca8bbd86eacddd282c6b89d8f9dc74c397570688aac0"
+        }
+      ],
+      "paragraphs": 33,
+      "footnotes": 0,
+      "references": 7,
+      "wordCount": 1396
+    },
+    {
+      "slug": "blackface-and-racism-in-greek-film-and-television",
+      "title": "Blackface and Racism in Greek Film and Television",
+      "sourceFile": "Blackface_and_Racism_in_Greek_Film_and_Television_EN.docx",
+      "download": "downloads/blackface-and-racism-in-greek-film-and-television.docx",
+      "sha256": "bca79290b912aaf61ac3c29d11c87b1bfc797a47a477281d8c52c84c28ee3a46",
+      "images": [
+        {
+          "file": "image-1.jpg",
+          "originalPart": "word/media/rId20.jpg",
+          "sha256": "61a14915111ba3f23c0a6aea319a025b6f067a20b2cd819cabb9952925228954"
+        },
+        {
+          "file": "image-2.jpg",
+          "originalPart": "word/media/rId26.jpg",
+          "sha256": "de710afd4f0b603fe8b12d0bd57cb498d4dad4e1e558e0620ef0d49c3994c803"
+        },
+        {
+          "file": "image-3.jpg",
+          "originalPart": "word/media/rId32.jpg",
+          "sha256": "188698c80ceced3d62ba06f19e7daf31eb5346c871d9984c6ad4033f1b3e781e"
+        },
+        {
+          "file": "image-4.jpg",
+          "originalPart": "word/media/rId37.jpg",
+          "sha256": "e79db8ca246d0a531fed90e78c520d0b22b1a8bc254c8c1b9879f17fdd9ddace"
+        }
+      ],
+      "paragraphs": 17,
+      "footnotes": 9,
+      "references": 9,
+      "wordCount": 1212
+    }
+  ]
+}

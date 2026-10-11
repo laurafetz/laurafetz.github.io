@@ -1,0 +1,37 @@
+/* Writing examples and full articles share the portrait-inspired portfolio design. */
+.writing-section { padding: 90px 64px 100px; background: #eee7d9; }
+.writing-heading { max-width: 1180px; margin: 0 auto 38px; }
+.writing-heading h2 { font: 500 clamp(32px,3.3vw,46px)/1.2 'Manrope',sans-serif; letter-spacing: -.04em; }
+.writing-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; max-width: 1180px; margin: 0 auto; }
+.writing-card { min-width: 0; background: var(--white); border: 1px solid #d9cebb; border-radius: 6px; overflow: hidden; box-shadow: 4px 5px 0 #d5c9b340; display: flex; flex-direction: column; }
+.writing-card-visual { display: block; overflow: hidden; }
+.writing-card-visual img { display: block; width: 100%; height: auto; aspect-ratio: 2/1; object-fit: cover; }
+.writing-card-copy { padding: 28px 32px 32px; display: flex; flex-direction: column; flex: 1; }
+.writing-card-copy h3 { font: 500 25px/1.35 'Manrope',sans-serif; letter-spacing: -.035em; margin: 12px 0 18px; }
+.writing-card-copy > p:not(.project-type) { font-size: 13px; line-height: 1.85; color: var(--ink-muted); margin-bottom: 24px; }
+.writing-card-copy > .cta-link { align-self: flex-start; margin-top: auto; font-size: 10px; }
+.writing-page .project-hero { align-items: start; }
+.writing-page .project-cover { margin-top: 70px; }
+.writing-byline { font-size: 12px; line-height: 1.8; color: var(--ink-muted); margin-top: 20px; }
+.writing-byline a { color: var(--sea); text-decoration: underline; text-underline-offset: 3px; }
+.writing-reader { padding: 40px 46px; }
+.writing-prose { font-size: 15px; line-height: 1.95; }
+.writing-prose p { overflow-wrap: anywhere; margin-bottom: 24px; }
+.writing-prose h2 { font-size: 25px; margin-top: 44px; scroll-margin-top: 100px; }
+.writing-prose .writing-dialogue { font-size: 16px; color: var(--sea); }
+.writing-figure { margin: 30px 0; }
+.writing-image-link { display: block; }
+.writing-prose .writing-figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; border: 1px solid #e5dfd2; }
+.writing-figure figcaption { font-size: 12px; line-height: 1.8; color: var(--ink-muted); margin-top: 12px; overflow-wrap: anywhere; }
+.writing-prose .writing-image-open { display: inline-block; font-size: 10px; margin-top: 8px; color: var(--ink-muted); }
+.writing-prose .writing-quote { font: 500 23px/1.5 'Manrope',sans-serif; margin: 36px 0; padding-left: 24px; color: var(--sea); }
+.writing-reference { font-size: 13px; line-height: 1.9; }
+.writing-note-ref a { padding: 1px 3px; text-decoration: none; }
+.writing-footnotes { margin-top: 44px; border-top: 1px solid #e5dfd2; scroll-margin-top: 100px; }
+.writing-footnotes ol { padding-left: 24px; }
+.writing-footnotes li { font-size: 12px; line-height: 1.9; padding-left: 5px; margin-bottom: 18px; overflow-wrap: anywhere; scroll-margin-top: 100px; }
+.writing-footnotes .note-back { margin-left: 8px; }
+.more-writing > div { grid-template-columns: repeat(2,minmax(0,1fr)); }
+@media (max-width: 1024px) { .writing-section { padding-inline: 40px; } .writing-grid { gap: 22px; } .writing-card-copy { padding: 24px; } .writing-card-copy h3 { font-size: 23px; } .writing-reader { padding: 30px; } }
+@media (max-width: 768px) { .writing-section { padding: 70px 24px; } .writing-grid { grid-template-columns: 1fr; gap: 26px; } .writing-heading { margin-bottom: 30px; } .writing-heading h2 { font-size: 32px; } .writing-card-copy { padding: 24px; } .writing-card-copy h3 { font-size: 23px; } .writing-reader { padding: 26px 20px; } .writing-prose { font-size: 14px; line-height: 1.9; } .writing-prose h2 { font-size: 22px; } .writing-page .project-cover { margin-top: 0; } .writing-prose .writing-quote { font-size: 21px; padding-left: 16px; } .more-writing > div { grid-template-columns: 1fr; } }
+@media print { .writing-grid { display: block; } .writing-card { break-inside: avoid; margin-bottom: 24px; } .writing-image-open { display: none; } .writing-page .project-cover { display: none; } .writing-prose { font-size: 11pt; } }

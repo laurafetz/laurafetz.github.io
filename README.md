@@ -8,7 +8,7 @@ My little corner of the web, bringing together my background, interests, and pro
 
 I wanted a place to share my work and give a sense of who I am beyond a GitHub profile. I'm interested in understanding human behaviour through research, statistical modelling, and machine learning, and this website brings those interests together.
 
-## My projects
+## My programming projects
 
 - [Language models & truthfulness](https://laurafetz.github.io/projects/language-model-truthfulness/) — evaluating the factual accuracy of language models.
 - [Recognising human activity](https://laurafetz.github.io/projects/human-activity-recognition/) — using sensor data to classify everyday activities.
@@ -18,6 +18,15 @@ I wanted a place to share my work and give a sense of who I am beyond a GitHub p
 - [Understanding parental stress](https://laurafetz.github.io/projects/parental-stress/) — analysing a stress intervention with ANOVA.
 
 Each project has its own page with an overview, findings, and either a readable notebook or the original report. The original files are also available to download. Where a project includes both coursework and a later analysis, these are labelled separately.
+
+## My writing examples
+
+I also share writing on child development, culture, and society:
+
+- [Parenting the Pooh Way: Encouraging the Shy Child](https://laurafetz.github.io/writing/parenting-the-pooh-way/)
+- [Blackface and Racism in Greek Film and Television](https://laurafetz.github.io/writing/blackface-and-racism-in-greek-film-and-television/)
+
+Both posts can be read directly on the website, with their original images and references. The original Word files are available to download.
 
 ## The design
 
