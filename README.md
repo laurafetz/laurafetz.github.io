@@ -45,6 +45,14 @@ python3 -m http.server 8000
 
 Then open [localhost:8000](http://localhost:8000).
 
+## Comments
+
+Each programming project and writing example has its own comment section, using the free community version of [HTML Comment Box](https://www.htmlcommentbox.com/). Visitors can leave a name and message without creating an account.
+
+I sign in with Google on the provider’s install page to get the embed code that makes me the moderator. The public `jread` script URL is configured in `comments.js`, keeping my moderator access attached to all nine pages. No paid plan is needed. The provider’s attribution stays visible.
+
+Comments load near the end of the page. Directory URLs and their `index.html` equivalents share a thread. If the service cannot load, the page offers a retry button.
+
 ## Credits
 
 I started with [Ivory Flow by Tooplate](https://www.tooplate.com/view/2166-ivory-flow) and adapted the layout, styling, and content for my portfolio. Thank you to Tooplate for the original template.
