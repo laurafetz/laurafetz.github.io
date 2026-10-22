@@ -29,6 +29,22 @@
     const message = thread.querySelector('#hcb_form_content');
     if (name) name.setAttribute('aria-label', 'Name');
     if (message) message.setAttribute('aria-label', 'Your comment');
+
+    // Keep the free widget's provider link, with a quieter attribution label.
+    const credit = thread.querySelector('#hcb_form > .home-desc');
+    if (credit) {
+      credit.childNodes.forEach(node => {
+        if (node.nodeType === 3 && /^Not using\s*$/.test(node.nodeValue)) {
+          node.nodeValue = 'Powered by ';
+        }
+      });
+      const suffix = credit.querySelector('span.home-desc');
+      if (suffix) suffix.childNodes.forEach(node => {
+        if (node.nodeType === 3 && /^\s*yet\?\s*$/.test(node.nodeValue)) {
+          node.nodeValue = '';
+        }
+      });
+    }
   });
   formObserver.observe(thread, { childList: true, subtree: true });
 
