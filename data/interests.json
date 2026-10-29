@@ -1,0 +1,63 @@
+{
+  "visited": [
+    "040",
+    "056",
+    "191",
+    "203",
+    "214",
+    "818",
+    "242",
+    "250",
+    "276",
+    "300",
+    "344",
+    "372",
+    "380",
+    "438",
+    "470",
+    "484",
+    "492",
+    "504",
+    "528",
+    "608",
+    "616",
+    "642",
+    "702",
+    "705",
+    "724",
+    "756",
+    "764",
+    "788",
+    "792",
+    "826",
+    "840",
+    "704",
+    "480"
+  ],
+  "books": [
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho"
+    },
+    {
+      "title": "The Café on the Edge of the World",
+      "author": "John Strelecky"
+    },
+    {
+      "title": "Disgrace",
+      "author": "John Maxwell Coetzee"
+    },
+    {
+      "title": "How Much Land Does a Man Need?",
+      "author": "Leo Tolstoy"
+    },
+    {
+      "title": "Farewell Anatolia",
+      "author": "Dido Sotiriou"
+    },
+    {
+      "title": "Momo",
+      "author": "Michael Ende"
+    }
+  ]
+}

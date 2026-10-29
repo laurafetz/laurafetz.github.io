@@ -19,6 +19,8 @@ I wanted a place to share my work and give a sense of who I am beyond a GitHub p
 
 Each project has its own page with an overview, findings, and either a readable notebook or the original report. The notebooks and PDF reports are also available to download. Where a project includes both coursework and a later analysis, these are labelled separately.
 
+The “View all projects” button switches between the carousel and a grid, so it's easy to browse everything together.
+
 ## My writing examples
 
 I also share writing on child development, culture, and society, alongside creative pieces:
@@ -32,6 +34,12 @@ All pieces can be read directly on the website. The blog posts include their ori
 ## The design
 
 I wanted the website to feel personal, so I used my portrait collage as the inspiration for the colours and visual style: warm cream, sea blue, sage, and soft orange, with botanical details and a few hints of travel.
+
+## Beyond data
+
+This is where I share a little more about my interests outside research. The Travel pop-up has an interactive map of the places I've visited, with a country selector, zoom controls, and a list of visited places. In Culture, I've added a small bookshelf with some of my favourite reads. My languages and proficiency levels are shown visually, and there's also a little about my love of food.
+
+The places and books are kept in `data/interests.json`. The map loads when Travel is opened and uses a local copy of map geometry, so it doesn't need an API key or a paid map service. The map data comes from [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/) via [World Atlas](https://github.com/topojson/world-atlas), using its 1:50m dataset and a Natural Earth projection. The World Atlas license is included in `data/world-atlas-LICENSE.txt`.
 
 ## Built with
 

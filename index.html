@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tooplate-ivory-style.css">
-  <link rel="stylesheet" href="personal.css?v=beyond-data">
+  <link rel="stylesheet" href="personal.css?v=map-bookshelf">
+  <link rel="stylesheet" href="explore.css?v=map-bookshelf">
   <link rel="stylesheet" href="writing.css?v=admission">
   <!-- Adapted from Tooplate 2166 Ivory Flow: https://www.tooplate.com/view/2166-ivory-flow -->
 </head>
@@ -61,7 +62,7 @@
   </section>
 
   <section class="canvas-section lookbook projects-section" id="projects" aria-labelledby="projects-title">
-    <div class="lookbook-header"><div><p class="section-eyebrow">03 / Selected coursework &amp; analysis</p><h2 class="lookbook-title" id="projects-title">Programming Projects</h2><p class="section-intro">A selection of programming and data analysis projects in behavioural research, psychometrics, and machine learning.</p></div><span class="lookbook-count">01 — 06</span></div>
+    <div class="lookbook-header"><div><p class="section-eyebrow">03 / Selected coursework &amp; analysis</p><h2 class="lookbook-title" id="projects-title">Programming Projects</h2><p class="section-intro">A selection of programming and data analysis projects in behavioural research, psychometrics, and machine learning.</p></div><div class="project-view-controls"><span class="lookbook-count">01 — 06</span><button class="project-view-button" id="project-view-toggle" type="button" aria-expanded="false" aria-controls="project-track" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>View all projects</span></button></div></div>
     <div class="lookbook-track" id="project-track" tabindex="0" aria-label="Programming projects, scroll horizontally"><article class="lookbook-card project-card">
       <a class="project-visual" href="projects/language-model-truthfulness/" aria-label="Explore Language models &amp; truthfulness"><img src="images/project-01.svg" alt="" loading="lazy" width="520" height="380"></a>
       <div class="project-copy"><p class="project-type">NLP · Python</p><h3><a href="projects/language-model-truthfulness/">Language models &amp; truthfulness</a></h3><p>Comparing five saved Qwen answer sets on TruthfulQA with semantic reference matching, bootstrap intervals, and paired tests.</p><a class="cta-link" href="projects/language-model-truthfulness/">Read project <span aria-hidden="true">→</span></a></div>
@@ -160,11 +161,21 @@
     <div data-dialog-content></div>
   </div>
 </dialog>
-<template id="interest-travel" data-title="Travel" data-description="A world of places to discover.">
+<template id="interest-travel" data-title="Travel" data-description="A world of places to discover." data-layout="wide">
   <div class="interest-story">
     <p>I love travelling: discovering new places, getting to know different ways of life, and seeing the world from another perspective.</p>
     <p>My dream is to visit every country in the world at least once. There is always somewhere new to explore, and I hope to keep that curiosity with me wherever I go.</p>
     <p class="interest-callout">Every country, at least once.</p>
+    <section class="travel-atlas" data-travel-map aria-labelledby="travel-map-title" aria-busy="true">
+      <div class="atlas-heading"><div><p class="section-eyebrow">My travel journal</p><h3 id="travel-map-title">Places I’ve been</h3></div><p class="travel-count" data-travel-count></p></div>
+      <p class="atlas-intro">Select a country to explore the map. The places I’ve visited are marked in green.</p>
+      <div class="atlas-controls"><div class="country-picker"><label for="travel-country">Find a country or territory</label><select id="travel-country" data-map-country disabled><option value="">Choose a place</option></select></div><div class="map-zoom-controls" aria-label="Map zoom"><button type="button" data-map-zoom="in" aria-label="Zoom in on the map" disabled>+</button><button type="button" data-map-zoom="out" aria-label="Zoom out on the map" disabled>−</button><button type="button" data-map-reset disabled>World view</button></div></div>
+      <div class="travel-map-frame" data-map-frame><p class="map-loading" role="status">Loading my travel map…</p></div>
+      <div class="map-legend"><span><i class="legend-visited" aria-hidden="true"></i>Visited</span><span><i class="legend-explore" aria-hidden="true"></i>Still to explore</span><span class="map-gesture-hint">Drag to move · use + and − to zoom</span></div>
+      <p class="map-country-info" data-map-info role="status">A lifetime of exploring ahead.</p>
+      <details class="visited-places"><summary>Places I’ve visited</summary><ul data-visited-places></ul></details>
+      <p class="map-credit">Map data: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a>, via <a href="https://github.com/topojson/world-atlas" target="_blank" rel="noopener noreferrer">World Atlas</a>.</p>
+    </section>
   </div>
 </template>
 <template id="interest-languages" data-title="Languages" data-description="Different languages, different ways of connecting.">
@@ -181,10 +192,11 @@
     <p class="language-scale-note">CEFR proficiency scale · A1 to C2</p>
   </div>
 </template>
-<template id="interest-culture" data-title="Culture" data-description="Books, stories, and perspectives from around the world.">
+<template id="interest-culture" data-title="Culture" data-description="Books, stories, and perspectives from around the world." data-layout="wide">
   <div class="interest-story">
     <p>During my bachelor’s degree, I minored in language, literature, and culture. That interest has stayed with me: I love reading books from different cultural backgrounds and discovering how other people tell their stories.</p>
     <p>My interest in culture and representation also led me to write about blackface and racism in Greek film and television.</p>
+    <section class="bookshelf" data-bookshelf aria-labelledby="bookshelf-title" aria-busy="true"><p class="section-eyebrow">Between the pages</p><h3 id="bookshelf-title">On my bookshelf</h3><p class="bookshelf-intro">A few books that have stayed with me.</p><div class="bookshelf-grid" data-bookshelf-books><p role="status">Loading my bookshelf…</p></div></section>
     <a class="interest-article-link" href="writing/blackface-and-racism-in-greek-film-and-television/"><span class="interest-link-label">From my writing</span><strong>Blackface and Racism in Greek Film and Television</strong><span class="interest-link-action">Read the article <span aria-hidden="true">↗</span></span></a>
   </div>
 </template>
@@ -194,6 +206,7 @@
     <p>Food is another way I get to know a place and its culture. Whether I’m travelling or closer to home, I’m always happy to try somewhere new.</p>
   </div>
 </template>
-<script src="personal.js?v=beyond-data" defer></script>
+<script src="personal.js?v=map-bookshelf" defer></script>
+<script src="explore.js?v=map-bookshelf" defer></script>
 </body>
 </html>

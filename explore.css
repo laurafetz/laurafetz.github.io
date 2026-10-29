@@ -1,0 +1,90 @@
+.project-view-controls { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; flex-shrink: 0; margin-left: 24px; }
+.project-view-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 11px 16px; border: 1px solid #b5c1b6; border-radius: 5px; background: var(--sage-light); color: var(--sea); font: 12px 'Manrope',sans-serif; cursor: pointer; white-space: nowrap; }
+.project-view-button[hidden], .lookbook-arrows[hidden] { display: none; }
+.project-view-button:hover { background: #dce5d7; border-color: #5e7967; }
+.project-view-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.lookbook-track.is-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); overflow: visible; scroll-snap-type: none; }
+.lookbook-track.is-grid .project-card { width: auto; min-width: 0; display: flex; flex-direction: column; }
+.lookbook-track.is-grid .project-copy { flex: 1; display: flex; flex-direction: column; }
+.lookbook-track.is-grid .project-copy h3 { min-height: 0; }
+.lookbook-track.is-grid .project-copy > p:not(.project-type) { min-height: 0; }
+.lookbook-track.is-grid .project-copy .cta-link { align-self: flex-start; margin-top: auto; }
+.interest-dialog-wide { width: min(1000px,calc(100% - 32px)); }
+.interest-dialog-wide .interest-story > p { max-width: 740px; }
+.travel-atlas { margin-top: 32px; border-top: 1px solid #ddd5c7; padding-top: 26px; }
+.atlas-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.atlas-heading .section-eyebrow, .bookshelf .section-eyebrow { margin-bottom: 6px; }
+.atlas-heading h3, .bookshelf > h3 { font-size: 25px; font-weight: 500; letter-spacing: -.035em; line-height: 1.35; }
+.travel-count { font: 11px/1.6 'DM Mono',monospace; color: #425d4d; text-align: right; }
+.atlas-intro, .bookshelf-intro { margin: 14px 0 20px; color: var(--ink-muted); font-size: 13px; line-height: 1.8; }
+.atlas-controls { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 14px; }
+.country-picker { min-width: 0; flex: 1; max-width: 340px; }
+.country-picker label { display: block; margin-bottom: 7px; color: var(--ink-muted); font-size: 11px; }
+.country-picker select { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #b9c6b5; border-radius: 5px; background: #fffdf7; color: var(--sea); font: 12px 'Manrope',sans-serif; }
+.country-picker select:focus-visible { outline: 2px solid var(--sea); outline-offset: 3px; }
+.map-zoom-controls { display: flex; gap: 7px; }
+.map-zoom-controls button { min-width: 44px; min-height: 44px; padding: 8px 13px; color: var(--sea); background: #fffdf7; border: 1px solid #b9c6b5; border-radius: 5px; cursor: pointer; font: 12px 'Manrope',sans-serif; }
+.map-zoom-controls button[data-map-zoom] { font-size: 22px; padding: 4px 10px; }
+.map-zoom-controls button:hover { background: var(--sage-light); }
+.map-zoom-controls button:disabled { opacity: .45; cursor: default; }
+.travel-map-frame { position: relative; overflow: hidden; border: 1px solid #c4d0cf; border-radius: 8px; background: #e4edf0; aspect-ratio: 960/496; }
+.travel-map-frame svg { display: block; width: 100%; height: 100%; touch-action: pan-y; cursor: grab; user-select: none; }
+.travel-map-frame svg.is-dragging { cursor: grabbing; }
+.map-ocean { fill: #e4edf0; stroke: #b7cbd0; stroke-width: 1; }
+.map-graticule { fill: none; stroke: #c4d6db; stroke-width: .5; pointer-events: none; }
+.map-country { fill: #e9e1d2; stroke: #fffdf7; stroke-width: .5; vector-effect: non-scaling-stroke; cursor: pointer; }
+.map-country.is-visited { fill: #728f77; }
+.map-country:hover, .map-country.is-selected { fill: #c58a58; stroke: #70452c; stroke-width: 1; }
+.map-country.is-selected { paint-order: stroke fill; }
+.map-loading { position: absolute; inset: 0; display: grid; place-content: center; padding: 20px; text-align: center; font-size: 13px; line-height: 1.8; color: var(--sea); }
+.map-error { padding: 30px; color: var(--ink-muted); font-size: 13px; line-height: 1.8; }
+.map-error button { display: block; margin-top: 12px; padding: 9px 14px; font: inherit; border: 1px solid #b9c6b5; border-radius: 4px; color: var(--sea); background: var(--paper); cursor: pointer; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 12px 0; font-size: 11px; line-height: 1.7; color: #4f6758; }
+.map-legend > span { display: inline-flex; align-items: center; gap: 7px; }
+.map-legend i { width: 10px; height: 10px; border-radius: 2px; border: 1px solid #a7b4a6; }
+.legend-visited { background: #728f77; }
+.legend-explore { background: #e9e1d2; }
+.map-legend .map-gesture-hint { margin-left: auto; color: var(--ink-muted); }
+.map-country-info { min-height: 47px; margin: 14px 0; padding: 13px 16px; border-radius: 5px; background: #e5eadd; color: #425d4d; font-size: 12px; line-height: 1.8; }
+.visited-places { border-top: 1px solid #ddd5c7; padding-top: 16px; }
+.visited-places summary { width: fit-content; padding: 4px 0; color: var(--sea); font-size: 13px; cursor: pointer; }
+.visited-places ul { display: flex; flex-wrap: wrap; list-style: none; gap: 7px; margin: 14px 0 0; padding: 0; }
+.visited-places button { min-height: 38px; padding: 8px 11px; border: 1px solid #c4d0bd; border-radius: 4px; color: #425d4d; background: #e5eadd; font: 11px 'Manrope',sans-serif; cursor: pointer; }
+.visited-places button:hover { background: #d5e0cf; }
+.map-credit { margin: 18px 0 0; color: var(--ink-muted); font-size: 10px; line-height: 1.8; }
+.map-credit a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.bookshelf { margin: 30px 0; padding: 26px 0 0; border-top: 1px solid #ddd5c7; }
+.bookshelf-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 28px 22px; }
+.book-cover { position: relative; display: flex; flex-direction: column; min-height: 255px; padding: 24px 20px 24px 25px; border-radius: 2px 6px 6px 2px; border: 1px solid #4c6957; color: #fffaf0; background: #526e5d; box-shadow: 4px 5px 0 #c9bca44d,inset 7px 0 0 #00000013; }
+.book-card:nth-child(3n+2) .book-cover { background: #2b5063; border-color: #294858; }
+.book-card:nth-child(3n+3) .book-cover { background: #a36343; border-color: #955b3c; }
+.book-cover::before { content: ''; display: block; width: 30px; height: 1px; background: #e9bb8b; margin: 4px 0 28px; }
+.book-cover h4 { font-size: clamp(18px,2vw,23px); font-weight: 500; line-height: 1.4; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.book-author { font-size: 11px; line-height: 1.7; margin: auto 0 0; padding-top: 28px; color: #fffaf0; }
+.book-note { margin: 15px 0 0; font-size: 12px; line-height: 1.8; color: var(--ink-muted); }
+@media (max-width: 1024px) { .lookbook-track.is-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 768px) {
+  .project-view-controls { margin-left: 0; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; }
+  .projects-section .lookbook-header { flex-direction: column; gap: 22px; }
+  .project-view-controls .lookbook-count { margin: 0; }
+  .project-view-button { font-size: 11px; }
+  .atlas-controls { flex-wrap: wrap; gap: 12px; }
+  .country-picker { max-width: none; flex-basis: 100%; }
+  .map-zoom-controls { width: 100%; }
+  .map-zoom-controls button[data-map-reset] { margin-left: auto; }
+  .map-legend .map-gesture-hint { margin-left: 0; flex-basis: 100%; }
+  .bookshelf-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 16px; }
+  .book-cover { min-height: 230px; padding: 20px 16px 20px 21px; }
+}
+@media (max-width: 540px) {
+  .lookbook-track.is-grid { grid-template-columns: minmax(0,1fr); }
+  .atlas-heading { align-items: flex-start; }
+  .atlas-heading h3, .bookshelf > h3 { font-size: 23px; }
+  .travel-count { max-width: 100px; font-size: 10px; }
+  .travel-map-frame { aspect-ratio: 4/3; }
+  .book-cover { min-height: 230px; padding: 18px 13px 20px 18px; }
+  .book-cover h4 { font-size: 16px; }
+  .book-author { font-size: 10px; }
+}
+@media (max-width: 350px) { .bookshelf-grid { grid-template-columns: minmax(0,1fr); } }
+@media print { .project-view-controls { display: none; } .lookbook-track.is-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .lookbook-track.is-grid .project-card { width: auto; } }

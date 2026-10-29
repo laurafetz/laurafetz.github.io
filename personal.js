@@ -69,9 +69,11 @@
         title.textContent = template.dataset.title || titleForTrigger(button);
         description.textContent = template.dataset.description || defaultDescription;
         content.replaceChildren(template.content.cloneNode(true));
+        dialog.classList.toggle('interest-dialog-wide', template.dataset.layout === 'wide');
         dialog.scrollTop = 0;
         dialog.showModal();
         document.body.classList.add('toolkit-open');
+        dialog.dispatchEvent(new CustomEvent('details:open', { bubbles: true }));
       });
     });
     dialog.querySelector('.toolkit-close').addEventListener('click', () => dialog.close());
@@ -92,6 +94,7 @@
   const previous = document.getElementById('lbPrev');
   const next = document.getElementById('lbNext');
   function updateArrows() {
+    if (track.classList.contains('is-grid')) return;
     previous.disabled = track.scrollLeft < 2;
     next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
   }
@@ -104,7 +107,7 @@
   next.addEventListener('click', () => moveProjects(1));
   track.addEventListener('scroll', updateArrows, { passive: true });
   track.addEventListener('keydown', event => {
-    if (event.target !== track) return;
+    if (event.target !== track || track.classList.contains('is-grid')) return;
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
       event.preventDefault(); moveProjects(event.key === 'ArrowRight' ? 1 : -1);
     }
