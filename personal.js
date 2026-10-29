@@ -48,42 +48,45 @@
   }, { passive: true });
   window.addEventListener('resize', updateNavigation);
   updateNavigation();
-  const toolkitDialog = document.getElementById('toolkit-dialog');
-  if (toolkitDialog) {
-    const toolkitTitle = document.getElementById('toolkit-title');
-    const toolkitContent = document.getElementById('toolkit-content');
-    const toolkitDescription = document.getElementById('toolkit-description');
-    const defaultToolkitDescription = toolkitDescription.textContent;
-    let toolkitOpener = null;
+  function bindDetailsDialog(dialogId, triggerSelector, templatePrefix, titleForTrigger) {
+    const dialog = document.getElementById(dialogId);
+    if (!dialog) return;
+    const title = dialog.querySelector('.toolkit-header h2');
+    const content = dialog.querySelector('[data-dialog-content]');
+    const description = dialog.querySelector('.toolkit-description');
+    const defaultDescription = description.textContent;
+    let opener = null;
     let backdropPointerDown = false;
     const outsideDialog = event => {
-      const bounds = toolkitDialog.getBoundingClientRect();
+      const bounds = dialog.getBoundingClientRect();
       return event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
     };
-    document.querySelectorAll('.toolkit-trigger').forEach(button => {
+    document.querySelectorAll(triggerSelector).forEach(button => {
       button.addEventListener('click', () => {
-        const template = document.getElementById('toolkit-' + button.dataset.toolkit);
-        if (!template || toolkitDialog.open) return;
-        toolkitOpener = button;
-        toolkitTitle.textContent = 'My ' + button.dataset.language + ' toolkit';
-        toolkitDescription.textContent = template.dataset.description || defaultToolkitDescription;
-        toolkitContent.replaceChildren(template.content.cloneNode(true));
-        toolkitDialog.scrollTop = 0;
-        toolkitDialog.showModal();
+        const template = document.getElementById(templatePrefix + (button.dataset.toolkit || button.dataset.interest));
+        if (!template || dialog.open) return;
+        opener = button;
+        title.textContent = template.dataset.title || titleForTrigger(button);
+        description.textContent = template.dataset.description || defaultDescription;
+        content.replaceChildren(template.content.cloneNode(true));
+        dialog.scrollTop = 0;
+        dialog.showModal();
         document.body.classList.add('toolkit-open');
       });
     });
-    toolkitDialog.querySelector('.toolkit-close').addEventListener('click', () => toolkitDialog.close());
-    toolkitDialog.addEventListener('pointerdown', event => { backdropPointerDown = outsideDialog(event); });
-    toolkitDialog.addEventListener('click', event => {
-      if (backdropPointerDown && outsideDialog(event)) toolkitDialog.close();
+    dialog.querySelector('.toolkit-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('pointerdown', event => { backdropPointerDown = outsideDialog(event); });
+    dialog.addEventListener('click', event => {
+      if (backdropPointerDown && outsideDialog(event)) dialog.close();
       backdropPointerDown = false;
     });
-    toolkitDialog.addEventListener('close', () => {
+    dialog.addEventListener('close', () => {
       document.body.classList.remove('toolkit-open');
-      toolkitOpener?.focus({ preventScroll: true });
+      opener?.focus({ preventScroll: true });
     });
   }
+  bindDetailsDialog('toolkit-dialog', '.toolkit-trigger', 'toolkit-', button => 'My ' + button.dataset.language + ' toolkit');
+  bindDetailsDialog('interest-dialog', '.interest-trigger', 'interest-', button => button.textContent.trim());
   const track = document.querySelector('.lookbook-track');
   if (!track) return;
   const previous = document.getElementById('lbPrev');
