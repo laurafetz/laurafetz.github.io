@@ -6,12 +6,16 @@
 .academic-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .academic-columns h3 { margin: 0 0 24px; font: 500 26px/1.3 'Manrope',sans-serif; }
 .degree-stack { display: grid; gap: 14px; }
-.degree-card { padding: 22px 24px; background: var(--white); border: 1px solid #ddd1bd; border-left: 3px solid #b18d64; border-radius: 4px; }
-.degree-card:nth-child(2) { border-left-color: var(--sea); }
-.degree-card:nth-child(3) { border-left-color: var(--sage); }
-.degree-level { display: flex; justify-content: space-between; gap: 20px; color: var(--ink-muted); font: 10px/1.7 'DM Mono',monospace; }
-.degree-card h4 { margin: 10px 0; font: 500 22px/1.35 'Manrope',sans-serif; letter-spacing: -.03em; }
-.degree-card > p:last-child { color: var(--ink-muted); font-size: 12px; line-height: 1.8; }
+.degree-card { --degree-accent: #315b70; display: grid; grid-template-columns: 94px minmax(0,1fr); min-height: 150px; overflow: hidden; background: var(--white); border: 1px solid #d7cdbb; border-radius: 6px; }
+.degree-card:nth-child(2) { --degree-accent: #526d5c; }
+.degree-card:nth-child(3) { --degree-accent: #895b3d; }
+.degree-mark { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; padding: 22px 10px; color: #fffdf8; background: var(--degree-accent); }
+.degree-mark > span { font: 500 36px/1 'Manrope',sans-serif; letter-spacing: -.055em; }
+.degree-mark time { padding-top: 12px; border-top: 1px solid #ffffff60; font: 12px/1.2 'DM Mono',monospace; letter-spacing: .04em; }
+.degree-copy { align-self: center; min-width: 0; padding: 22px 24px; }
+.degree-level { color: var(--degree-accent); font: 10px/1.7 'DM Mono',monospace; }
+.degree-card h4 { margin: 9px 0 10px; color: var(--ink); font: 600 24px/1.3 'Manrope',sans-serif; letter-spacing: -.035em; }
+.degree-university { color: var(--ink-muted); font-size: 12px; line-height: 1.7; }
 .skills-column h3 { margin-bottom: 10px; }
 .skills-intro { margin-bottom: 24px; color: var(--ink-muted); font-size: 12px; line-height: 1.7; }
 .skill-tiles { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 12px; }
@@ -87,9 +91,12 @@
 @media (max-width: 900px) {
   .academic-columns { grid-template-columns: minmax(0,1fr); gap: 46px; }
   .degree-stack { grid-template-columns: repeat(3,minmax(0,1fr)); align-items: stretch; }
-  .degree-card { padding: 18px; }
-  .degree-level { flex-direction: column; gap: 6px; }
-  .degree-card h4 { font-size: 20px; }
+  .degree-card { grid-template-columns: minmax(0,1fr); grid-template-rows: auto 1fr; min-height: 0; }
+  .degree-mark { flex-direction: row; justify-content: space-between; gap: 12px; padding: 18px 20px; }
+  .degree-mark > span { font-size: 30px; }
+  .degree-mark time { padding: 0; border: 0; }
+  .degree-copy { align-self: start; padding: 20px; }
+  .degree-card h4 { font-size: 22px; }
   .practice-layout { grid-template-columns: .85fr 1.3fr; gap: 30px; }
   .research-thread { grid-template-columns: minmax(0,1fr); }
   .research-thread .research-art { padding-left: 0; }
@@ -105,7 +112,12 @@
 }
 @media (max-width: 640px) {
   .degree-stack { grid-template-columns: minmax(0,1fr); }
-  .degree-level { flex-direction: row; }
+  .degree-card { grid-template-columns: 82px minmax(0,1fr); grid-template-rows: auto; }
+  .degree-mark { flex-direction: column; justify-content: center; gap: 14px; padding: 20px 10px; }
+  .degree-mark > span { font-size: 32px; }
+  .degree-mark time { padding-top: 12px; border-top: 1px solid #ffffff60; }
+  .degree-copy { align-self: center; }
+  .degree-card h4 { font-size: 21px; }
   .skill-tiles { gap: 10px; }
   .skill-tile { min-height: 120px; padding: 16px 14px; }
   .skill-tile:nth-child(-n+3) { padding: 16px 10px; }
