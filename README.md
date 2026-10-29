@@ -8,6 +8,10 @@ My little corner of the web, bringing together my background, interests, and pro
 
 I wanted a place to share my work and give a sense of who I am beyond a GitHub profile. I'm interested in understanding human behaviour through research, statistical modelling, and machine learning, and this website brings those interests together.
 
+## My research experience
+
+I've worked in research at the University of Amsterdam, Prowise NL, ARQ, and Ludwig-Maximilians University of Munich. The website has a short timeline of these roles, with the dates and a little about what I worked on — from developmental research with children to educational data analysis, meta-analysis, and psychometric simulations.
+
 ## My programming projects
 
 - [Language models & truthfulness](https://laurafetz.github.io/projects/language-model-truthfulness/) — evaluating the factual accuracy of language models.

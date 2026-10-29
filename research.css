@@ -1,0 +1,20 @@
+.research-section { display: grid; grid-template-columns: .8fr 1.6fr; gap: 64px; padding: 100px 64px; background: #e9eff0; border-top: 1px solid #d4dfe0; border-bottom: 1px solid #d4dfe0; }
+.research-heading { align-self: start; position: sticky; top: 120px; }
+.research-heading h2 { color: var(--ink); font: 500 clamp(32px,3.3vw,46px)/1.2 'Manrope',sans-serif; letter-spacing: -.04em; }
+.research-heading h2 em { color: var(--sea); }
+.research-heading > p:last-child { max-width: 300px; margin-top: 24px; color: var(--ink-muted); font-size: 14px; line-height: 1.85; }
+.research-roles { list-style: none; padding: 0; margin: 0; }
+.research-role { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 24px; padding: 25px 0; border-top: 1px solid #bdcdce; }
+.research-role:first-child { padding-top: 0; border-top: 0; }
+.research-role:last-child { padding-bottom: 0; }
+.research-dates { margin: 4px 0 0; color: #526968; font: 10px/1.85 'DM Mono',monospace; }
+.research-dates time { white-space: nowrap; }
+.research-role h3 { margin: 0 0 8px; font: 500 20px/1.4 'Manrope',sans-serif; letter-spacing: -.03em; color: var(--ink); }
+.research-organisation { margin: 0 0 12px; color: var(--sea); font-size: 12px; font-weight: 500; line-height: 1.7; }
+.research-summary { margin: 0; color: var(--ink-muted); font-size: 13px; line-height: 1.85; }
+@media (min-width: 769px) and (max-width: 1100px) { .pill-nav a { padding-inline: 8px; } }
+@media (max-width: 900px) { .pill-nav { display: none; } .hamburger { display: flex; } }
+@media (max-height: 700px) { .mobile-nav { gap: 16px; } .mobile-nav a { font-size: 22px; } }
+@media (max-width: 1100px) { .research-section { padding-inline: 40px; gap: 40px; grid-template-columns: .75fr 1.5fr; } .research-role { grid-template-columns: minmax(0,1fr); gap: 9px; } .research-dates { margin-top: 0; } }
+@media (max-width: 768px) { .research-section { grid-template-columns: minmax(0,1fr); padding: 70px 24px; gap: 36px; } .research-heading { position: static; } .research-heading h2 { font-size: 32px; } .research-heading > p:last-child { max-width: 510px; margin-top: 18px; font-size: 13px; } .research-role { padding-block: 24px; } .research-role h3 { font-size: 20px; } }
+@media print { .research-section { display: block; padding: 30px 24px; } .research-heading { position: static; margin-bottom: 24px; } .research-role { break-inside: avoid; } }

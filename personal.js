@@ -28,7 +28,8 @@
       else if (!event.shiftKey && document.activeElement === menu) { event.preventDefault(); first.focus(); }
     }
   });
-  window.matchMedia('(min-width: 769px)').addEventListener('change', event => { if (event.matches) setMenu(false); });
+  const navigationBreakpoint = Number(menu.dataset.navBreakpoint) || 768;
+  window.matchMedia('(min-width: ' + (navigationBreakpoint + 1) + 'px)').addEventListener('change', event => { if (event.matches) setMenu(false); });
   const sections = [...document.querySelectorAll('main > section[id]')];
   function updateNavigation() {
     if (!sections.length) return;
