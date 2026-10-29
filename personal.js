@@ -88,7 +88,7 @@
       opener?.focus({ preventScroll: true });
     });
   }
-  bindDetailsDialog('toolkit-dialog', '.toolkit-trigger', 'toolkit-', button => 'My ' + button.dataset.language + ' toolkit');
+  bindDetailsDialog('toolkit-dialog', '.toolkit-trigger', 'toolkit-', button => button.dataset.language ? 'My ' + button.dataset.language + ' toolkit' : button.textContent.replace('↗', '').trim());
   bindDetailsDialog('interest-dialog', '.interest-trigger', 'interest-', button => button.textContent.trim());
   const track = document.querySelector('.lookbook-track');
   if (!track) return;

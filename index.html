@@ -6,7 +6,7 @@
   <meta name="description" content="Laura Maria Fetz — behavioural data scientist working at the intersection of psychology, education, statistical modelling, and machine learning.">
   <meta name="theme-color" content="#f8f4ea">
   <meta property="og:title" content="Laura Maria Fetz — Behavioural Data Scientist">
-  <meta property="og:description" content="Exploring people, patterns, and possibilities through behavioural research and data science.">
+  <meta property="og:description" content="Slightly silly questions, real data, and a closer look at individual differences.">
   <meta property="og:type" content="website">
   <title>Laura Maria Fetz — Behavioural Data Scientist</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -18,14 +18,15 @@
   <link rel="stylesheet" href="explore.css?v=map-bookshelf">
   <link rel="stylesheet" href="research.css?v=integrated-sced">
   <link rel="stylesheet" href="writing.css?v=admission">
+  <link rel="stylesheet" href="rework.css?v=seven-chapters">
   <!-- Adapted from Tooplate 2166 Ivory Flow: https://www.tooplate.com/view/2166-ivory-flow -->
 </head>
-<body>
+<body class="home-page">
 <a class="skip-link" href="#main">Skip to content</a>
 <a class="site-mark" href="#home" aria-label="Laura Maria Fetz, home">LF<span>.</span></a>
-<nav class="pill-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Programming Projects</a><a href="#writing">Writing Examples</a><a href="#methods">Methods</a><a href="#beyond">Beyond data</a><a href="#contact">Contact</a></nav>
-<button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-nav-breakpoint="900"><span></span><span></span><span></span></button>
-<nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Programming Projects</a><a href="#writing">Writing Examples</a><a href="#methods">Methods</a><a href="#beyond">Beyond data</a><a href="#contact">Contact</a></nav>
+<nav class="pill-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#about">Academic background</a><a href="#practice">In practice</a><a href="#experience">Research</a><a href="#writing">Writing</a><a href="#projects">More fun with data</a><a href="#contact">Contact</a></nav>
+<button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-nav-breakpoint="1100"><span></span><span></span><span></span></button>
+<nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden><a href="#home">Home</a><a href="#about">Academic background</a><a href="#practice">In practice</a><a href="#experience">Research</a><a href="#writing">Writing</a><a href="#projects">More fun with data</a><a href="#contact">Contact</a></nav>
 <main id="main">
   <section class="canvas-section hero" id="home" aria-labelledby="home-title">
     <div class="hero-image portrait-stage">
@@ -37,40 +38,54 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Behavioural Data Scientist</p>
       <h1 class="hero-title" id="home-title">Laura Maria<br><span class="name-accent">Fetz.</span></h1>
-      <p class="hero-desc">I bring psychology, education, and data science together to explore human behaviour — through statistical modelling, machine learning, and thoughtful research.</p>
-      <div class="hero-interests" aria-label="Areas of interest"><span>Human behaviour</span><span>Data science</span><span>Psychology &amp; education</span></div>
-      <div class="hero-cta"><a href="#projects" class="cta-link">Explore my work <span aria-hidden="true">↓</span></a><a href="#about" class="cta-link cta-link--dark">A little about me</a></div>
+      <p class="hero-desc">Sometimes I wonder if we're secretly all the same. I use data to find out how we differ, and why.</p>
+      <div class="hero-cta"><a href="#experience" class="cta-link">Follow my research <span aria-hidden="true">↓</span></a><a href="#about" class="cta-link cta-link--dark">Academic background</a></div>
     </div>
     <span class="section-index" aria-hidden="true">01 / A personal introduction</span>
   </section>
 
-  <section class="canvas-section product about-section" id="about" aria-labelledby="about-title">
-    <div class="education-panel">
-      <p class="section-eyebrow">An interdisciplinary background</p>
-      <h2 class="education-title">Different fields.<br><em>Connected</em><br>questions.</h2>
-      <div class="degree"><span>Master’s degree</span><h3>Behavioural<br>Data Science</h3><p>University of Amsterdam</p></div>
-      <div class="degree"><span>Master’s degree</span><h3>Child Development<br>&amp; Education</h3><p>University of Amsterdam</p></div>
+  <section class="canvas-section academic-section" id="about" aria-labelledby="academic-title">
+    <header class="chapter-heading"><p class="section-eyebrow">02 / Academic background</p><h2 id="academic-title">Academic background</h2></header>
+    <div class="academic-columns">
+      <div class="study-column"><h3>Where I studied</h3><div class="degree-stack">
+        <article class="degree-card"><p class="degree-level">MSc Psychology <time datetime="2025">2025</time></p><h4>Behavioural Data Science</h4><p>University of Amsterdam</p></article>
+        <article class="degree-card"><p class="degree-level">Master of Science <time datetime="2024">2024</time></p><h4>Child Development &amp; Education</h4><p>University of Amsterdam</p></article>
+        <article class="degree-card"><p class="degree-level">Bachelor of Arts</p><h4>Educational Science</h4><p>Ludwig-Maximilians University of Munich</p></article>
+      </div></div>
+      <div class="skills-column"><h3>What I learned</h3><p class="skills-intro">Select a skill to take a closer look.</p><div class="skill-tiles">
+        <button class="toolkit-trigger skill-tile" type="button" data-toolkit="r" data-language="R" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my R toolkit"><span class="skill-name">R<span aria-hidden="true">↗</span></span><small>Packages & applications</small></button>
+        <button class="toolkit-trigger skill-tile" type="button" data-toolkit="python" data-language="Python" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my Python toolkit"><span class="skill-name">Python<span aria-hidden="true">↗</span></span><small>Data & machine learning</small></button>
+        <button class="toolkit-trigger skill-tile" type="button" data-toolkit="sql" data-language="SQL" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my SQL toolkit"><span class="skill-name">SQL<span aria-hidden="true">↗</span></span><small>Queries & linked data</small></button>
+        <button class="toolkit-trigger skill-tile" type="button" data-toolkit="modelling" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my Statistical modelling toolkit"><span class="skill-name">Statistical modelling<span aria-hidden="true">↗</span></span><small>Patterns across people & time</small></button>
+        <button class="toolkit-trigger skill-tile" type="button" data-toolkit="psychometrics" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my Psychometrics toolkit"><span class="skill-name">Psychometrics<span aria-hidden="true">↗</span></span><small>Making measurement meaningful</small></button>
+        <button class="toolkit-trigger skill-tile" type="button" data-toolkit="machine-learning" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my Machine learning toolkit"><span class="skill-name">Machine learning<span aria-hidden="true">↗</span></span><small>Prediction with perspective</small></button>
+        <button class="toolkit-trigger skill-tile" type="button" data-toolkit="research-practice" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my Research practice toolkit"><span class="skill-name">Research practice<span aria-hidden="true">↗</span></span><small>From questions to clear findings</small></button>
+      </div></div>
     </div>
-    <div class="product-info">
-      <p class="product-badge">02 / About me</p>
-      <h2 class="product-name" id="about-title">Curiosity,<br>with a quantitative lens.</h2>
-      <p class="product-desc">I’m an interdisciplinary researcher with master’s degrees in Behavioural Data Science and Child Development &amp; Education from the University of Amsterdam.</p>
-      <p class="product-desc">My work combines quantitative research, statistical modelling, and machine learning to better understand human behaviour, psychological processes, and educational outcomes.</p>
-      <p class="product-desc">I enjoy working with complex datasets, exploring methodological challenges, and translating research questions into meaningful analyses.</p>
-      <dl class="product-specs"><div class="product-spec"><dt>Research interests</dt><dd>Psychology &amp; education</dd></div><div class="product-spec"><dt>Methods</dt><dd>Statistics &amp; machine learning</dd></div><div class="product-spec"><dt>Focus</dt><dd>Behaviour &amp; measurement</dd></div><div class="product-spec"><dt>Tools</dt><dd>R · Python · SQL</dd></div></dl>
-      <div class="product-actions"><a href="#experience" class="cta-link">My research experience <span aria-hidden="true">↓</span></a><a href="#methods" class="cta-link cta-link--dark">My methods &amp; skills</a><a href="https://www.linkedin.com/in/laura-maria-fetz/" class="cta-link cta-link--dark" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
+  </section>
+
+  <section class="canvas-section practice-section" id="practice" aria-labelledby="practice-title">
+    <header class="chapter-heading"><p class="section-eyebrow">03 / Applied experience</p><h2 id="practice-title">Where I put it<br>into practice.</h2></header>
+    <div class="practice-layout">
+      <div class="practice-role"><p class="practice-date">Feb–May 2025</p><h3>Data Science Intern</h3><p class="practice-company">Prowise Learn</p><p class="practice-context">An adaptive learning platform used by over 300,000 children.</p><dl class="practice-scale"><div><dt>maths &amp; language games</dt><dd>6</dd></div><div><dt>student responses analysed</dt><dd>Millions</dd></div></dl></div>
+      <div class="practice-contributions"><ul>
+        <li>Analysed millions of student responses across six maths and language games on an adaptive learning platform used by over 300,000 children.</li>
+        <li>Built workflows to extract, merge and model learning data with multilevel models.</li>
+        <li>Showed that learning differed substantially between individual students, and that focused practice helped in some games but not others.</li>
+        <li>Presented findings and recommendations for the learning-goal algorithm to the Content &amp; Psychometrics team, and contributed to the analysis of a newly launched deadline feature.</li>
+      </ul><details class="research-direction"><summary>Did the sevens stick?</summary><p>At Prowise, both questions met in the classroom: did children really learn, and would the scores show it? Normal practice mixes it up: 5 × 7, 3 × 2, 7 × 9. But sometimes students get a focused learning-goal session with only the 7 times table. Using multilevel models on large learning datasets, I tested whether students actually got better afterwards.</p></details></div>
     </div>
   </section>
 
   <section class="canvas-section research-section" id="experience" aria-labelledby="experience-title">
-    <header class="research-heading"><div><p class="section-eyebrow">03 / Research Experience</p><h2 id="experience-title">From patterns<br><em>to people.</em></h2></div><p>I’m drawn to research that connects careful measurement with people’s lives. These are some of the questions I’ve helped explore.</p></header>
+    <header class="research-heading"><div><p class="section-eyebrow">04 / Research experience</p><h2 id="experience-title">Who am I<br>as a researcher?</h2></div><p>I keep coming back to the same question: what works on average, and what works for this one person?</p></header>
     <article class="research-spotlight" id="research-publication" aria-labelledby="research-publication-title">
       <div class="publication-overview">
         <p class="research-publication-badge">Publication highlight · 2026</p>
-        <h3 id="research-publication-title">What changes for a child,<br>and does it last?</h3>
+        <h3 id="research-publication-title">Better… for now?</h3>
         <p class="publication-description">A multilevel meta-analysis of single-case research on interventions for externalizing behaviour problems in children and adolescents.</p>
         <p class="publication-credit">Joint first author with Shawn I. Kok<br><cite>JAACAP Open</cite> · 2026</p>
-        <div class="publication-links"><a class="research-paper-link" href="https://doi.org/10.1016/j.jaacop.2025.12.002" target="_blank" rel="noopener noreferrer">Read our published paper <span aria-hidden="true">↗</span></a><a class="publication-experience-link" href="#research-sced">Research Assistant experience · 2023–2024 <span aria-hidden="true">↓</span></a></div>
+        <div class="publication-links"><a class="research-paper-link" href="https://doi.org/10.1016/j.jaacop.2025.12.002" target="_blank" rel="noopener noreferrer">Read our published paper <span aria-hidden="true">↗</span></a><a class="publication-experience-link" href="#research-sced">The single-case research thread · 2023–2026 <span aria-hidden="true">↓</span></a></div>
       </div>
       <div class="research-publication">
         <p class="publication-kicker">Our meta-analysis, in numbers</p>
@@ -79,85 +94,45 @@
         <details class="publication-next"><summary>The next question</summary><p>How can support be tailored to individual children and sustained over time? Our findings point toward that question, while study quality and limited follow-up data leave room for stronger evidence.</p></details>
       </div>
     </article>
-    <p class="research-timeline-guide">A research journey <span>Most recent first</span></p>
-    <ol class="research-timeline" role="list" aria-label="Research experience, most recent first">
-      <li class="research-milestone">
-        <div class="research-date"><span class="research-years"><time datetime="2025">2025</time>–<time datetime="2026">2026</time></span></div>
-        <article class="research-story research-story-models" aria-labelledby="research-models-title">
-          <div class="research-story-copy">
-            <header class="research-story-meta"><p>Junior Researcher<span class="research-affiliation">University of Amsterdam</span></p></header>
-            <p class="research-topic">Measurement &amp; models</p><h3 id="research-models-title">One hidden trait, or a web of connections?</h3><p class="research-contribution">I ran simulations comparing factor and network models under three population structures, alongside meta-analytic research.</p><a class="research-inline-link" href="#research-sced">Explore my SCED research <span aria-hidden="true">↓</span></a>
-        <details class="research-direction"><summary>Explore the direction</summary><p>Related simulation research tests how competing models can account for similar patterns. It encourages researchers to consider network explanations alongside factor models. The bigger question: when does a well-fitting model actually help explain the process behind the data?</p><a href="https://pubmed.ncbi.nlm.nih.gov/38392174/" target="_blank" rel="noopener noreferrer">Related research · Kan and colleagues, 2024 <span aria-hidden="true">↗</span></a></details>
-          </div>
-          <figure class="research-art model-demo" data-model-demo>
-          <div class="model-controls" role="group" aria-label="Compare conceptual model diagrams"><button type="button" data-research-model="factor" aria-pressed="true">Factor model</button><button type="button" data-research-model="network" aria-pressed="false">Network model</button></div>
-          <svg viewBox="0 0 320 180" role="img" aria-labelledby="research-model-graphic-title"><title id="research-model-graphic-title">Conceptual factor model: a shared trait links four observed measures</title><g data-model-view="factor"><path class="diagram-line" d="M160 70 48 132M160 70 123 132M160 70 198 132M160 70 273 132"/><circle class="diagram-node diagram-node-sea" cx="160" cy="43" r="28"/><text class="diagram-light-label" x="160" y="47">Trait</text><g class="diagram-measures"><rect x="16" y="132" width="64" height="32" rx="5"/><rect x="91" y="132" width="64" height="32" rx="5"/><rect x="166" y="132" width="64" height="32" rx="5"/><rect x="241" y="132" width="64" height="32" rx="5"/></g><g class="diagram-label"><text x="48" y="153">A</text><text x="123" y="153">B</text><text x="198" y="153">C</text><text x="273" y="153">D</text></g></g><g data-model-view="network" hidden><path class="diagram-line" d="M65 40 255 40 225 142 95 142ZM65 40 225 142M255 40 95 142"/><circle class="diagram-node diagram-node-sea" cx="65" cy="40" r="21"/><circle class="diagram-node diagram-node-sage" cx="255" cy="40" r="21"/><circle class="diagram-node diagram-node-terra" cx="225" cy="142" r="21"/><circle class="diagram-node diagram-node-sage" cx="95" cy="142" r="21"/><g class="diagram-light-label"><text x="65" y="45">A</text><text x="255" y="45">B</text><text x="225" y="147">C</text><text x="95" y="147">D</text></g></g></svg>
-          <figcaption class="model-caption" aria-live="polite">Concept sketch · a shared trait links the observed measures A–D.</figcaption>
-        </figure>
-        </article>
-      </li>
-
-      <li class="research-milestone">
-        <div class="research-date"><span class="research-years"><time datetime="2025">2025</time></span></div>
-        <article class="research-story research-story-learning" aria-labelledby="research-learning-title">
-          <div class="research-story-copy">
-            <header class="research-story-meta"><p>Data Science Intern<span class="research-affiliation">Prowise NL</span></p></header>
-            <p class="research-topic">Learning in the real world</p><h3 id="research-learning-title">What can everyday practice tell us about learning?</h3><p class="research-contribution">I used multilevel models to analyse student learning outcomes in large educational datasets.</p>
-        <details class="research-direction"><summary>Explore the direction</summary><p>Prowise’s wider research explores how to measure changing skills and individual differences in adaptive learning systems. That could help us distinguish learning progress from differences in tasks and practice, and design more responsive support.</p><a href="https://www.prowise.com/product/prowise-learn/prowise-learn-onderzoek/" target="_blank" rel="noopener noreferrer">Related research · Prowise Learn <span aria-hidden="true">↗</span></a></details>
-          </div>
-          <figure class="research-art learning-art"><p class="research-art-heading">Adaptive learning cycle</p><svg viewBox="0 0 320 180" role="img" aria-labelledby="learning-graphic-title"><title id="learning-graphic-title">Conceptual adaptive learning cycle: practice, feedback, and the next task</title><path class="diagram-line" d="M94 82h19m-6-5 6 5-6 5m97-5h18m-6-5 6 5-6 5M266 124v28H51v-28"/><g class="learning-tiles"><rect x="8" y="38" width="86" height="86" rx="10"/><rect x="117" y="38" width="86" height="86" rx="10"/><rect x="226" y="38" width="86" height="86" rx="10"/></g><g class="diagram-label"><text x="51" y="104">Practice</text><text x="160" y="104">Feedback</text><text x="269" y="104">Next task</text></g><g class="learning-symbols"><circle cx="39" cy="66" r="4"/><circle cx="51" cy="66" r="4"/><circle cx="63" cy="66" r="4"/><path d="m145 68 10 10 20-24M256 56h10v10h-10zm15 0h10v10h-10zm-15 15h10v10h-10zm15 0h10v10h-10z"/></g></svg><figcaption>Concept sketch · learning environments that respond as children practise.</figcaption></figure>
-        </article>
-      </li>
-
-      <li class="research-milestone">
-        <div class="research-date"><span class="research-years"><time datetime="2023">2023</time>–<time datetime="2024">2024</time></span></div>
-        <article class="research-story research-story-sced" id="research-sced" aria-labelledby="research-change-title">
-          <div class="research-story-copy">
-            <header class="research-story-meta"><p>Research Assistant<span class="research-affiliation">University of Amsterdam</span></p></header>
-            <p class="research-topic">Individual change, shared evidence</p><h3 id="research-change-title">Following change, one child at a time.</h3><p class="research-contribution">I worked with Dr. Marija Maric on meta-analyses of single-case experimental design (SCED) studies of child and adolescent interventions. I also built Shiny apps to make the research data easier to explore.</p>
-            <a class="research-inline-link" href="#research-publication">Our externalizing meta-analysis <span aria-hidden="true">↑</span></a>
-            <details class="research-direction"><summary>Explore the direction</summary><p>Marija Maric and colleagues’ 2023 meta-analysis examines interventions for internalizing disorders in children and adolescents, including anxiety, depression, and post-traumatic stress. It shows how single-case data can be brought together to explore individual change and patterns across studies.</p><a href="https://doi.org/10.1007/s10567-023-00432-9" target="_blank" rel="noopener noreferrer">Related research · Maric et al., 2023&nbsp;<span aria-hidden="true">↗</span></a></details>
-          </div>
-          <figure class="research-art sced-art">
+    <p class="research-timeline-guide">Three research threads <span>2021–2026</span></p>
+    <ul class="thread-legend" aria-label="Timeline colours"><li><span class="legend-lmu" aria-hidden="true"></span>Developmental psychology</li><li><span class="legend-sced" aria-hidden="true"></span>Single-case research</li><li><span class="legend-intelligence" aria-hidden="true"></span>Intelligence &amp; measurement</li></ul>
+    <div class="research-threads" role="group" aria-label="Overlapping academic research threads, 2021 to 2026">
+      <time class="thread-year year-1" datetime="2021">2021</time>
+      <time class="thread-year year-2" datetime="2022">2022</time>
+      <time class="thread-year year-3" datetime="2023">2023</time>
+      <time class="thread-year year-4" datetime="2024">2024</time>
+      <time class="thread-year year-5" datetime="2025">2025</time>
+      <time class="thread-year year-6" datetime="2026">2026</time>
+      <span class="thread-bar thread-bar-lmu" aria-hidden="true"></span><span class="thread-bar thread-bar-sced" aria-hidden="true"></span><span class="thread-bar thread-bar-intelligence" aria-hidden="true"></span>
+      <article class="research-story research-thread thread-lmu" aria-labelledby="research-development-title">
+        <div class="research-story-copy"><p class="thread-period">2021–2022</p><header class="research-story-meta"><p>Research Assistant<span class="research-affiliation">Ludwig-Maximilians University of Munich</span></p></header><h3 id="research-development-title">Where it all started.</h3><p class="research-contribution">My first research job meant sitting on tiny chairs across from four- to seven-year-olds, running reasoning tasks and listening to how they explained their answers. I collected the data, transcribed every conversation, and handled the admin that keeps a study running. It's where I learned that behind every data point is a child with their own idea of what the question meant.</p><details class="research-direction"><summary>Explore the direction</summary><p>A 2026 study involving Köksal and Sodian linked early understanding of other people’s minds with later scientific reasoning. This wider research asks how social understanding and thinking about evidence develop together.</p><a href="https://pubmed.ncbi.nlm.nih.gov/42640009/" target="_blank" rel="noopener noreferrer">Related research · scientific reasoning, 2026 <span aria-hidden="true">↗</span></a></details></div>
+        <figure class="research-art development-art"><svg viewBox="0 0 320 180" role="img" aria-labelledby="development-graphic-title"><title id="development-graphic-title">Conceptual illustration of asking questions, trying ideas, and explaining</title><path class="diagram-line" d="M91 77h28m-6-5 6 5-6 5m86-5h25m-6-5 6 5-6 5"/><circle class="wonder-disc" cx="55" cy="77" r="34"/><text class="wonder-mark" x="55" y="91">?</text><g class="development-blocks"><rect x="135" y="76" width="27" height="27" rx="3"/><rect x="165" y="76" width="27" height="27" rx="3"/><rect x="150" y="46" width="27" height="27" rx="3"/></g><path class="explain-bubble" d="M242 47h51a9 9 0 0 1 9 9v34a9 9 0 0 1-9 9h-30l-15 13V99h-6a9 9 0 0 1-9-9V56a9 9 0 0 1 9-9Z"/><path class="diagram-line" d="M247 65h40m-40 14h28"/><g class="diagram-label"><text x="55" y="149">Ask</text><text x="162" y="149">Try</text><text x="268" y="149">Explain</text></g></svg><figcaption>Concept sketch · the beginnings of scientific thinking.</figcaption></figure>
+      </article>
+      <article class="research-story research-thread thread-sced" id="research-sced" aria-labelledby="research-change-title">
+        <div class="research-story-copy"><p class="thread-period">2023–2026</p><header class="research-story-meta"><p>Research Intern · Research Assistant<span class="research-affiliation">ARQ &amp; University of Amsterdam</span></p></header><h3 id="research-change-title">One child at a time.</h3><p class="research-contribution">At ARQ, I analysed single-case data from family-based interventions designed to keep children safe, following each family closely, session after session. At the same time, I joined a research team at the University of Amsterdam, collecting data from published single-case studies for a meta-analysis. What began as data collection became our 2026 paper, with me as joint first author. It's where I got hooked on the question I still ask: what works on average, and what works for this one child?</p><a class="research-inline-link" href="#research-publication">Our externalizing meta-analysis <span aria-hidden="true">↑</span></a><details class="research-direction"><summary>Explore the direction</summary><p>Marija Maric and colleagues’ 2023 meta-analysis examines interventions for internalizing disorders in children and adolescents, including anxiety, depression, and post-traumatic stress. It shows how single-case data can be brought together to explore individual change and patterns across studies.</p><a href="https://doi.org/10.1007/s10567-023-00432-9" target="_blank" rel="noopener noreferrer">Related research · Maric et al., 2023&nbsp;<span aria-hidden="true">↗</span></a></details></div>
+        <figure class="research-art sced-art">
             <svg viewBox="0 0 320 180" role="img" aria-labelledby="sced-graphic-title"><title id="sced-graphic-title">Conceptual illustration of three symptom trajectories decreasing during treatment</title><g class="diagram-label"><text x="99" y="16">Baseline</text><text x="237" y="16">Treatment</text><text x="22" y="55">A</text><text x="22" y="102">B</text><text x="22" y="149">C</text></g><path class="sced-guide" d="M44 65h264M44 112h264M44 159h264"/><path class="diagram-line diagram-dashed" d="M160 25v137"/><g fill="#315b70"><path class="sced-trajectory" stroke="#315b70" d="M50 30 L82 34 L114 28 L146 32 L178 42 L210 44 L242 51 L274 50 L302 55"/><circle cx="50" cy="30" r="2.5"/><circle cx="82" cy="34" r="2.5"/><circle cx="114" cy="28" r="2.5"/><circle cx="146" cy="32" r="2.5"/><circle cx="178" cy="42" r="2.5"/><circle cx="210" cy="44" r="2.5"/><circle cx="242" cy="51" r="2.5"/><circle cx="274" cy="50" r="2.5"/><circle cx="302" cy="55" r="2.5"/></g><g fill="#718b73"><path class="sced-trajectory" stroke="#718b73" d="M50 94 L82 90 L114 96 L146 91 L178 93 L210 98 L242 95 L274 100 L302 99"/><circle cx="50" cy="94" r="2.5"/><circle cx="82" cy="90" r="2.5"/><circle cx="114" cy="96" r="2.5"/><circle cx="146" cy="91" r="2.5"/><circle cx="178" cy="93" r="2.5"/><circle cx="210" cy="98" r="2.5"/><circle cx="242" cy="95" r="2.5"/><circle cx="274" cy="100" r="2.5"/><circle cx="302" cy="99" r="2.5"/></g><g fill="#c58a58"><path class="sced-trajectory" stroke="#c58a58" d="M50 119 L82 124 L114 120 L146 123 L178 127 L210 125 L242 136 L274 140 L302 145"/><circle cx="50" cy="119" r="2.5"/><circle cx="82" cy="124" r="2.5"/><circle cx="114" cy="120" r="2.5"/><circle cx="146" cy="123" r="2.5"/><circle cx="178" cy="127" r="2.5"/><circle cx="210" cy="125" r="2.5"/><circle cx="242" cy="136" r="2.5"/><circle cx="274" cy="140" r="2.5"/><circle cx="302" cy="145" r="2.5"/></g></svg>
             <figcaption>Concept sketch · symptom levels over repeated observations.</figcaption>
           </figure>
-        </article>
-      </li>
-
-      <li class="research-milestone">
-        <div class="research-date"><span class="research-years"><time datetime="2023">2023</time></span></div>
-        <article class="research-story research-story-family" id="research-family" aria-labelledby="research-family-title">
-          <div class="research-story-copy">
-            <header class="research-story-meta"><p>Research Intern<span class="research-affiliation">ARQ · Impact of disasters and crises</span></p></header>
-            <p class="research-topic">Family safety</p><h3 id="research-family-title">How can support help a family stay safe?</h3><p class="research-contribution">I analysed single-case data on family-based interventions addressing child abuse and co-authored a research manuscript.</p>
-        <details class="research-direction"><summary>Explore the direction</summary><p>A related case report by Sepers, Maric and Mooren examines social networks within the Resolutions Approach. It raises a question worth following: how might supportive relationships help families sustain safety over time?</p><a href="https://doi.org/10.3390/children12050580" target="_blank" rel="noopener noreferrer">Related research · family social support, 2025 <span aria-hidden="true">↗</span></a></details>
-          </div>
-          <figure class="research-art family-art"><svg viewBox="0 0 320 180" role="img" aria-labelledby="family-graphic-title"><title id="family-graphic-title">Conceptual illustration of a family connected to a wider support network</title><path class="diagram-line diagram-dashed" d="M160 88 53 53M160 88 269 53M160 88 68 145M160 88 253 145"/><circle class="support-ring" cx="160" cy="88" r="47"/><g class="diagram-node diagram-node-sage"><circle cx="53" cy="53" r="16"/><circle cx="269" cy="53" r="16"/></g><g class="diagram-node diagram-node-terra"><circle cx="68" cy="145" r="11"/><circle cx="253" cy="145" r="11"/></g><g class="family-symbol"><circle cx="147" cy="74" r="9"/><circle cx="175" cy="74" r="9"/><circle cx="161" cy="95" r="7"/><path d="M134 103V94a13 13 0 0 1 26 0m2 0a13 13 0 0 1 26 0v9m-37 11v-6a10 10 0 0 1 20 0v6"/></g><text class="diagram-label" x="160" y="163">A wider circle of support</text></svg><figcaption>Concept sketch · looking at the relationships around a family.</figcaption></figure>
-        </article>
-      </li>
-
-      <li class="research-milestone">
-        <div class="research-date"><span class="research-years"><time datetime="2021">2021</time>–<time datetime="2022">2022</time></span></div>
-        <article class="research-story research-story-development" aria-labelledby="research-development-title">
-          <div class="research-story-copy">
-            <header class="research-story-meta"><p>Research Assistant<span class="research-affiliation">Ludwig-Maximilians University of Munich</span></p></header>
-            <p class="research-topic">Growing minds</p><h3 id="research-development-title">How do children learn to reason?</h3><p class="research-contribution">I administered psychological tasks with children aged 4–7 and prepared interview data for developmental research.</p>
-        <details class="research-direction"><summary>Explore the direction</summary><p>A 2026 study involving Köksal and Sodian linked early understanding of other people’s minds with later scientific reasoning. This wider research asks how social understanding and thinking about evidence develop together.</p><a href="https://pubmed.ncbi.nlm.nih.gov/42640009/" target="_blank" rel="noopener noreferrer">Related research · scientific reasoning, 2026 <span aria-hidden="true">↗</span></a></details>
-          </div>
-          <figure class="research-art development-art"><svg viewBox="0 0 320 180" role="img" aria-labelledby="development-graphic-title"><title id="development-graphic-title">Conceptual illustration of asking questions, trying ideas, and explaining</title><path class="diagram-line" d="M91 77h28m-6-5 6 5-6 5m86-5h25m-6-5 6 5-6 5"/><circle class="wonder-disc" cx="55" cy="77" r="34"/><text class="wonder-mark" x="55" y="91">?</text><g class="development-blocks"><rect x="135" y="76" width="27" height="27" rx="3"/><rect x="165" y="76" width="27" height="27" rx="3"/><rect x="150" y="46" width="27" height="27" rx="3"/></g><path class="explain-bubble" d="M242 47h51a9 9 0 0 1 9 9v34a9 9 0 0 1-9 9h-30l-15 13V99h-6a9 9 0 0 1-9-9V56a9 9 0 0 1 9-9Z"/><path class="diagram-line" d="M247 65h40m-40 14h28"/><g class="diagram-label"><text x="55" y="149">Ask</text><text x="162" y="149">Try</text><text x="268" y="149">Explain</text></g></svg><figcaption>Concept sketch · the beginnings of scientific thinking.</figcaption></figure>
-        </article>
-      </li>
-    </ol>
+      </article>
+      <article class="research-story research-thread thread-intelligence" id="research-intelligence" aria-labelledby="research-models-title">
+        <div class="research-story-copy"><p class="thread-period">2024–2025</p><header class="research-story-meta"><p>Master’s thesis · Junior Researcher<span class="research-affiliation">University of Amsterdam</span></p></header><h3 id="research-models-title">What if <em>g</em> isn't a thing?</h3><p class="research-contribution">Tracking change one child at a time made me wonder what our scores actually capture. For decades, intelligence has been explained by one hidden general factor, <em>g</em>. My master's thesis asked whether a web of abilities that strengthen each other could explain the same data just as well. As a junior researcher, I extended it with simulations, testing when <em>g</em> truly fits and when it only looks like it does.</p><details class="research-direction"><summary>Explore the direction</summary><p>Related simulation research tests how competing models can account for similar patterns. It encourages researchers to consider network explanations alongside factor models. The bigger question: when does a well-fitting model actually help explain the process behind the data?</p><a href="https://pubmed.ncbi.nlm.nih.gov/38392174/" target="_blank" rel="noopener noreferrer">Related research · Kan and colleagues, 2024 <span aria-hidden="true">↗</span></a></details></div>
+        <figure class="research-art model-demo" data-model-demo>
+          <div class="model-controls" role="group" aria-label="Compare conceptual model diagrams"><button type="button" data-research-model="factor" aria-pressed="true">Factor model</button><button type="button" data-research-model="network" aria-pressed="false">Network model</button></div>
+          <svg viewBox="0 0 320 180" role="img" aria-labelledby="research-model-graphic-title"><title id="research-model-graphic-title">Conceptual factor model: a shared trait links four observed measures</title><g data-model-view="factor"><path class="diagram-line" d="M160 70 48 132M160 70 123 132M160 70 198 132M160 70 273 132"/><circle class="diagram-node diagram-node-sea" cx="160" cy="43" r="28"/><text class="diagram-light-label" x="160" y="47">g</text><g class="diagram-measures"><rect x="16" y="132" width="64" height="32" rx="5"/><rect x="91" y="132" width="64" height="32" rx="5"/><rect x="166" y="132" width="64" height="32" rx="5"/><rect x="241" y="132" width="64" height="32" rx="5"/></g><g class="diagram-label"><text x="48" y="153">A</text><text x="123" y="153">B</text><text x="198" y="153">C</text><text x="273" y="153">D</text></g></g><g data-model-view="network" hidden><path class="diagram-line" d="M65 40 255 40 225 142 95 142ZM65 40 225 142M255 40 95 142"/><circle class="diagram-node diagram-node-sea" cx="65" cy="40" r="21"/><circle class="diagram-node diagram-node-sage" cx="255" cy="40" r="21"/><circle class="diagram-node diagram-node-terra" cx="225" cy="142" r="21"/><circle class="diagram-node diagram-node-sage" cx="95" cy="142" r="21"/><g class="diagram-light-label"><text x="65" y="45">A</text><text x="255" y="45">B</text><text x="225" y="147">C</text><text x="95" y="147">D</text></g></g></svg>
+          <figcaption class="model-caption" aria-live="polite">Concept sketch · a shared trait links the observed measures A–D.</figcaption>
+        </figure>
+      </article>
+    </div>
     <p class="research-context-note">Diagrams are conceptual. Links marked “Related research” explore the wider field beyond my own roles.</p>
+    <p class="research-writing-note">And when I'm not analysing data, I write: about shy children, about how culture shows up on screen, and once, a satirical play. <a href="#writing">The three pieces are linked underneath <span aria-hidden="true">↓</span></a></p>
   </section>
 
+  <section class="canvas-section writing-section" id="writing" aria-labelledby="writing-title"><div class="writing-heading"><p class="section-eyebrow">05 / Writing</p><h2 id="writing-title">Things I wrote without<br>a single p-value.</h2><p class="section-intro">Three pieces on childhood, culture, and the cost of belonging.</p></div><div class="writing-grid"><article class="writing-card"><a class="writing-card-visual" href="writing/parenting-the-pooh-way/" aria-label="Read Parenting the Pooh Way: Encouraging the Shy Child"><img src="images/writing-development.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Blog post · Child development</p><h3><a href="writing/parenting-the-pooh-way/">Parenting the Pooh Way: Encouraging the Shy Child</a></h3><p>An exploration of childhood shyness and how parents can offer gentle, supportive encouragement.</p><a class="cta-link" href="writing/parenting-the-pooh-way/">Read article <span aria-hidden="true">→</span></a></div></article><article class="writing-card"><a class="writing-card-visual" href="writing/blackface-and-racism-in-greek-film-and-television/" aria-label="Read Blackface and Racism in Greek Film and Television"><img src="images/writing-culture.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Blog post · Culture &amp; society</p><h3><a href="writing/blackface-and-racism-in-greek-film-and-television/">Blackface and Racism in Greek Film and Television</a></h3><p>A critical look at racist portrayals in Greek cinema and television, their historical context, and the debate around representation.</p><a class="cta-link" href="writing/blackface-and-racism-in-greek-film-and-television/">Read article <span aria-hidden="true">→</span></a></div></article><article class="writing-card"><a class="writing-card-visual" href="writing/the-price-of-admission/" aria-label="Read The Price of Admission"><img src="images/writing-admission.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Creative writing · Satirical play</p><h3><a href="writing/the-price-of-admission/">The Price of Admission</a></h3><p><em>A tragedy in several unnecessary procedures.</em> A satirical play about beauty and the cost of belonging.</p><a class="cta-link" href="writing/the-price-of-admission/">Read the play <span aria-hidden="true">→</span></a></div></article></div></section>
+
   <section class="canvas-section lookbook projects-section" id="projects" aria-labelledby="projects-title">
-    <div class="lookbook-header"><div><p class="section-eyebrow">04 / Selected coursework &amp; analysis</p><h2 class="lookbook-title" id="projects-title">Programming Projects</h2><p class="section-intro">A selection of programming and data analysis projects in behavioural research, psychometrics, and machine learning.</p></div><div class="project-view-controls"><span class="lookbook-count">01 — 06</span><button class="project-view-button" id="project-view-toggle" type="button" aria-expanded="false" aria-controls="project-track" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>View all projects</span></button></div></div>
-    <div class="lookbook-track" id="project-track" tabindex="0" aria-label="Programming projects, scroll horizontally"><article class="lookbook-card project-card">
-      <a class="project-visual" href="projects/language-model-truthfulness/" aria-label="Explore Language models &amp; truthfulness"><img src="images/project-01.svg" alt="" loading="lazy" width="520" height="380"></a>
-      <div class="project-copy"><p class="project-type">NLP · Python</p><h3><a href="projects/language-model-truthfulness/">Language models &amp; truthfulness</a></h3><p>Comparing five saved Qwen answer sets on TruthfulQA with semantic reference matching, bootstrap intervals, and paired tests.</p><a class="cta-link" href="projects/language-model-truthfulness/">Read project <span aria-hidden="true">→</span></a></div>
-    </article><article class="lookbook-card project-card">
+    <div class="lookbook-header"><div><p class="section-eyebrow">06 / Coursework &amp; analysis</p><h2 class="lookbook-title" id="projects-title">More fun with data</h2><p class="section-intro">A few questions I’ve explored with data, from movement and personality to how we think about the future.</p></div><div class="project-view-controls"><span class="lookbook-count">01 — 05</span><button class="project-view-button" id="project-view-toggle" type="button" aria-expanded="false" aria-controls="project-track" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>View all projects</span></button></div></div>
+    <div class="lookbook-track" id="project-track" tabindex="0" aria-label="Data projects, scroll horizontally"><article class="lookbook-card project-card">
       <a class="project-visual" href="projects/human-activity-recognition/" aria-label="Explore Recognising human activity"><img src="images/project-02.svg" alt="" loading="lazy" width="520" height="380"></a>
       <div class="project-copy"><p class="project-type">Machine learning · R</p><h3><a href="projects/human-activity-recognition/">Recognising human activity</a></h3><p>Extracting features from smartphone sensor recordings and comparing classifiers for activities and postural transitions.</p><a class="cta-link" href="projects/human-activity-recognition/">Read project <span aria-hidden="true">→</span></a></div>
     </article><article class="lookbook-card project-card">
@@ -177,31 +152,8 @@
     <p class="projects-note">Project pages include the analyses, collaborators, results, and limitations.</p>
   </section>
 
-  <section class="canvas-section writing-section" id="writing" aria-labelledby="writing-title"><div class="writing-heading"><p class="section-eyebrow">05 / Essays, blog posts &amp; creative writing</p><h2 id="writing-title">Writing Examples</h2><p class="section-intro">Writing is another way I explore the questions that interest me — from child development to culture and society.</p></div><div class="writing-grid"><article class="writing-card"><a class="writing-card-visual" href="writing/parenting-the-pooh-way/" aria-label="Read Parenting the Pooh Way: Encouraging the Shy Child"><img src="images/writing-development.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Blog post · Child development</p><h3><a href="writing/parenting-the-pooh-way/">Parenting the Pooh Way: Encouraging the Shy Child</a></h3><p>An exploration of childhood shyness and how parents can offer gentle, supportive encouragement.</p><a class="cta-link" href="writing/parenting-the-pooh-way/">Read article <span aria-hidden="true">→</span></a></div></article><article class="writing-card"><a class="writing-card-visual" href="writing/blackface-and-racism-in-greek-film-and-television/" aria-label="Read Blackface and Racism in Greek Film and Television"><img src="images/writing-culture.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Blog post · Culture &amp; society</p><h3><a href="writing/blackface-and-racism-in-greek-film-and-television/">Blackface and Racism in Greek Film and Television</a></h3><p>A critical look at racist portrayals in Greek cinema and television, their historical context, and the debate around representation.</p><a class="cta-link" href="writing/blackface-and-racism-in-greek-film-and-television/">Read article <span aria-hidden="true">→</span></a></div></article><article class="writing-card"><a class="writing-card-visual" href="writing/the-price-of-admission/" aria-label="Read The Price of Admission"><img src="images/writing-admission.svg" alt="" width="520" height="300" loading="lazy"></a><div class="writing-card-copy"><p class="project-type">Creative writing · Satirical play</p><h3><a href="writing/the-price-of-admission/">The Price of Admission</a></h3><p><em>A tragedy in several unnecessary procedures.</em> A satirical play about beauty and the cost of belonging.</p><a class="cta-link" href="writing/the-price-of-admission/">Read the play <span aria-hidden="true">→</span></a></div></article></div></section>
-
-  <section class="canvas-section process" id="methods" aria-labelledby="methods-title">
-    <div class="process-inner"><div class="process-left"><p class="section-eyebrow">06 / Methods &amp; skills</p><h2 class="process-title" id="methods-title">Understanding people.<br><em>Working with data.</em></h2><p class="process-subtitle">I’m interested in how computational and statistical methods can help us understand complex psychological and social phenomena.</p><div class="tools-list" aria-label="Programming languages"><button class="toolkit-trigger" type="button" data-language="R" data-toolkit="r" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my R toolkit">R <span aria-hidden="true">↗</span></button><button class="toolkit-trigger" type="button" data-language="Python" data-toolkit="python" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my Python toolkit">Python <span aria-hidden="true">↗</span></button><button class="toolkit-trigger" type="button" data-language="SQL" data-toolkit="sql" aria-haspopup="dialog" aria-controls="toolkit-dialog" aria-label="Explore my SQL toolkit">SQL <span aria-hidden="true">↗</span></button></div><p class="tools-hint">Select a language to explore my toolkit.</p></div>
-      <div class="timeline">
-        <div class="timeline-item"><p class="timeline-step">01 / Statistical modelling</p><h3 class="timeline-heading">Patterns across people &amp; time</h3><p class="timeline-text">Structural equation modelling, multilevel modelling, longitudinal data analysis, generalised linear mixed models, network analysis, and Monte Carlo simulation.</p></div>
-        <div class="timeline-item"><p class="timeline-step">02 / Psychometrics</p><h3 class="timeline-heading">Making measurement meaningful</h3><p class="timeline-text">Classical test theory, item response theory, confirmatory factor analysis, measurement invariance, and latent variable modelling.</p></div>
-        <div class="timeline-item"><p class="timeline-step">03 / Machine learning</p><h3 class="timeline-heading">Prediction with perspective</h3><p class="timeline-text">Supervised learning, classification, regression, natural language processing, model evaluation, and interpretable approaches.</p></div>
-        <div class="timeline-item"><p class="timeline-step">04 / Research practice</p><h3 class="timeline-heading">From questions to clear findings</h3><p class="timeline-text">Research design, data management, statistical inference, and data visualisation — with an interest in methodological challenges.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="canvas-section video-fragment beyond-section" id="beyond" aria-labelledby="beyond-title">
-    <div class="beyond-art" aria-hidden="true"><img src="images/world-notes.svg" alt="" width="440" height="440" loading="lazy"></div>
-    <div class="video-content"><p class="section-eyebrow">07 / Beyond data</p><h2 class="video-title" id="beyond-title">There’s a whole world<br><em>outside the dataset.</em></h2><p class="video-caption">Outside of research and coding, I love travelling, exploring new cultures, learning languages, and discovering good food.</p><p class="video-caption">I’m always curious about new places, people, and experiences.</p><div class="interest-list">
-        <button class="interest-trigger" type="button" data-interest="travel" aria-haspopup="dialog" aria-controls="interest-dialog" aria-label="Read about my love of travel"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="5" ry="12"/><path d="M4 16h24M7 8c6 4 12 4 18 0M7 24c6-4 12-4 18 0"/></svg>Travel</button>
-        <button class="interest-trigger" type="button" data-interest="languages" aria-haspopup="dialog" aria-controls="interest-dialog" aria-label="Explore the languages I speak"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 5h22v16H13l-7 6v-6H5zM10 10h12M10 15h8"/></svg>Languages</button>
-        <button class="interest-trigger" type="button" data-interest="culture" aria-haspopup="dialog" aria-controls="interest-dialog" aria-label="Read about my interest in culture"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m4 11 12-7 12 7H4M6 26h20M8 14v9M16 14v9M24 14v9"/></svg>Culture</button>
-        <button class="interest-trigger" type="button" data-interest="food" aria-haspopup="dialog" aria-controls="interest-dialog" aria-label="Read about my love of food"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12h17v10a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5V12M23 14h3a3 3 0 0 1 0 6h-3M10 4v4M16 3v5"/></svg>Food</button>
-      </div><p class="interest-hint">Select an interest to find out more.</p></div>
-  </section>
-
   <section class="canvas-section signature" id="contact" aria-labelledby="contact-title">
-    <div class="signature-content"><p class="signature-mark">08 / Get in touch</p><h2 class="signature-heading" id="contact-title">Let’s <em>connect.</em></h2><p class="signature-text">Interested in behavioural research, data science, or a shared question? Let’s connect.</p><a href="https://www.linkedin.com/in/laura-maria-fetz/" class="signature-email" target="_blank" rel="noopener noreferrer">Find me on LinkedIn <span aria-hidden="true">↗</span></a><div class="signature-links"><a href="https://github.com/laurafetz" class="cta-link" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="#home" class="cta-link cta-link--dark">Back to top <span aria-hidden="true">↑</span></a></div></div>
+    <div class="signature-content"><p class="signature-mark">07 / Let’s connect</p><h2 class="signature-heading" id="contact-title">Let’s <em>connect.</em></h2><p class="signature-text">Happy to talk data, travel or Greek film.</p><a href="https://www.linkedin.com/in/laura-maria-fetz/" class="signature-email" target="_blank" rel="noopener noreferrer">Find me on LinkedIn <span aria-hidden="true">↗</span></a><div class="signature-links"><a href="https://github.com/laurafetz" class="cta-link" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="#home" class="cta-link cta-link--dark">Back to top <span aria-hidden="true">↑</span></a></div></div>
     <footer class="signature-footer"><span>© 2026 Laura Maria Fetz</span><span>Adapted from <a href="https://www.tooplate.com/view/2166-ivory-flow" target="_blank" rel="noopener noreferrer">Ivory Flow by Tooplate</a></span></footer>
   </section>
 </main>
@@ -209,7 +161,7 @@
 <dialog class="toolkit-dialog" id="toolkit-dialog" aria-labelledby="toolkit-title" aria-describedby="toolkit-description">
   <div class="toolkit-shell">
     <header class="toolkit-header">
-      <div><p class="section-eyebrow">06 / A closer look</p><h2 id="toolkit-title">My toolkit</h2></div>
+      <div><p class="section-eyebrow">02 / What I learned</p><h2 id="toolkit-title">My toolkit</h2></div>
       <button class="toolkit-close" type="button" aria-label="Close toolkit" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
     </header>
     <p class="toolkit-description" id="toolkit-description">Packages and libraries I work with.</p>
@@ -232,7 +184,7 @@
     <section class="toolkit-group"><h3>Working with data</h3><ul class="toolkit-tags"><li>pandas</li><li>NumPy</li></ul></section>
     <section class="toolkit-group"><h3>Machine learning &amp; deep learning</h3><ul class="toolkit-tags"><li>PyTorch</li><li>TensorFlow</li></ul></section>
   </div>
-  <footer class="toolkit-footer"><p>See some of these tools in my work</p><div class="toolkit-projects"><a href="projects/language-model-truthfulness/">Language models &amp; truthfulness <span aria-hidden="true">↗</span></a></div></footer>
+
 </template>
 <template id="toolkit-sql" data-description="Queries and operations I use to import, combine, and explore structured data.">
   <div class="toolkit-groups">
@@ -242,63 +194,13 @@
     <section class="toolkit-group"><h3>Summarising data</h3><ul class="toolkit-tags"><li>GROUP BY</li><li>HAVING</li></ul></section>
   </div>
 </template>
-<dialog class="toolkit-dialog interest-dialog" id="interest-dialog" aria-labelledby="interest-title" aria-describedby="interest-description">
-  <div class="toolkit-shell">
-    <header class="toolkit-header">
-      <div><p class="section-eyebrow">07 / Beyond data</p><h2 id="interest-title">A little more about me</h2></div>
-      <button class="toolkit-close" type="button" aria-label="Close interest" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
-    </header>
-    <p class="toolkit-description" id="interest-description">The things I love outside of research.</p>
-    <div data-dialog-content></div>
-  </div>
-</dialog>
-<template id="interest-travel" data-title="Travel" data-description="A world of places to discover." data-layout="wide">
-  <div class="interest-story">
-    <p>I love travelling: discovering new places, getting to know different ways of life, and seeing the world from another perspective.</p>
-    <p>My dream is to visit every country in the world at least once. There is always somewhere new to explore, and I hope to keep that curiosity with me wherever I go.</p>
-    <p class="interest-callout">Every country, at least once.</p>
-    <section class="travel-atlas" data-travel-map aria-labelledby="travel-map-title" aria-busy="true">
-      <div class="atlas-heading"><div><p class="section-eyebrow">My travel journal</p><h3 id="travel-map-title">Places I’ve been</h3></div><p class="travel-count" data-travel-count></p></div>
-      <p class="atlas-intro">Select a country to explore the map. The places I’ve visited are marked in green.</p>
-      <div class="atlas-controls"><div class="country-picker"><label for="travel-country">Find a country or territory</label><select id="travel-country" data-map-country disabled><option value="">Choose a place</option></select></div><div class="map-zoom-controls" aria-label="Map zoom"><button type="button" data-map-zoom="in" aria-label="Zoom in on the map" disabled>+</button><button type="button" data-map-zoom="out" aria-label="Zoom out on the map" disabled>−</button><button type="button" data-map-reset disabled>World view</button></div></div>
-      <div class="travel-map-frame" data-map-frame><p class="map-loading" role="status">Loading my travel map…</p></div>
-      <div class="map-legend"><span><i class="legend-visited" aria-hidden="true"></i>Visited</span><span><i class="legend-explore" aria-hidden="true"></i>Still to explore</span><span class="map-gesture-hint">Drag to move · use + and − to zoom</span></div>
-      <p class="map-country-info" data-map-info role="status">A lifetime of exploring ahead.</p>
-      <details class="visited-places"><summary>Places I’ve visited</summary><ul data-visited-places></ul></details>
-      <p class="map-credit">Map data: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a>, via <a href="https://github.com/topojson/world-atlas" target="_blank" rel="noopener noreferrer">World Atlas</a>.</p>
-    </section>
-  </div>
-</template>
-<template id="interest-languages" data-title="Languages" data-description="Different languages, different ways of connecting.">
-  <div class="interest-story">
-    <p>Learning languages is part of my curiosity about people and places. These are the languages I speak and my proficiency levels.</p>
-    <ul class="language-levels">
-      <li><div class="language-heading"><h3>German</h3><span>C2</span></div><div class="language-scale" aria-hidden="true"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span></div></li>
-      <li><div class="language-heading"><h3>English</h3><span>C1</span></div><div class="language-scale" aria-hidden="true"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span></div></li>
-      <li><div class="language-heading"><h3>Greek</h3><span>B2</span></div><div class="language-scale" aria-hidden="true"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span><span></span></div></li>
-      <li><div class="language-heading"><h3>Spanish</h3><span>B1</span></div><div class="language-scale" aria-hidden="true"><span class="is-filled"></span><span class="is-filled"></span><span class="is-filled"></span><span></span><span></span><span></span></div></li>
-      <li><div class="language-heading"><h3>Dutch</h3><span>A2</span></div><div class="language-scale" aria-hidden="true"><span class="is-filled"></span><span class="is-filled"></span><span></span><span></span><span></span><span></span></div></li>
-    </ul>
-    <div class="language-scale-key" aria-hidden="true"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div>
-    <p class="language-scale-note">CEFR proficiency scale · A1 to C2</p>
-  </div>
-</template>
-<template id="interest-culture" data-title="Culture" data-description="Books, stories, and perspectives from around the world." data-layout="wide">
-  <div class="interest-story">
-    <p>During my bachelor’s degree, I minored in language, literature, and culture. That interest has stayed with me: I love reading books from different cultural backgrounds and discovering how other people tell their stories.</p>
-    <p>My interest in culture and representation also led me to write about blackface and racism in Greek film and television.</p>
-    <section class="bookshelf" data-bookshelf aria-labelledby="bookshelf-title" aria-busy="true"><p class="section-eyebrow">Between the pages</p><h3 id="bookshelf-title">On my bookshelf</h3><p class="bookshelf-intro">A few books that have stayed with me.</p><div class="bookshelf-grid" data-bookshelf-books><p role="status">Loading my bookshelf…</p></div></section>
-    <a class="interest-article-link" href="writing/blackface-and-racism-in-greek-film-and-television/"><span class="interest-link-label">From my writing</span><strong>Blackface and Racism in Greek Film and Television</strong><span class="interest-link-action">Read the article <span aria-hidden="true">↗</span></span></a>
-  </div>
-</template>
-<template id="interest-food" data-title="Food" data-description="Curiosity, with something delicious on the table.">
-  <div class="interest-story">
-    <p>I’m a big foodie. I love exploring new restaurants, trying different cuisines, and discovering dishes I haven’t tasted before.</p>
-    <p>Food is another way I get to know a place and its culture. Whether I’m travelling or closer to home, I’m always happy to try somewhere new.</p>
-  </div>
-</template>
-<script src="personal.js?v=research-experience" defer></script>
-<script src="explore.js?v=map-bookshelf-2" defer></script>
+
+<template id="toolkit-modelling" data-title="Statistical modelling" data-description="Patterns across people and time."><div class="method-detail"><p>Structural equation modelling, multilevel modelling, longitudinal data analysis, generalised linear mixed models, network analysis, and Monte Carlo simulation.</p><ul class="toolkit-tags"><li>Structural equation modelling</li><li>Multilevel modelling</li><li>Longitudinal analysis</li><li>Generalised linear mixed models</li><li>Network analysis</li><li>Monte Carlo simulation</li></ul></div></template>
+<template id="toolkit-psychometrics" data-title="Psychometrics" data-description="Making measurement meaningful."><div class="method-detail"><p>Classical test theory, item response theory, confirmatory factor analysis, measurement invariance, and latent variable modelling.</p><ul class="toolkit-tags"><li>Classical test theory</li><li>Item response theory</li><li>Confirmatory factor analysis</li><li>Measurement invariance</li><li>Latent variable modelling</li></ul></div></template>
+<template id="toolkit-machine-learning" data-title="Machine learning" data-description="Prediction with perspective."><div class="method-detail"><p>Supervised learning, classification, regression, natural language processing, model evaluation, and interpretable approaches.</p><ul class="toolkit-tags"><li>Supervised learning</li><li>Classification</li><li>Regression</li><li>Natural language processing</li><li>Model evaluation</li><li>Interpretability</li></ul></div></template>
+<template id="toolkit-research-practice" data-title="Research practice" data-description="From questions to clear findings."><div class="method-detail"><p>Research design, data management, statistical inference, and data visualisation — with an interest in methodological challenges.</p><ul class="toolkit-tags"><li>Research design</li><li>Data management</li><li>Statistical inference</li><li>Data visualisation</li></ul></div></template>
+<script src="personal.js?v=seven-chapters" defer></script>
+<script src="explore.js?v=seven-chapters" defer></script>
 <script src="research.js?v=fieldnotes" defer></script>
 </body>
 </html>
