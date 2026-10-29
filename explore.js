@@ -33,7 +33,7 @@
     return profileRequest;
   }
   function loadMap() {
-    if (!mapRequest) mapRequest = readJson('data/travel-map.json').catch(error => {
+    if (!mapRequest) mapRequest = readJson('data/travel-map.json?v=country-focus').catch(error => {
       mapRequest = null;
       throw error;
     });
@@ -166,7 +166,7 @@
         selector.value = id;
         info.textContent = country.name + (visited.has(id) ? ' — one of the places I’ve visited.' : ' — somewhere I’d love to explore.');
         if (focusMap) {
-          const [x0, y0, x1, y1] = country.bounds;
+          const [x0, y0, x1, y1] = country.focusBounds || country.bounds;
           const width = Math.max((x1 - x0) * 1.7, (y1 - y0) * 1.7 * world.width / world.height, world.width / 12);
           const height = width * world.height / world.width;
           setView({ x: (x0 + x1 - width) / 2, y: (y0 + y1 - height) / 2, width, height });
