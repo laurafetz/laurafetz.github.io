@@ -20,7 +20,7 @@ There's a separate section for my internship at Prowise Learn. My research timel
 
 The pieces can be read on the site or downloaded as PDFs. The blog posts link to their original publications.
 
-## More fun with data
+## Fun with Data
 
 For now, this section brings together five coursework projects: human activity recognition, growth and identity, future thinking, personality impressions, and parental stress. Each has its own page with the analysis, collaborators, sources, and limitations. The project browser can switch between a carousel and a grid.
 
