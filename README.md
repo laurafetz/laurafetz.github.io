@@ -10,7 +10,9 @@ I wanted a place to share my work and give a sense of who I am beyond a GitHub p
 
 ## My research experience
 
-I've worked in research at the University of Amsterdam, Prowise NL, ARQ, and Ludwig-Maximilians University of Munich. The website has a short timeline of these roles, with the dates and a little about what I worked on — from developmental research with children to educational data analysis, meta-analysis, and psychometric simulations.
+I've worked in research at the University of Amsterdam, Prowise NL, ARQ, and Ludwig-Maximilians University of Munich. This section follows the questions behind that work, with years, short highlights, and conceptual illustrations. You can switch between factor and network diagrams and explore links to related research.
+
+It also features my [joint-first-author meta-analysis in JAACAP Open](https://doi.org/10.1016/j.jaacop.2025.12.002). The diagrams explain research ideas; the linked wider research is separate from the contributions described in my roles.
 
 ## My programming projects
 
